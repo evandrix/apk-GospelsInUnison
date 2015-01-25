@@ -1,0 +1,644 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US"
+ xmlns:og="http://opengraphprotocol.org/schema/"
+ xmlns:fb="http://www.facebook.com/2008/fbml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>SavageLook.com  &raquo; Swipes, or &#8220;Flings&#8221;, for Navigation in Android</title>
+
+<link rel="stylesheet" href="http://savagelook.com/blog/wp-content/themes/BlueBubble/style.css" type="text/css" media="screen" />
+<link rel="alternate" type="application/rss+xml" title="SavageLook.com RSS Feed" href="http://savagelook.com/blog/feed" />
+<link rel="pingback" href="http://savagelook.com/blog/xmlrpc.php" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3/jquery.min.js"></script>
+
+<script type="text/javascript">
+	var mailpath = 'http://savagelook.com/blog/wp-content/themes/BlueBubble/scripts/mail.php';
+	var ajaxgifpath = 'http://savagelook.com/blog/wp-content/themes/BlueBubble/images/loader.gif';
+</script>
+<script type="text/javascript" src="http://savagelook.com/blog/wp-content/themes/BlueBubble/scripts/js.js"></script>
+
+<link rel="alternate" type="application/rss+xml" title="SavageLook.com &raquo; Swipes, or &#8220;Flings&#8221;, for Navigation in Android Comments Feed" href="http://savagelook.com/blog/android/swipes-or-flings-for-navigation-in-android/feed" />
+<link rel='stylesheet' id='shadowbox-css-css'  href='http://savagelook.com/blog/wp-content/plugins/shadowbox-js/shadowbox/shadowbox.css?ver=3.0.3' type='text/css' media='screen' />
+<link rel='stylesheet' id='shadowbox-extras-css'  href='http://savagelook.com/blog/wp-content/plugins/shadowbox-js/css/extras.css?ver=3.0.3.8' type='text/css' media='screen' />
+<script type='text/javascript' src='http://savagelook.com/blog/wp-includes/js/l10n.js?ver=20101110'></script>
+<script type='text/javascript' src='http://savagelook.com/blog/wp-includes/js/jquery/jquery.js?ver=1.6.1'></script>
+<script type='text/javascript' src='http://savagelook.com/blog/wp-includes/js/comment-reply.js?ver=20090102'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var SHRSB_Globals = {
+	src: "http://savagelook.com/blog/wp-content/plugins/sexybookmarks/spritegen",
+	perfoption: "1"
+};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://savagelook.com/blog/wp-content/plugins/sexybookmarks/spritegen/jquery.shareaholic-publishers-sb.min.js?ver=4.0.4.2'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://savagelook.com/blog/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://savagelook.com/blog/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='SavageLook.com' href='http://savagelook.com/blog' />
+<link rel='start' title='Flash Player 10.1' href='http://savagelook.com/blog/away3d/flash-player-10-1' />
+<link rel='prev' title='Mobile Developer&#8217;s Icon &amp; Image Checklist' href='http://savagelook.com/blog/android/mobile-developers-icon-image-checklist' />
+<link rel='next' title='A Deeper Look at Appcelerator and PhoneGap' href='http://savagelook.com/blog/portfolio/a-deeper-look-at-appcelerator-and-phonegap' />
+<meta name="generator" content="WordPress 3.2.1" />
+<link rel='canonical' href='http://savagelook.com/blog/android/swipes-or-flings-for-navigation-in-android' />
+<link rel='shortlink' href='http://savagelook.com/blog/?p=2768' />
+
+ 		<!-- by Twitter Follow Me Box v1.1 -->
+ 		<script type="text/javascript">
+ 			//<![CDATA[
+  			jQuery(document).ready(function(){
+    			jQuery("body").append("<div id=\"tfmBox\"></div>");
+    			jQuery("#tfmBox").css({'position' : 'fixed', 'top' : '130px', 'width' : '30px', 'height' : '119px', 'z-index' : '1000', 'cursor' : 'pointer', 'background' : '#000000 url(http://savagelook.com/blog/wp-content/plugins/twitter-follow-me-box/follow-me.png) no-repeat scroll right top', 'left' : '0'});
+    			jQuery("#tfmBox").click(function () { 
+			      window.open('http://twitter.com/tonylukasavage/');
+    			});
+    		});
+    		//]]>
+  		</script>
+		<!-- /by Twitter Follow Me Box -->
+ 	
+<link rel="stylesheet" href="http://savagelook.com/blog/wp-content/plugins/wp-syntax/wp-syntax.css" type="text/css" media="screen" />
+<!-- Wordpress Popular Posts v2.1.4 -->
+<script type="text/javascript" charset="utf-8">
+    /* <![CDATA[ */				
+	jQuery.post('http://savagelook.com/blog/wp-admin/admin-ajax.php', {action: 'wpp_update', token: 'f11580edfc', id: 2768});
+    /* ]]> */
+</script>
+<!-- End Wordpress Popular Posts v2.1.4 -->
+            
+<!-- Wordpress Popular Posts v2.1.4 -->
+<link rel="stylesheet" href="http://savagelook.com/blog/wp-content/plugins/wordpress-popular-posts/style/wpp.css" type="text/css" media="screen" />
+<!-- End Wordpress Popular Posts v2.1.4 -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18931485-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+
+
+<div id="container">
+
+
+<div id="header">
+		<a class="homelink" title="SavageLook.com" href="http://savagelook.com/blog/"><img class="logotype" alt="logo" src="http://savagelook.com/misc/sl_drop2.png" /></a>
+
+<span style="float:right; padding-top:15px;"><a href="http://feeds.feedburner.com/Savagelookcom"><img src="http://savagelook.com/misc/feedicon2.png" title="Subscribe to the RSS feed"/></a></span>
+<span style="float:right; padding-top:15px;"><a href="http://twitter.com/tonylukasavage"><img src="http://www.twitterbuttons.com/upload/images/f79f1a5d0atwitter-bg-fm.png" title="Follow @tonylukasavage on twitter" alt="Follow @tonylukasavage on twitter" width="44" height="44" /></a></span>							
+
+</div> <!-- END #header -->
+
+
+
+	<div id="content">
+
+	
+		
+			<div class="postsingle" id="post-2768">
+						
+				<h1><a href="http://savagelook.com/blog/android/swipes-or-flings-for-navigation-in-android" rel="bookmark" title="Permanent Link to Swipes, or &#8220;Flings&#8221;, for Navigation in Android">Swipes, or &#8220;Flings&#8221;, for Navigation in Android</a></h1>
+				
+				<p class="postmetadata">by Tony Lukasavage on Thursday, March 31st, 2011  | <img src="http://savagelook.com/blog/wp-content/themes/BlueBubble/images/comments.png" alt="comments"> <a href="http://savagelook.com/blog/android/swipes-or-flings-for-navigation-in-android#comments" title="Comment on Swipes, or &#8220;Flings&#8221;, for Navigation in Android">8 Comments</a> | Tags: <a href="http://savagelook.com/blog/tag/android" rel="tag">Android</a>, <a href="http://savagelook.com/blog/tag/mobile" rel="tag">Mobile</a> </p>
+
+<div style="float:right;">
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style ">
+<a class="addthis_button_tweet" tw:via="tonylukasavage"></a>
+<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+<a class="addthis_counter addthis_pill_style"></a>
+</div>
+<script type="text/javascript">
+var addthis_config = {"data_track_clickback":true};
+</script>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=savagelook"></script>
+<!-- AddThis Button END -->
+
+
+
+</div>
+
+				<div class="entry">
+					<!-- Start LikeButtonSetTop --><!-- End LikeButtonSetTop --><h2>Download the Project</h2>
+<ul style="margin-bottom:20px;">
+<li><a href="http://savagelook.com/misc/Fling.zip"><strong>Eclipse project and full source for &#8220;Fling&#8221;</strong></a></li>
+</ul>
+<h2>Overview</h2>
+<p>I&#8217;ll keep the narrative on this one brief and get you right to the good stuff.  I wanted to be able to navigate through the activities in an Android app just like Tweetdeck.  One swipe of the finger and you quickly transition to the next column.  Take a look at how it looks when you swipe your finger from right to left. </p>
+<table>
+<tr>
+<td style="text-align:center;"><a href="http://savagelook.com/blog/wp-content/uploads/2011/03/device1.png" rel="shadowbox[sbpost-2768];player=img;"><img src="http://savagelook.com/blog/wp-content/uploads/2011/03/device1-168x300.png" alt="" title="device1" width="168" height="300" class="aligncenter size-medium wp-image-2770" /></a><br /><strong>pre-fling</strong></td>
+<td>&rarr;</td>
+<td style="text-align:center;"><a href="http://savagelook.com/blog/wp-content/uploads/2011/03/device2.png" rel="shadowbox[sbpost-2768];player=img;"><img src="http://savagelook.com/blog/wp-content/uploads/2011/03/device2-168x300.png" alt="" title="device2" width="168" height="300" class="aligncenter size-medium wp-image-2771" /></a><br /><strong>during fling</strong></td>
+<td>&rarr;</td>
+<td style="text-align:center;"><a href="http://savagelook.com/blog/wp-content/uploads/2011/03/device3.png" rel="shadowbox[sbpost-2768];player=img;"><img src="http://savagelook.com/blog/wp-content/uploads/2011/03/device3-168x300.png" alt="" title="device3" width="168" height="300" class="aligncenter size-medium wp-image-2772" /></a><br /><strong>post-fling</strong></td>
+</tr>
+</table>
+<p>In Android, they call this a &#8220;fling&#8221;.  Think of a fling as a touch and drag with a specific direction and speed threshold.  Once that speed threshold is surpassed, the fling is triggered.  Here&#8217;s the bare bones code necessary to get fling gestures working in your Android app.  Also, I use custo animations based on the ones from the Android SDK to determine how my activities will transition.  A left to right fling should obviously have the opposite appearance as a right to left fling.  Big thanks to <a href="http://stackoverflow.com/questions/937313/android-basic-gesture-detection" target="_blank">this post</a> as it makes up a majority of the logic and code in this sample.</p>
+<h2>src/MainActivity.java</h2>
+<p>This is where the heavy lifting is done.  The important things to note are the use of a custom gesture listener to handle our fling event and the use of <a href="http://developer.android.com/reference/android/app/Activity.html#overridePendingTransition(int, int)" target="_blank">overridePendingTransition()</a> to apply our custom transition animations to the activity we just started.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="java" style="font-family:monospace;"><span style="color: #000000; font-weight: bold;">package</span> <span style="color: #006699;">com.savagelook</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #000000; font-weight: bold;">import</span> <span style="color: #006699;">android.app.Activity</span><span style="color: #339933;">;</span>
+<span style="color: #000000; font-weight: bold;">import</span> <span style="color: #006699;">android.content.Intent</span><span style="color: #339933;">;</span>
+<span style="color: #000000; font-weight: bold;">import</span> <span style="color: #006699;">android.os.Bundle</span><span style="color: #339933;">;</span>
+<span style="color: #000000; font-weight: bold;">import</span> <span style="color: #006699;">android.view.GestureDetector</span><span style="color: #339933;">;</span>
+<span style="color: #000000; font-weight: bold;">import</span> <span style="color: #006699;">android.view.GestureDetector.SimpleOnGestureListener</span><span style="color: #339933;">;</span>
+<span style="color: #000000; font-weight: bold;">import</span> <span style="color: #006699;">android.view.View</span><span style="color: #339933;">;</span>
+<span style="color: #000000; font-weight: bold;">import</span> <span style="color: #006699;">android.view.MotionEvent</span><span style="color: #339933;">;</span>
+&nbsp;
+<span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000000; font-weight: bold;">class</span> MainActivity <span style="color: #000000; font-weight: bold;">extends</span> Activity <span style="color: #009900;">&#123;</span>
+    <span style="color: #000000; font-weight: bold;">private</span> <span style="color: #000000; font-weight: bold;">static</span> <span style="color: #000000; font-weight: bold;">final</span> <span style="color: #000066; font-weight: bold;">int</span> SWIPE_MIN_DISTANCE <span style="color: #339933;">=</span> <span style="color: #cc66cc;">120</span><span style="color: #339933;">;</span>
+    <span style="color: #000000; font-weight: bold;">private</span> <span style="color: #000000; font-weight: bold;">static</span> <span style="color: #000000; font-weight: bold;">final</span> <span style="color: #000066; font-weight: bold;">int</span> SWIPE_MAX_OFF_PATH <span style="color: #339933;">=</span> <span style="color: #cc66cc;">250</span><span style="color: #339933;">;</span>
+    <span style="color: #000000; font-weight: bold;">private</span> <span style="color: #000000; font-weight: bold;">static</span> <span style="color: #000000; font-weight: bold;">final</span> <span style="color: #000066; font-weight: bold;">int</span> SWIPE_THRESHOLD_VELOCITY <span style="color: #339933;">=</span> <span style="color: #cc66cc;">200</span><span style="color: #339933;">;</span>
+    <span style="color: #000000; font-weight: bold;">private</span> GestureDetector gestureDetector<span style="color: #339933;">;</span>
+&nbsp;
+    <span style="color: #008000; font-style: italic; font-weight: bold;">/** Called when the activity is first created. */</span>
+    @Override
+    <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000066; font-weight: bold;">void</span> onCreate<span style="color: #009900;">&#40;</span>Bundle savedInstanceState<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+        <span style="color: #000000; font-weight: bold;">super</span>.<span style="color: #006633;">onCreate</span><span style="color: #009900;">&#40;</span>savedInstanceState<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+        setContentView<span style="color: #009900;">&#40;</span>R.<span style="color: #006633;">layout</span>.<span style="color: #006633;">main</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&nbsp;
+        gestureDetector <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> GestureDetector<span style="color: #009900;">&#40;</span><span style="color: #000000; font-weight: bold;">new</span> MyGestureDetector<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+        <span style="color: #003399;">View</span> mainview <span style="color: #339933;">=</span> <span style="color: #009900;">&#40;</span><span style="color: #003399;">View</span><span style="color: #009900;">&#41;</span> findViewById<span style="color: #009900;">&#40;</span>R.<span style="color: #006633;">id</span>.<span style="color: #006633;">mainView</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&nbsp;
+        <span style="color: #666666; font-style: italic;">// Set the touch listener for the main view to be our custom gesture listener</span>
+        mainview.<span style="color: #006633;">setOnTouchListener</span><span style="color: #009900;">&#40;</span><span style="color: #000000; font-weight: bold;">new</span> <span style="color: #003399;">View</span>.<span style="color: #006633;">OnTouchListener</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+            <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000066; font-weight: bold;">boolean</span> onTouch<span style="color: #009900;">&#40;</span><span style="color: #003399;">View</span> v, MotionEvent event<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+                <span style="color: #000000; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>gestureDetector.<span style="color: #006633;">onTouchEvent</span><span style="color: #009900;">&#40;</span>event<span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+                    <span style="color: #000000; font-weight: bold;">return</span> <span style="color: #000066; font-weight: bold;">true</span><span style="color: #339933;">;</span>
+                <span style="color: #009900;">&#125;</span>
+                <span style="color: #000000; font-weight: bold;">return</span> <span style="color: #000066; font-weight: bold;">false</span><span style="color: #339933;">;</span>
+            <span style="color: #009900;">&#125;</span>
+        <span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    <span style="color: #009900;">&#125;</span>
+&nbsp;
+    <span style="color: #000000; font-weight: bold;">class</span> MyGestureDetector <span style="color: #000000; font-weight: bold;">extends</span> SimpleOnGestureListener <span style="color: #009900;">&#123;</span>
+        @Override
+        <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000066; font-weight: bold;">boolean</span> onFling<span style="color: #009900;">&#40;</span>MotionEvent e1, MotionEvent e2, <span style="color: #000066; font-weight: bold;">float</span> velocityX, <span style="color: #000066; font-weight: bold;">float</span> velocityY<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+	    Intent intent <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> Intent<span style="color: #009900;">&#40;</span>MainActivity.<span style="color: #000000; font-weight: bold;">this</span>.<span style="color: #006633;">getBaseContext</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>, MainActivity.<span style="color: #000000; font-weight: bold;">class</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+&nbsp;
+            <span style="color: #000000; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #003399;">Math</span>.<span style="color: #006633;">abs</span><span style="color: #009900;">&#40;</span>e1.<span style="color: #006633;">getY</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">-</span> e2.<span style="color: #006633;">getY</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&gt;</span> SWIPE_MAX_OFF_PATH<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+                <span style="color: #000000; font-weight: bold;">return</span> <span style="color: #000066; font-weight: bold;">false</span><span style="color: #339933;">;</span>
+            <span style="color: #009900;">&#125;</span>
+&nbsp;
+            <span style="color: #666666; font-style: italic;">// right to left swipe</span>
+            <span style="color: #000000; font-weight: bold;">if</span><span style="color: #009900;">&#40;</span>e1.<span style="color: #006633;">getX</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">-</span> e2.<span style="color: #006633;">getX</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&gt;</span> SWIPE_MIN_DISTANCE <span style="color: #339933;">&amp;&amp;</span> <span style="color: #003399;">Math</span>.<span style="color: #006633;">abs</span><span style="color: #009900;">&#40;</span>velocityX<span style="color: #009900;">&#41;</span> <span style="color: #339933;">&gt;</span> SWIPE_THRESHOLD_VELOCITY<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    		startActivity<span style="color: #009900;">&#40;</span>intent<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    		MainActivity.<span style="color: #000000; font-weight: bold;">this</span>.<span style="color: #006633;">overridePendingTransition</span><span style="color: #009900;">&#40;</span>
+			R.<span style="color: #006633;">anim</span>.<span style="color: #006633;">slide_in_right</span>,
+			R.<span style="color: #006633;">anim</span>.<span style="color: #006633;">slide_out_left</span>
+    		<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    	    <span style="color: #666666; font-style: italic;">// right to left swipe</span>
+            <span style="color: #009900;">&#125;</span>  <span style="color: #000000; font-weight: bold;">else</span> <span style="color: #000000; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>e2.<span style="color: #006633;">getX</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">-</span> e1.<span style="color: #006633;">getX</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">&gt;</span> SWIPE_MIN_DISTANCE <span style="color: #339933;">&amp;&amp;</span> <span style="color: #003399;">Math</span>.<span style="color: #006633;">abs</span><span style="color: #009900;">&#40;</span>velocityX<span style="color: #009900;">&#41;</span> <span style="color: #339933;">&gt;</span> SWIPE_THRESHOLD_VELOCITY<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+    		startActivity<span style="color: #009900;">&#40;</span>intent<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+    		MainActivity.<span style="color: #000000; font-weight: bold;">this</span>.<span style="color: #006633;">overridePendingTransition</span><span style="color: #009900;">&#40;</span>
+			R.<span style="color: #006633;">anim</span>.<span style="color: #006633;">slide_in_left</span>, 
+			R.<span style="color: #006633;">anim</span>.<span style="color: #006633;">slide_out_right</span>
+    		<span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
+            <span style="color: #009900;">&#125;</span>
+&nbsp;
+            <span style="color: #000000; font-weight: bold;">return</span> <span style="color: #000066; font-weight: bold;">false</span><span style="color: #339933;">;</span>
+        <span style="color: #009900;">&#125;</span>
+&nbsp;
+        <span style="color: #666666; font-style: italic;">// It is necessary to return true from onDown for the onFling event to register</span>
+        @Override
+        <span style="color: #000000; font-weight: bold;">public</span> <span style="color: #000066; font-weight: bold;">boolean</span> onDown<span style="color: #009900;">&#40;</span>MotionEvent e<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
+	        	<span style="color: #000000; font-weight: bold;">return</span> <span style="color: #000066; font-weight: bold;">true</span><span style="color: #339933;">;</span>
+        <span style="color: #009900;">&#125;</span>
+    <span style="color: #009900;">&#125;</span>
+<span style="color: #009900;">&#125;</span></pre></div></div>
+
+<h2>res/layout/main.xml</h2>
+<p>A standard main.xml. The only change you&#8217;ll find here is that we&#8217;ve given the main view, our LinearLayout, an ID so it is accessible in MainActivity.java.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;?xml</span> <span style="color: #000066;">version</span>=<span style="color: #ff0000;">&quot;1.0&quot;</span> <span style="color: #000066;">encoding</span>=<span style="color: #ff0000;">&quot;utf-8&quot;</span><span style="color: #000000; font-weight: bold;">?&gt;</span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;LinearLayout</span> <span style="color: #000066;">xmlns:android</span>=<span style="color: #ff0000;">&quot;http://schemas.android.com/apk/res/android&quot;</span></span>
+<span style="color: #009900;">    <span style="color: #000066;">android:orientation</span>=<span style="color: #ff0000;">&quot;vertical&quot;</span></span>
+<span style="color: #009900;">    <span style="color: #000066;">android:layout_width</span>=<span style="color: #ff0000;">&quot;fill_parent&quot;</span></span>
+<span style="color: #009900;">    <span style="color: #000066;">android:layout_height</span>=<span style="color: #ff0000;">&quot;fill_parent&quot;</span></span>
+<span style="color: #009900;">    <span style="color: #000066;">android:id</span>=<span style="color: #ff0000;">&quot;@+id/mainView&quot;</span></span>
+<span style="color: #009900;">    <span style="color: #000000; font-weight: bold;">&gt;</span></span> 
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;TextView</span>  </span>
+<span style="color: #009900;">	    <span style="color: #000066;">android:layout_width</span>=<span style="color: #ff0000;">&quot;fill_parent&quot;</span> </span>
+<span style="color: #009900;">            <span style="color: #000066;">android:layout_height</span>=<span style="color: #ff0000;">&quot;wrap_content&quot;</span> </span>
+<span style="color: #009900;">	    <span style="color: #000066;">android:text</span>=<span style="color: #ff0000;">&quot;@string/hello&quot;</span></span>
+<span style="color: #009900;">	<span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/LinearLayout<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre></div></div>
+
+<h2>AndroidManifest.xml</h2>
+<p>Again, a standard manifest with one small change.  I added <strong>android:noHistory=&#8221;true&#8221;</strong> so that as we load new activities with each fling, the view stack doesn&#8217;t grow out of control.  You can remove this if you would like to go back to a previous activity after each fling using the back button.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;?xml</span> <span style="color: #000066;">version</span>=<span style="color: #ff0000;">&quot;1.0&quot;</span> <span style="color: #000066;">encoding</span>=<span style="color: #ff0000;">&quot;utf-8&quot;</span><span style="color: #000000; font-weight: bold;">?&gt;</span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;manifest</span> <span style="color: #000066;">xmlns:android</span>=<span style="color: #ff0000;">&quot;http://schemas.android.com/apk/res/android&quot;</span></span>
+<span style="color: #009900;">      <span style="color: #000066;">package</span>=<span style="color: #ff0000;">&quot;com.savagelook&quot;</span></span>
+<span style="color: #009900;">      <span style="color: #000066;">android:versionCode</span>=<span style="color: #ff0000;">&quot;1&quot;</span></span>
+<span style="color: #009900;">      <span style="color: #000066;">android:versionName</span>=<span style="color: #ff0000;">&quot;1.0&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+&nbsp;
+    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;application</span> <span style="color: #000066;">android:icon</span>=<span style="color: #ff0000;">&quot;@drawable/icon&quot;</span> <span style="color: #000066;">android:label</span>=<span style="color: #ff0000;">&quot;@string/app_name&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+        <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;activity</span> <span style="color: #000066;">android:name</span>=<span style="color: #ff0000;">&quot;.MainActivity&quot;</span></span>
+<span style="color: #009900;">                  <span style="color: #000066;">android:label</span>=<span style="color: #ff0000;">&quot;@string/app_name&quot;</span></span>
+<span style="color: #009900;">                  <span style="color: #000066;">android:noHistory</span>=<span style="color: #ff0000;">&quot;true&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+            <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;intent-filter<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+                <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;action</span> <span style="color: #000066;">android:name</span>=<span style="color: #ff0000;">&quot;android.intent.action.MAIN&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+                <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;category</span> <span style="color: #000066;">android:name</span>=<span style="color: #ff0000;">&quot;android.intent.category.LAUNCHER&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+            <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/intent-filter<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+        <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/activity<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+    <span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/application<span style="color: #000000; font-weight: bold;">&gt;</span></span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/manifest<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre></div></div>
+
+<h2>res/anim/slide_in_right.xml</h2>
+<p>This along with the next 3 animations are the custom transition animations used to move our activities in and out with each fling.  They are just copies of the animations in the Android SDK.  In my case, they were found in <strong>ANDROID_SDK/platforms/android-8/data/res/anim</strong>.  Create your own <strong>anim</strong> folder under <strong>res</strong> in your project and add these there.</p>
+
+<div class="wp_syntax"><div class="code"><pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;set</span> <span style="color: #000066;">xmlns:android</span>=<span style="color: #ff0000;">&quot;http://schemas.android.com/apk/res/android&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;translate</span> <span style="color: #000066;">android:fromXDelta</span>=<span style="color: #ff0000;">&quot;50%p&quot;</span> <span style="color: #000066;">android:toXDelta</span>=<span style="color: #ff0000;">&quot;0&quot;</span></span>
+<span style="color: #009900;">            <span style="color: #000066;">android:duration</span>=<span style="color: #ff0000;">&quot;@android:integer/config_mediumAnimTime&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;alpha</span> <span style="color: #000066;">android:fromAlpha</span>=<span style="color: #ff0000;">&quot;0.0&quot;</span> <span style="color: #000066;">android:toAlpha</span>=<span style="color: #ff0000;">&quot;1.0&quot;</span></span>
+<span style="color: #009900;">            <span style="color: #000066;">android:duration</span>=<span style="color: #ff0000;">&quot;@android:integer/config_mediumAnimTime&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/set<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre></div></div>
+
+<h2>res/anim/slide_out_right.xml</h2>
+
+<div class="wp_syntax"><div class="code"><pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;set</span> <span style="color: #000066;">xmlns:android</span>=<span style="color: #ff0000;">&quot;http://schemas.android.com/apk/res/android&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;translate</span> <span style="color: #000066;">android:fromXDelta</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">android:toXDelta</span>=<span style="color: #ff0000;">&quot;50%p&quot;</span></span>
+<span style="color: #009900;">            <span style="color: #000066;">android:duration</span>=<span style="color: #ff0000;">&quot;@android:integer/config_mediumAnimTime&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;alpha</span> <span style="color: #000066;">android:fromAlpha</span>=<span style="color: #ff0000;">&quot;1.0&quot;</span> <span style="color: #000066;">android:toAlpha</span>=<span style="color: #ff0000;">&quot;0.0&quot;</span></span>
+<span style="color: #009900;">            <span style="color: #000066;">android:duration</span>=<span style="color: #ff0000;">&quot;@android:integer/config_mediumAnimTime&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/set<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre></div></div>
+
+<h2>res/anim/slide_in_left.xml</h2>
+
+<div class="wp_syntax"><div class="code"><pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;set</span> <span style="color: #000066;">xmlns:android</span>=<span style="color: #ff0000;">&quot;http://schemas.android.com/apk/res/android&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;translate</span> <span style="color: #000066;">android:fromXDelta</span>=<span style="color: #ff0000;">&quot;-50%p&quot;</span> <span style="color: #000066;">android:toXDelta</span>=<span style="color: #ff0000;">&quot;0&quot;</span></span>
+<span style="color: #009900;">            <span style="color: #000066;">android:duration</span>=<span style="color: #ff0000;">&quot;@android:integer/config_mediumAnimTime&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;alpha</span> <span style="color: #000066;">android:fromAlpha</span>=<span style="color: #ff0000;">&quot;0.0&quot;</span> <span style="color: #000066;">android:toAlpha</span>=<span style="color: #ff0000;">&quot;1.0&quot;</span></span>
+<span style="color: #009900;">            <span style="color: #000066;">android:duration</span>=<span style="color: #ff0000;">&quot;@android:integer/config_mediumAnimTime&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/set<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre></div></div>
+
+<h2>res/anim/slide_out_left.xml</h2>
+
+<div class="wp_syntax"><div class="code"><pre class="xml" style="font-family:monospace;"><span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;set</span> <span style="color: #000066;">xmlns:android</span>=<span style="color: #ff0000;">&quot;http://schemas.android.com/apk/res/android&quot;</span><span style="color: #000000; font-weight: bold;">&gt;</span></span>
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;translate</span> <span style="color: #000066;">android:fromXDelta</span>=<span style="color: #ff0000;">&quot;0&quot;</span> <span style="color: #000066;">android:toXDelta</span>=<span style="color: #ff0000;">&quot;-50%p&quot;</span></span>
+<span style="color: #009900;">            <span style="color: #000066;">android:duration</span>=<span style="color: #ff0000;">&quot;@android:integer/config_mediumAnimTime&quot;</span><span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+	<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;alpha</span> <span style="color: #000066;">android:fromAlpha</span>=<span style="color: #ff0000;">&quot;1.0&quot;</span> <span style="color: #000066;">android:toAlpha</span>=<span style="color: #ff0000;">&quot;0.0&quot;</span></span>
+<span style="color: #009900;">            <span style="color: #000066;">android:duration</span>=<span style="color: #ff0000;">&quot;@android:integer/config_mediumAnimTime&quot;</span> <span style="color: #000000; font-weight: bold;">/&gt;</span></span>
+<span style="color: #009900;"><span style="color: #000000; font-weight: bold;">&lt;/set<span style="color: #000000; font-weight: bold;">&gt;</span></span></span></pre></div></div>
+
+<h2>Summary</h2>
+<p>Its a little more work than you might expect for this functionality, but you do get a lot of opportunities to tinker with it.  You can change the speed threshold for when flings occur.  You can change both the current and incoming transition animations. You can even get creative and make transitions based on vertical or diagonal flings as well.  Thats the beauty, and sometimes curse, of Android: near infinite flexibility.</p>
+<div class="shr-publisher-2768"></div><!-- Start LikeButtonSetBottom --><!-- End LikeButtonSetBottom -->				</div>
+					
+				
+			</div>
+			
+
+<!-- You can start editing here. -->
+
+	<h3 id="comments">8 Responses to &#8220;Swipes, or &#8220;Flings&#8221;, for Navigation in Android&#8221;</h3>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+	<div id="commentlist">
+		<ol class="commentlist">
+					<li class="comment even thread-even depth-1" id="comment-1526">
+				<div id="div-comment-1526" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/118a8d3dd527ae32223551041a065cce?s=64&amp;d=&amp;r=R' class='avatar avatar-64 photo' height='64' width='64' />		<cite class="fn"><a href='http://www.taotekaching.com' rel='external nofollow' class='url'>ZagNut</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://savagelook.com/blog/android/swipes-or-flings-for-navigation-in-android/comment-page-1#comment-1526">
+			April 7, 2011 at 8:07 pm</a>		</div>
+
+		<p>sweet&#8230;</p>
+<p>you know any way to limit the history to &#8220;cache&#8221; 1 or more activities?</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1529">
+				<div id="div-comment-1529" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/66aa4728a7ce4c354d60571ce9a0be9b?s=64&amp;d=&amp;r=R' class='avatar avatar-64 photo' height='64' width='64' />		<cite class="fn"><a href='http://nologo.co.uk' rel='external nofollow' class='url'>pils</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://savagelook.com/blog/android/swipes-or-flings-for-navigation-in-android/comment-page-1#comment-1529">
+			April 11, 2011 at 2:43 pm</a>		</div>
+
+		<p>Excellent tutorial. So excellent I actually copied it by hand and got it to work without using the project. Trust me, that&#8217;s good.</p>
+<p>Now, you may find this funny but, how on earth does one add individual content to x number of &#8216;views&#8217;? (specifically in Eclipse which is not the best &#8216;designer&#8217; interface in the world)</p>
+<p>Do please bear in mind this is only the second tutorial I&#8217;ve done (the first excellent working one is: <a href="http://developingthedream.blogspot.com/2011/01/android-canvas-frame-by-frame-animation.html" rel="nofollow">http://developingthedream.blogspot.com/2011/01/android-canvas-frame-by-frame-animation.html</a> )</p>
+<p>And how does one &#8216;control&#8217; how many &#8216;views&#8217; there are available?</p>
+<p>Forgive my naivety, I am merely, what some refer to as, a &#8216;designer&#8217;.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment even thread-even depth-1" id="comment-1579">
+				<div id="div-comment-1579" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/b08710477bc047754ecd47caca35373b?s=64&amp;d=&amp;r=R' class='avatar avatar-64 photo' height='64' width='64' />		<cite class="fn"><a href='http://powertwenty.com' rel='external nofollow' class='url'>Kevin Dahlhausen</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://savagelook.com/blog/android/swipes-or-flings-for-navigation-in-android/comment-page-1#comment-1579">
+			May 12, 2011 at 12:44 pm</a>		</div>
+
+		<p>Pils, </p>
+<p>I am working on this now.  There might be a better or more canonical way, but this is working for me in a little demo:</p>
+<p>o I have only two views inside the view flipper<br />
+o keep a &#8216;currently displayed index&#8217; into the list of elements to be displayed<br />
+o on swipe right to left, check if there is any data below the current index, if so  decrement the current index, fill the view not being displayed with data at the new index, set the appropriate animations, and then use the view flipper to swtich to it.<br />
+o do the opposite on swipe left to right</p>
+<p>That&#8217;s the general idea.   I&#8217;ve cleaned it up so that the layout of the individual views inside the flipper is defined once in xml and a LayoutInflater is used to<br />
+create each of the two views from it.</p>
+<p>It works well, the code is not ugly, but it seems a lot of manual work to do something that is so fundamental to the mobile user experience &#8211; hence the<br />
+nagging feeling that I&#8217;m missing something provided out of the box.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1646">
+				<div id="div-comment-1646" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/4dfd1f5f064849eff938ef84a6d90ad1?s=64&amp;d=&amp;r=R' class='avatar avatar-64 photo' height='64' width='64' />		<cite class="fn"><a href='http://widemotion.net' rel='external nofollow' class='url'>AMESLON Xavier</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://savagelook.com/blog/android/swipes-or-flings-for-navigation-in-android/comment-page-1#comment-1646">
+			June 9, 2011 at 4:38 am</a>		</div>
+
+		<p>I understand pretty much how work your code and enjoyed it. Thanks so much it&#8217;s hard to find good documentation on it.</p>
+<p>But now, I&#8217;d like to do as your screenshots upper in this page: A fling where screens follow my fingers. </p>
+<p>Can you help me for it. I really don&#8217;t know where I should start.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment even thread-even depth-1" id="comment-1707">
+				<div id="div-comment-1707" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/cd2136445db488f06dadb8f0e4741c73?s=64&amp;d=&amp;r=R' class='avatar avatar-64 photo' height='64' width='64' />		<cite class="fn"><a href='http://emumair.wordpress.com' rel='external nofollow' class='url'>Umair</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://savagelook.com/blog/android/swipes-or-flings-for-navigation-in-android/comment-page-1#comment-1707">
+			June 28, 2011 at 7:51 am</a>		</div>
+
+		<p>Great tutorial. It really helped.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1744">
+				<div id="div-comment-1744" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/s=64' class='avatar avatar-64 photo avatar-default' height='64' width='64' />		<cite class="fn">Philip</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://savagelook.com/blog/android/swipes-or-flings-for-navigation-in-android/comment-page-1#comment-1744">
+			July 11, 2011 at 10:55 am</a>		</div>
+
+		<p>This is really what I need. </p>
+<p>Thanks for your great work.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment even thread-even depth-1" id="comment-1745">
+				<div id="div-comment-1745" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/s=64' class='avatar avatar-64 photo avatar-default' height='64' width='64' />		<cite class="fn">Abhi</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://savagelook.com/blog/android/swipes-or-flings-for-navigation-in-android/comment-page-1#comment-1745">
+			July 11, 2011 at 1:05 pm</a>		</div>
+
+		<p>nice tutorial..thanks..It really helped&#8230;:)</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1747">
+				<div id="div-comment-1747" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/s=64' class='avatar avatar-64 photo avatar-default' height='64' width='64' />		<cite class="fn">Nick</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://savagelook.com/blog/android/swipes-or-flings-for-navigation-in-android/comment-page-1#comment-1747">
+			July 12, 2011 at 3:22 pm</a>		</div>
+
+		<p>Nice Work! Thanks for the tutorial and including the source</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		</ol>
+	</div>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+ 
+
+
+<div id="respond">
+
+<h3>Leave a Reply</h3>
+
+<div class="cancel-comment-reply">
+	<small><a rel="nofollow" id="cancel-comment-reply-link" href="/blog/android/swipes-or-flings-for-navigation-in-android#respond" style="display:none;">Click here to cancel reply.</a></small>
+</div>
+
+
+<form action="http://savagelook.com/blog/wp-comments-post.php" method="post" id="commentform">
+
+
+<p><input type="text" name="author" id="author" value="" size="22" tabindex="1"  />
+<label for="author"><small>Name </small></label></p>
+
+<p><input type="text" name="email" id="email" value="" size="22" tabindex="2"  />
+<label for="email"><small>Mail (will not be published) </small></label></p>
+
+<p><input type="text" name="url" id="url" value="" size="22" tabindex="3" />
+<label for="url"><small>Website</small></label></p>
+
+
+<!--<p><small><strong>XHTML:</strong> You can use these tags: <code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; &lt;pre lang=&quot;&quot; line=&quot;&quot; escaped=&quot;&quot;&gt; </code></small></p>-->
+
+<p><textarea name="comment" id="comment" cols="58" rows="10" tabindex="4"></textarea></p>
+
+<p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
+<input type='hidden' name='comment_post_ID' value='2768' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p>
+<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="480249dc28" /></p>
+</form>
+
+</div>
+
+			
+			
+			
+
+		
+		
+
+	
+	</div>
+
+
+
+<div id="sidebar">
+<!--
+	<ul>
+		<li class="page_item page-item-530"><a href="http://savagelook.com/blog/" title="Home">Home</a></li>
+<li class="page_item page-item-531 current_page_parent"><a href="http://savagelook.com/blog/blog" title="Blog">Blog</a></li>
+	</ul>
+	<br />
+		-->
+	
+		<h2>Popular Posts</h2><ul>	<li><a href="http://savagelook.com/blog/portfolio/appcelerator-vs-phonegap-vs-adobe-air">Appcelerator vs. PhoneGap vs. Adobe Air</a></li>
+	<li><a href="http://savagelook.com/blog/portfolio/a-deeper-look-at-appcelerator-and-phonegap">A Deeper Look at Appcelerator and PhoneGap</a></li>
+	<li><a href="http://savagelook.com/blog/portfolio/from-windows-to-mac-9-things-i-love-hate">From Windows to Mac: 9 Things I Love & Hate</a></li>
+	<li><a href="http://savagelook.com/blog/portfolio/haters-gonna-hate-the-psyche-of-the-tech-zealot">Haters Gonna Hate: The Psyche of the Tech Zealot</a></li>
+	<li><a href="http://savagelook.com/blog/portfolio/programmers-why-do-we-do-it">Programmers: Why do we do it?</a></li>
+</ul><h2>Some of My Work</h2>			<div class="textwidget"><a href="https://market.android.com/details?id=com.savagelook.knucklehead" target="_blank"><img src="http://savagelook.com/blog/wp-content/uploads/2011/06/icon_512x5121-e1307561743714.png" style="height:160px; width:160px;"/></a>
+<p><b>Knuckle Head</b> is THE app for the true MMA fan! Get every detail about every fighter in the world!</p>
+<p><b>Get it now:</b> <a href="https://market.android.com/details?id=com.savagelook.knucklehead&feature=search_result" target="_blank">Android Market</a></p>
+<hr>
+<a href="https://market.android.com/details?id=air.Repper" target="_blank"><img src="http://savagelook.com/blog/wp-content/uploads/2011/05/repper.png" style="height:160px; width:160px;"/></a>
+<p><b>Repper</b> is a fitness calculator app for estimating your 1-15 rep max on your lifts in the gym.</p>
+<p><b>Get it now:</b> <a href="https://market.android.com/details?id=air.Repper" target="_blank">Android Market</a></p>
+<p><b>Get it now:</b> <a href="http://itunes.apple.com/us/app/repper/id427803964?mt=8" target="_blank">Apple App Store</a></p>
+<p><b>Get the source:</b> <a href="https://github.com/tonylukasavage" target="_blank">Github</a></p>
+<hr>
+<img src="http://savagelook.com/blog/wp-content/uploads/2011/05/234.jpeg" style="height:160px; width:160px;"/>
+<p><b>Away3D 3.6 Essentials</b> is an incredible reference and guide book to creating striking 3D content in Flash using the Away3D engine.  Matthew Casperson is the author and I was a technical reviewer.</p>
+<p><b>Get it now:</b> <a href="http://www.amazon.com/dp/184951206X/ref=as_li_tf_til?tag=httpsavagelco-20&camp=0&creative=0&linkCode=as1&creativeASIN=184951206X&adid=0QZ8DPHHWAQVH4F25KQR" target="_blank">Amazon Bookstore</a></p>
+<hr>
+<img src="http://savagelook.com/blog/wp-content/uploads/2011/05/corpho.png" style="height:160px; width:160px;"/>
+<p><b>PhoneGap Cordova</b> is a top secret, but not so secret, PhoneGap buildchain for OS X</p>
+<p><b>Get the source:</b> <a href="https://github.com/brianleroux/Cordova" target="_blank">Github</a></p>
+
+<hr>
+<img src="http://savagelook.com/blog/wp-content/uploads/2011/05/titan_logo_256_reasonably_small.png" style="height:160px; width:160px;"/>
+<p>I'm a <b>Titanium Titan</b>, which is a community leader for <a href="http://www.appcelerator.com/" target="_blank">Titanium Appcelerator</a>.  Click <a href="http://developer.appcelerator.com/blog/2011/01/titanium-titan-program.html" target="_blank">here</a> to learn more about what this means and how we contribute.</p></div>
+		<h2>Twitter Feed</h2><script src="http://widgets.twimg.com/j/2/widget.js"></script><script>new TWTR.Widget({  version: 2,  type: 'profile',  rpp: 30,  interval: 5000,  width: 220,  height: 300,  theme: {    shell: {      background: '#000000',      color: '#FFFFFF'    },    tweets: {      background: '#FFFFFF',      color: '#000000',      links: '#0E3BED'    }  },  features: {    scrollbar: true,    loop: true,    live: true,    hashtags: true,    timestamp: true,    avatars: false,    behavior: 'default'  }}).render().setUser('tonylukasavage').start();</script>
+<h2> Helpful &amp; Fun Stuff I Use </h2>
+<div class="advcustomvalue">
+<script type="text/javascript"><!--
+google_ad_client = "pub-8526874234699762";
+/* 160x600, created 12/16/10 */
+google_ad_slot = "6167924706";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+<br /><br /><br />
+
+<table>
+<tr><td>
+<iframe src="http://rcm.amazon.com/e/cm?t=httpsavagelco-20&#038;o=1&#038;p=8&#038;l=as1&#038;asins=0321741234&#038;ref=tf_til&#038;fc1=000000&#038;IS2=1&#038;lt1=_blank&#038;m=amazon&#038;lc1=0000FF&#038;bc1=FFFFFF&#038;bg1=FFFFFF&#038;npa=1&#038;f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+
+</td><td>
+<iframe src="http://rcm.amazon.com/e/cm?t=httpsavagelco-20&#038;o=1&#038;p=8&#038;l=as1&#038;asins=1934356565&#038;ref=tf_til&#038;fc1=000000&#038;IS2=1&#038;lt1=_blank&#038;m=amazon&#038;lc1=0000FF&#038;bc1=FFFFFF&#038;bg1=FFFFFF&#038;npa=1&#038;f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+
+</td></tr></table>
+<script type="text/javascript"><!--
+google_ad_client = "pub-8526874234699762";
+/* 160x600, created 12/16/10 */
+google_ad_slot = "6167924706";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+<br /><br /><br />
+
+<table>
+<tr><td>
+<iframe src="http://rcm.amazon.com/e/cm?t=httpsavagelco-20&#038;o=1&#038;p=8&#038;l=as1&#038;asins=0470565527&#038;ref=tf_til&#038;fc1=000000&#038;IS2=1&#038;lt1=_blank&#038;m=amazon&#038;lc1=0000FF&#038;bc1=FFFFFF&#038;bg1=FFFFFF&#038;npa=1&#038;f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+
+</td><td>
+<iframe src="http://rcm.amazon.com/e/cm?t=httpsavagelco-20&#038;o=1&#038;p=8&#038;l=as1&#038;asins=B0045FM6SU&#038;ref=tf_til&#038;fc1=000000&#038;IS2=1&#038;lt1=_blank&#038;m=amazon&#038;lc1=0000FF&#038;bc1=FFFFFF&#038;bg1=FFFFFF&#038;npa=1&#038;f=ifr" style="width:120px;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+
+</td></tr></table>
+<script type="text/javascript"><!--
+google_ad_client = "pub-8526874234699762";
+/* 160x600, created 12/16/10 */
+google_ad_slot = "6167924706";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+			
+		<br />
+		<br />
+</div>
+</div> <!-- END #container -->
+<script type='text/javascript' src='http://savagelook.com/blog/wp-admin/admin-ajax.php?action=shadowboxjs&#038;cache=5accf6df8debb45c639367c7c8d7bde7&#038;ver=3.0.3'></script>
+<script type="text/javascript">var SHRSB_Settings = {"shr-publisher-2768":{"link":"http:\/\/savagelook.com\/blog\/android\/swipes-or-flings-for-navigation-in-android","shortener":"bitly","title":"Swipes, or \"Flings\", for Navigation in Android","notes":"Move%20through%20your%20Android%20app%20with%20the%20flick%20of%20a%20finger%20with%20these%20quick%20pointers","service":"7,5,40,38,102,88,2,3,78,61","apikey":"8afa39428933be41f8afdb8ea21a495c","expand":true,"src":"http:\/\/savagelook.com\/blog\/wp-content\/plugins\/sexybookmarks\/spritegen","localize":true,"share_src":"http:\/\/www.shareaholic.com","rel":"nofollow","target":"_blank","bgimg":"http:\/\/savagelook.com\/blog\/wp-content\/plugins\/sexybookmarks\/images\/share-knowledge.png","bgimg_padding":"35px 0 0 10px","center":true,"twitter_template":"${title} - ${short_link} via @tonylukasavage","mode":"inject","designer_toolTips":"1","tip_bg_color":"#000000","tip_text_color":"#ffffff"}};</script>
+<!-- Begin Shadowbox JS v3.0.3.8 -->
+<!-- Selected Players: html, iframe, img, qt, swf, wmp -->
+<script type="text/javascript">
+/* <![CDATA[ */
+	var shadowbox_conf = {
+		autoDimensions: false,
+		animateFade: true,
+		animate: true,
+		animSequence: "sync",
+		autoplayMovies: true,
+		continuous: false,
+		counterLimit: 10,
+		counterType: "default",
+		displayCounter: true,
+		displayNav: true,
+		enableKeys: true,
+		flashBgColor: "#000000",
+		flashParams: {bgcolor:"#000000", allowFullScreen:true},
+		flashVars: {},
+		flashVersion: "9.0.0",
+		handleOversize: "resize",
+		handleUnsupported: "link",
+		initialHeight: 160,
+		initialWidth: 320,
+		modal: false,
+		overlayColor: "#000",
+		showMovieControls: true,
+		showOverlay: true,
+		skipSetup: false,
+		slideshowDelay: 0,
+		useSizzle: false,
+		viewportPadding: 20
+	};
+	Shadowbox.init(shadowbox_conf);
+/* ]]> */
+</script>
+<!-- End Shadowbox JS -->
+
+</body>
+</html><!-- WP Super Cache is installed but broken. The path to wp-cache-phase1.php in wp-content/advanced-cache.php must be fixed! -->

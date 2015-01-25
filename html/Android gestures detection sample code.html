@@ -1,0 +1,1306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html dir='ltr' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<meta content='bw9k5B4Ce2BGuoU3gKng0Em9ki3Dv0evnzKxMOp5NuE=' name='verify-v1'/>
+<meta content='kImTG7cW_u5hDHaNeeUKFBEbrHc' name='alexaVerifyID'/>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<script type="text/javascript">(function() { var a=window;function c(b){this.t={};this.tick=function(b,i,d){d=d!=void 0?d:(new Date).getTime();this.t[b]=[d,i]};this.tick("start",null,b)}var e=new c;a.jstiming={Timer:c,load:e};try{var g=null;a.chrome&&a.chrome.csi&&(g=Math.floor(a.chrome.csi().pageT));g==null&&a.gtbExternal&&(g=a.gtbExternal.pageT());g==null&&a.external&&(g=a.external.pageT);g&&(a.jstiming.pt=g)}catch(h){};a.tickAboveFold=function(b){var f=0;if(b.offsetParent){do f+=b.offsetTop;while(b=b.offsetParent)}b=f;b<=750&&a.jstiming.load.tick("aft")};var j=!1;function k(){j||(j=!0,a.jstiming.load.tick("firstScrollTime"))}a.addEventListener?a.addEventListener("scroll",k,!1):a.attachEvent("onscroll",k);
+ })();</script>
+<meta content='true' name='MSSmartTagsPreventParsing'/>
+<meta content='blogger' name='generator'/>
+<link href='http://www.ceveni.com/favicon.ico' rel='icon' type='image/x-icon'/>
+<link href='http://www.ceveni.com/2009/08/android-gestures-detection-sample-code.html' rel='canonical'/>
+<link rel="alternate" type="application/atom+xml" title="Technology blog, Science and Mystery - Atom" href="http://www.ceveni.com/feeds/posts/default" />
+<link rel="alternate" type="application/rss+xml" title="Technology blog, Science and Mystery - RSS" href="http://www.ceveni.com/feeds/posts/default?alt=rss" />
+<link rel="service.post" type="application/atom+xml" title="Technology blog, Science and Mystery - Atom" href="http://www.blogger.com/feeds/9040940768980958235/posts/default" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.blogger.com/rsd.g?blogID=9040940768980958235" />
+<link rel="alternate" type="application/atom+xml" title="Technology blog, Science and Mystery - Atom" href="http://www.ceveni.com/feeds/8835744555143189398/comments/default" />
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<meta content='Technology, Mystery, Mobility' name='title'/>
+<meta content='personal website all about technology, programming, Mystery and conspiracy theory' name='description'/>
+<meta content='Technology, Mobile, Android, Mystery, Science, Personal' name='keywords'/>
+<meta content='Manjunath' name='author'/>
+<meta content='Manjunath' name='owner'/>
+<meta content='(c) 2011' name='copyright'/>
+<meta content='76B914DC32E1DDFC7EF515B79CF57103' name='msvalidate.01'/>
+<META content='7ed298774192a38f' name='y_key'></META>
+<meta content='tA8TEeSJd1i5IpnCs4+S5cksYHSCBCOXO0UGOV11E3k=' name='verify-v1'/>
+<title>
+Android gestures detection sample code
+</title>
+<link href='http://lh5.ggpht.com/_A_FNfqyuLTQ/TTCWMHyoUMI/AAAAAAAAEMY/Z9X308gdK8U/s800/cevenileo.jpg' rel='icon' type='image/vnd.microsoft.icon'/>
+<link type='text/css' rel='stylesheet' href='http://www.blogger.com/static/v1/widgets/129348724-widget_css_bundle.css' />
+ <link rel="stylesheet" type="text/css" href="http://www.blogger.com/dyn-css/authorization.css?targetBlogID=9040940768980958235&zx=761f7740-a9ed-4088-8ef5-ba29e0da5066"/>
+<style type="text/css">#navbar-iframe { display:block }
+</style>
+
+<style id='page-skin-1' type='text/css'><!--
+/*
+-----------------------------------------------
+Blogger Template Style
+Name:     Minima Stretch
+Designer: Douglas Bowman / Darren Delaye
+URL:      www.stopdesign.com
+Date:     26 Feb 2004
+----------------------------------------------- */
+#navbar-iframe { display: none !important; }
+/* Variable definitions
+====================
+<Variable name="bgcolor" description="Page Background Color"
+type="color" default="#fff">
+<Variable name="textcolor" description="Text Color"
+type="color" default="#333">
+<Variable name="linkcolor" description="Link Color"
+type="color" default="#58a">
+<Variable name="pagetitlecolor" description="Blog Title Color"
+type="color" default="#666">
+<Variable name="descriptioncolor" description="Blog Description Color"
+type="color" default="#999">
+<Variable name="titlecolor" description="Post Title Color"
+type="color" default="#c60">
+<Variable name="bordercolor" description="Border Color"
+type="color" default="#ccc">
+<Variable name="sidebarcolor" description="Sidebar Title Color"
+type="color" default="#999">
+<Variable name="sidebartextcolor" description="Sidebar Text Color"
+type="color" default="#666">
+<Variable name="visitedlinkcolor" description="Visited Link Color"
+type="color" default="#999">
+<Variable name="bodyfont" description="Text Font"
+type="font" default="normal normal 100% Georgia, Serif">
+<Variable name="headerfont" description="Sidebar Title Font"
+type="font"
+default="normal normal 78% 'Trebuchet MS',Trebuchet,Arial,Verdana,Sans-serif">
+<Variable name="pagetitlefont" description="Blog Title Font"
+type="font"
+default="normal normal 200% Georgia, Serif">
+<Variable name="descriptionfont" description="Blog Description Font"
+type="font"
+default="normal normal 78% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif">
+<Variable name="postfooterfont" description="Post Footer Font"
+type="font"
+default="normal normal 78% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif">
+<Variable name="startSide" description="Start side in blog language"
+type="automatic" default="left">
+<Variable name="endSide" description="End side in blog language"
+type="automatic" default="right">
+*/
+/* Use this with templates/template-twocol.html */
+body {
+background:#ffffff;
+margin:0;
+color:#333333;
+font:x-small Georgia Serif;
+font-size/* */:/**/small;
+font-size: /**/small;
+text-align: center;
+}
+a:link {
+color:#5588aa;
+text-decoration:none;
+}
+a:visited {
+color:#999999;
+text-decoration:none;
+}
+a:hover {
+color:#cc6600;
+text-decoration:underline;
+}
+a img {
+border-width:0;
+}
+/* Header
+-----------------------------------------------
+*/
+#header-wrapper {
+margin:0 2% 10px;
+border:1px solid #cccccc;
+}
+#header {
+margin: 5px;
+border: 1px solid #cccccc;
+text-align: center;
+color:#666666;
+}
+#header-inner {
+background-position: center;
+margin-left: auto;
+margin-right: auto;
+}
+#header h1 {
+margin:5px 5px 0;
+padding:15px 20px .25em;
+line-height:1.2em;
+text-transform:uppercase;
+letter-spacing:.2em;
+font: normal normal 200% Georgia, Serif;
+}
+#header a {
+color:#666666;
+text-decoration:none;
+}
+#header a:hover {
+color:#666666;
+}
+#header .description {
+margin:0 5px 5px;
+padding:0 20px 15px;
+text-transform:uppercase;
+letter-spacing:.2em;
+line-height: 1.4em;
+font: normal normal 78% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif;
+color: #999999;
+}
+#header img {
+margin-left: auto;
+margin-right: auto;
+}
+/* Outer-Wrapper
+----------------------------------------------- */
+#outer-wrapper {
+margin:0;
+padding:10px;
+text-align:left;
+font: normal normal 100% Georgia, Serif;
+}
+#main-wrapper {
+margin-left: 2%;
+width: 67%;
+float: left;
+display: inline;       /* fix for doubling margin in IE */
+word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
+overflow: hidden;      /* fix for long non-text content breaking IE sidebar float */
+}
+#sidebar-wrapper {
+margin-right: 2%;
+width: 25%;
+float: right;
+display: inline;       /* fix for doubling margin in IE */
+word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
+overflow: hidden;      /* fix for long non-text content breaking IE sidebar float */
+}
+/* Headings
+----------------------------------------------- */
+h2 {
+margin:1.5em 0 .75em;
+font:normal normal 78% 'Trebuchet MS',Trebuchet,Arial,Verdana,Sans-serif;
+line-height: 1.4em;
+text-transform:uppercase;
+letter-spacing:.2em;
+color:#999999;
+}
+/* Posts
+-----------------------------------------------
+*/
+h2.date-header {
+margin:1.5em 0 .5em;
+}
+.post {
+margin:.5em 0 1.5em;
+border-bottom:1px dotted #cccccc;
+padding-bottom:1.5em;
+}
+.post h3 {
+margin:.25em 0 0;
+padding:0 0 4px;
+font-size:140%;
+font-weight:normal;
+line-height:1.4em;
+color:#cc6600;
+}
+.post h3 a, .post h3 a:visited, .post h3 strong {
+display:block;
+text-decoration:none;
+color:#cc6600;
+font-weight:normal;
+}
+.post h3 strong, .post h3 a:hover {
+color:#333333;
+}
+.post-body {
+margin:0 0 .75em;
+line-height:1.6em;
+}
+.post-body blockquote {
+line-height:1.3em;
+}
+.post-footer {
+margin: .75em 0;
+color:#999999;
+text-transform:uppercase;
+letter-spacing:.1em;
+font: normal normal 78% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif;
+line-height: 1.4em;
+}
+.comment-link {
+margin-left:.6em;
+}
+.post img {
+padding:4px;
+border:1px solid #cccccc;
+}
+.post blockquote {
+margin:1em 20px;
+}
+.post blockquote p {
+margin:.75em 0;
+}
+/*
+Custom CSS class to display code snippets Added By Manju.
+2009 JUL 4th
+*/
+.mycode
+{
+border:1px dashed #aaaaaa;
+background:#99CCFF;
+white-space:pre;
+font-family:monospace;
+font-size:9pt;
+line-height: 10pt;
+height:auto;
+width:auto;
+padding:5px;
+margin-left:10px;
+overflow:auto;
+}
+/* Comments
+----------------------------------------------- */
+#comments h4 {
+margin:1em 0;
+font-weight: bold;
+line-height: 1.4em;
+text-transform:uppercase;
+letter-spacing:.2em;
+color: #999999;
+}
+#comments-block {
+margin:1em 0 1.5em;
+line-height:1.6em;
+}
+#comments-block .comment-author {
+margin:.5em 0;
+}
+#comments-block .comment-body {
+margin:.25em 0 0;
+}
+#comments-block .comment-footer {
+margin:-.25em 0 2em;
+line-height: 1.4em;
+text-transform:uppercase;
+letter-spacing:.1em;
+}
+#comments-block .comment-body p {
+margin:0 0 .75em;
+}
+.deleted-comment {
+font-style:italic;
+color:gray;
+}
+.feed-links {
+clear: both;
+line-height: 2.5em;
+}
+#blog-pager-newer-link {
+float: left;
+}
+#blog-pager-older-link {
+float: right;
+}
+#blog-pager {
+text-align: center;
+}
+/* Sidebar Content
+----------------------------------------------- */
+.sidebar {
+color: #666666;
+line-height: 1.5em;
+}
+.sidebar ul {
+list-style:none;
+margin:0 0 0;
+padding:0 0 0;
+}
+.sidebar li {
+margin:0;
+padding-top:0;
+padding-right:0;
+padding-bottom:.25em;
+padding-left:15px;
+text-indent:-15px;
+line-height:1.5em;
+}
+.sidebar .widget, .main .widget {
+border-bottom:1px dotted #cccccc;
+margin:0 0 1.5em;
+padding:0 0 1.5em;
+}
+.main .Blog {
+border-bottom-width: 0;
+}
+/* Profile
+----------------------------------------------- */
+.profile-img {
+float: left;
+margin-top: 0;
+margin-right: 5px;
+margin-bottom: 5px;
+margin-left: 0;
+padding: 4px;
+border: 1px solid #cccccc;
+}
+.profile-data {
+margin:0;
+text-transform:uppercase;
+letter-spacing:.1em;
+font: normal normal 78% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif;
+color: #999999;
+font-weight: bold;
+line-height: 1.6em;
+}
+.profile-datablock {
+margin:.5em 0 .5em;
+}
+.profile-textblock {
+margin: 0.5em 0;
+line-height: 1.6em;
+}
+.profile-link {
+font: normal normal 78% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif;
+text-transform: uppercase;
+letter-spacing: .1em;
+}
+/* Footer
+----------------------------------------------- */
+#footer {
+width:660px;
+clear:both;
+margin:0 auto;
+padding-top:15px;
+line-height: 1.6em;
+text-transform:uppercase;
+letter-spacing:.1em;
+text-align: center;
+}
+
+--></style>
+<script src='http://www.google.com/jsapi/?key=ABQIAAAA-dCld0fUsXM25Xrk_v7V6BQ9FDVyEn0SDNerEnmf6zx58TYnXxRWyRO3e6Ac0MRZ8S7vqedmHgLNlg' type='text/javascript'></script>
+<script src='http://www.google.com/uds/solutions/dynamicfeed/gfdynamicfeedcontrol.js' type='text/javascript'></script>
+<link href='http://lh5.ggpht.com/_A_FNfqyuLTQ/TTCWMHyoUMI/AAAAAAAAEMY/Z9X308gdK8U/s800/cevenileo.jpg' rel='shortcut icon'/>
+<script type="text/javascript">(function(){if(navigator.userAgent.indexOf("Mobile")!=-1&&navigator.userAgent.indexOf("WebKit")!=-1&&navigator.userAgent.indexOf("iPad")==-1){var a;a:{var b=window.location.href,c=b.split("?");switch(c.length){case 1:a=b+"?m=1";break a;case 2:a=c[1].search("(^|&)m=")>=0?null:b+"&m=1";break a;default:a=null}}a&&window.location.replace(a)};})();
+</script><script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('headEnd');
+</script></head>
+<body>
+<div class='navbar section' id='navbar'><div class='widget Navbar' id='Navbar1'><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener("load",
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<iframe src="http://www.blogger.com/navbar.g?targetBlogID=9040940768980958235&amp;blogName=Technology+blog,+Science+and+Mystery&amp;publishMode=PUBLISH_MODE_HOSTED&amp;navbarType=BLUE&amp;layoutType=LAYOUTS&amp;searchRoot=http://www.ceveni.com/search&amp;blogLocale=en_US&amp;homepageUrl=http://www.ceveni.com/&amp;targetPostID=8835744555143189398&amp;vt=1504771984048608849" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="30px" width="100%" id="navbar-iframe" allowtransparency="true" title="Blogger Navigation and Search"></iframe>
+<div></div></div></div>
+<div id='outer-wrapper'><div id='wrap2'>
+<!-- skip links for text browsers -->
+<span id='skiplinks' style='display:none;'>
+<a href='#main'>skip to main </a> |
+      <a href='#sidebar'>skip to sidebar</a>
+</span>
+<div id='header-wrapper'>
+<div class='header section' id='header'><div class='widget Header' id='Header1'>
+<div id='header-inner'>
+<a href='http://www.ceveni.com/' style='display: block'>
+<img alt='Technology blog, Science and Mystery' height='138px; ' id='Header1_headerimg' src='http://2.bp.blogspot.com/_A_FNfqyuLTQ/SCKO3lofK7I/AAAAAAAABNQ/1uElIzsK_ZY/S1600-R/blogheader1.jpg' style='display: block' width='843px; '/>
+</a>
+</div>
+</div><div class='widget HTML' id='HTML4'>
+<h2 class='title'>Ads by Google</h2>
+<div class='widget-content'>
+<script type="text/javascript"><!--
+google_ad_client = "pub-3165976012109915";
+google_ad_host = "pub-1556223355139109";
+/* 728x90, created 4/25/11 */
+google_ad_slot = "8552315980";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=9040940768980958235&widgetType=HTML&widgetId=HTML4&action=editWidget&sectionId=header' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML4"));' target='configHTML4' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div></div>
+</div>
+<div id='content-wrapper'>
+<div id='crosscol-wrapper' style='text-align:center'>
+<div class='crosscol section' id='crosscol'></div>
+</div>
+<div id='main-wrapper'>
+<div class='main section' id='main'><div class='widget HTML' id='HTML10'>
+<h2 class='title'>Google Search</h2>
+<div class='widget-content'>
+<form id="cse-search-box" action="http://www.google.com/cse" target="_blank">
+  <div>
+    <input value="partner-pub-3165976012109915:lmhq4vmuixh" name="cx" type="hidden" />
+    <input value="ISO-8859-1" name="ie" type="hidden" />
+    <input name="q" size="70" type="text" />
+    <input value="Search" name="sa" type="submit" />
+  </div>
+</form>
+
+<script src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en" type="text/javascript"></script>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=9040940768980958235&widgetType=HTML&widgetId=HTML10&action=editWidget&sectionId=main' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML10"));' target='configHTML10' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget Blog' id='Blog1'>
+<div class='blog-posts hfeed'>
+<!-- google_ad_section_start(name=default) -->
+<h2 class='date-header'>Thursday, August 20, 2009</h2>
+<div class='post hentry'>
+<a name='8835744555143189398'></a>
+<h3 class='post-title entry-title'>
+<a href='http://www.ceveni.com/2009/08/android-gestures-detection-sample-code.html'>Android gestures detection sample code</a>
+</h3>
+<div class='post-header-line-1'></div>
+<div class='post-body entry-content'>
+<p><div style="text-align: justify;">I recently wanted to implement all the gestures and motion detection in my project such as onFling (swipeup, swipe down), onLongPress, singletap, showpress context menu etc in android and after searching for a long while did not find any sample program that has all the methods as example mainly for onFling and so i made a sample  program with all these see the below code<br /></div><div class="mycode"><br />package testt.manju.com;<br /><br />import android.app.Activity;<br />import android.graphics.Color;<br />import android.os.Bundle;<br />import android.view.GestureDetector;<br />import android.view.MotionEvent;<br />import android.view.GestureDetector.OnGestureListener;<br />import android.widget.LinearLayout;<br />import android.widget.TextView;<br />import android.widget.Toast;<br /><br />public class gridd extends Activity implements OnGestureListener<br />{       private LinearLayout main;       private TextView viewA;<br /><br />   private static final int SWIPE_MIN_DISTANCE = 120;<br />   private static final int SWIPE_MAX_OFF_PATH = 250;<br />   private static final int SWIPE_THRESHOLD_VELOCITY = 200;<br /><br /><br />   private GestureDetector gestureScanner;<br />       @Override<br />   public void onCreate(Bundle savedInstanceState)<br />   {<br />       super.onCreate(savedInstanceState);<br />             gestureScanner = new GestureDetector(this);<br />             main = new LinearLayout(this);<br />       main.setBackgroundColor(Color.GRAY);<br />       main.setLayoutParams(new LinearLayout.LayoutParams(320,480));<br />             viewA = new TextView(this);<br />       viewA.setBackgroundColor(Color.YELLOW);<br />       viewA.setTextColor(Color.BLACK);<br />       viewA.setTextSize(16);<br />       viewA.setLayoutParams(new LinearLayout.LayoutParams(320,80));<br />       main.addView(viewA);<br />             setContentView(main);<br />   }<br />     @Override<br />   public boolean onTouchEvent(MotionEvent me)<br />   {<br />    return gestureScanner.onTouchEvent(me);<br />   }<br />     @Override<br />   public boolean onDown(MotionEvent e)<br />   {<br />    viewA.setText("-" + "DOWN" + "-");<br />    return true;<br />   }<br />     @Override<br />   public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY)<br />   {<br />       try {<br />           if (Math.abs(e1.getY() - e2.getY()) > SWIPE_MAX_OFF_PATH)<br />               return false;<br />           // right to left swipe<br />           if(e1.getX() - e2.getX() > SWIPE_MIN_DISTANCE &amp;&amp; Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {<br />               Toast.makeText(getApplicationContext(), "Left Swipe", Toast.LENGTH_SHORT).show();<br />           }  else if (e2.getX() - e1.getX() > SWIPE_MIN_DISTANCE &amp;&amp; Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {<br />               Toast.makeText(getApplicationContext(), "Right Swipe", Toast.LENGTH_SHORT).show();<br />           }<br />           else if(e1.getY() - e2.getY() > SWIPE_MIN_DISTANCE &amp;&amp; Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {<br />               Toast.makeText(getApplicationContext(), "Swipe up", Toast.LENGTH_SHORT).show();<br />           }  else if (e2.getY() - e1.getY() > SWIPE_MIN_DISTANCE &amp;&amp; Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {<br />               Toast.makeText(getApplicationContext(), "Swipe down", Toast.LENGTH_SHORT).show();<br />           }<br />       } catch (Exception e) {<br />           // nothing<br />       }<br /><br />               return true;<br />   }<br />     @Override<br />   public void onLongPress(MotionEvent e)<br />   {<br />       Toast mToast =  Toast.makeText(getApplicationContext(), "Long Press", Toast.LENGTH_SHORT);<br />       mToast.show();<br />       }<br />     @Override<br />   public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY)<br />   {<br />    viewA.setText("-" + "SCROLL" + "-");<br />    return true;<br />   }<br />     @Override<br />   public void onShowPress(MotionEvent e)<br />   {<br />    viewA.setText("-" + "SHOW PRESS" + "-");<br />   }         @Override<br />   public boolean onSingleTapUp(MotionEvent e)       {<br />       Toast mToast =  Toast.makeText(getApplicationContext(), "Single Tap", Toast.LENGTH_SHORT);<br />       mToast.show();<br />    return true;<br />   }<br />}<br /></div><br /><div style="text-align: justify;">you can change the threshold, swipe distance and max swip path for onFling Method as per your requirements if the code working mail me or you can suggest improvements<br /></div></p>
+<div><iframe allowTransparency='true' frameborder='0' scrolling='no' src='http://www.facebook.com/plugins/like.php?href=http://www.ceveni.com/2009/08/android-gestures-detection-sample-code.html&layout=box_count&show_faces=false&width=100&action=recommend&font=arial&colorscheme=light' style='border:none; overflow:hidden; width:90px; height:65px;'></iframe></div>
+<div style='clear: both;'></div>
+</div>
+<div class='post-footer'>
+<p class='post-footer-line post-footer-line-1'><span class='post-author vcard'>
+Posted by
+<span class='fn'>Manjunath</span>
+</span>
+<span class='post-timestamp'>
+at
+<a class='timestamp-link' href='http://www.ceveni.com/2009/08/android-gestures-detection-sample-code.html' rel='bookmark' title='permanent link'><abbr class='published' title='2009-08-20T10:05:00-07:00'>10:05 AM</abbr></a>
+</span>
+<span class='post-comment-link'>
+</span>
+<span class='post-icons'>
+<span class='item-action'>
+<a href='http://www.blogger.com/email-post.g?blogID=9040940768980958235&postID=8835744555143189398' title='Email Post'>
+<img alt='' class='icon-action' src='http://www.blogger.com/img/icon18_email.gif'/>
+</a>
+</span>
+<span class='item-control blog-admin pid-1729617370'>
+<a href='http://www.blogger.com/post-edit.g?blogID=9040940768980958235&postID=8835744555143189398&from=pencil' title='Edit Post'>
+<img alt='' class='icon-action' height='18' src='http://www.blogger.com/img/icon18_edit_allbkg.gif' width='18'/>
+</a>
+</span>
+</span>
+<span class='post-backlinks post-comment-link'>
+</span>
+</p>
+<p class='post-footer-line post-footer-line-2'><span class='post-labels'>
+Labels:
+<a href='http://www.ceveni.com/search/label/programming' rel='tag'>programming</a>
+</span>
+</p>
+<p class='post-footer-line post-footer-line-3'></p>
+</div>
+</div>
+<div class='comments' id='comments'>
+<a name='comments'></a>
+<h4>
+15
+comments:
+        
+</h4>
+<dl id='comments-block'>
+<dt class='comment-author ' id='c796493956218508562'>
+<a name='c796493956218508562'></a>
+<a href='http://www.airsource.co.uk' rel='nofollow'>Ben Blaukopf</a>
+said...
+</dt>
+<dd class='comment-body'>
+<p>Useful code, and thanks. One fix though - the detection of a swipe up/down should depend upon velocityY, not velocityX!</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://www.ceveni.com/2009/08/android-gestures-detection-sample-code.html?showComment=1251974978242#c796493956218508562' title='comment permalink'>
+September 3, 2009 3:49 AM
+</a>
+<span class='item-control blog-admin pid-1111549379'>
+<a href='http://www.blogger.com/delete-comment.g?blogID=9040940768980958235&postID=796493956218508562' title='Delete Comment'>
+<img src='http://www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c2781474450109231103'>
+<a name='c2781474450109231103'></a>
+Anonymous
+said...
+</dt>
+<dd class='comment-body'>
+<p>Thanks...for your useful code. <br />It&#39;s good Sample code!!</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://www.ceveni.com/2009/08/android-gestures-detection-sample-code.html?showComment=1269158819031#c2781474450109231103' title='comment permalink'>
+March 21, 2010 1:06 AM
+</a>
+<span class='item-control blog-admin pid-1046688627'>
+<a href='http://www.blogger.com/delete-comment.g?blogID=9040940768980958235&postID=2781474450109231103' title='Delete Comment'>
+<img src='http://www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c7794375638901558218'>
+<a name='c7794375638901558218'></a>
+<a href='http://lisudza.wordpress.com/' rel='nofollow'>lisudza</a>
+said...
+</dt>
+<dd class='comment-body'>
+<p>Thank you so much for this. I had the same issue I could not get a code snippet on gestures.</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://www.ceveni.com/2009/08/android-gestures-detection-sample-code.html?showComment=1275417915436#c7794375638901558218' title='comment permalink'>
+June 1, 2010 11:45 AM
+</a>
+<span class='item-control blog-admin pid-673813432'>
+<a href='http://www.blogger.com/delete-comment.g?blogID=9040940768980958235&postID=7794375638901558218' title='Delete Comment'>
+<img src='http://www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c9163689839134534575'>
+<a name='c9163689839134534575'></a>
+<a href='http://www.blogger.com/profile/02156641399426334394' rel='nofollow'>Vikrant Singh</a>
+said...
+</dt>
+<dd class='comment-body'>
+<p>activity class has no other method than ontouchEvent to override<br />compiler is giving an error in my case :(</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://www.ceveni.com/2009/08/android-gestures-detection-sample-code.html?showComment=1276753530267#c9163689839134534575' title='comment permalink'>
+June 16, 2010 10:45 PM
+</a>
+<span class='item-control blog-admin pid-297704692'>
+<a href='http://www.blogger.com/delete-comment.g?blogID=9040940768980958235&postID=9163689839134534575' title='Delete Comment'>
+<img src='http://www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c843694699044338525'>
+<a name='c843694699044338525'></a>
+<a href='http://www.blogger.com/profile/15225301928711883293' rel='nofollow'>pichik</a>
+said...
+</dt>
+<dd class='comment-body'>
+<p>hey dude...  Excellent example for gestures.. but when i tried this between the activities, the application is closed.. could u please correct me where im doing wrong??</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://www.ceveni.com/2009/08/android-gestures-detection-sample-code.html?showComment=1281766930046#c843694699044338525' title='comment permalink'>
+August 13, 2010 11:22 PM
+</a>
+<span class='item-control blog-admin pid-1579614631'>
+<a href='http://www.blogger.com/delete-comment.g?blogID=9040940768980958235&postID=843694699044338525' title='Delete Comment'>
+<img src='http://www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c6565074727773204803'>
+<a name='c6565074727773204803'></a>
+<a href='http://www.blogger.com/profile/06195834110225326461' rel='nofollow'>chungyin</a>
+said...
+</dt>
+<dd class='comment-body'>
+<p>cool ... this is really an excellent example! thanks for that. :)</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://www.ceveni.com/2009/08/android-gestures-detection-sample-code.html?showComment=1284684407650#c6565074727773204803' title='comment permalink'>
+September 16, 2010 5:46 PM
+</a>
+<span class='item-control blog-admin pid-433178990'>
+<a href='http://www.blogger.com/delete-comment.g?blogID=9040940768980958235&postID=6565074727773204803' title='Delete Comment'>
+<img src='http://www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c750285116893878089'>
+<a name='c750285116893878089'></a>
+<a href='http://google.com' rel='nofollow'>SkaWorld</a>
+said...
+</dt>
+<dd class='comment-body'>
+<p>Thack you Coll!!!!</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://www.ceveni.com/2009/08/android-gestures-detection-sample-code.html?showComment=1289290803300#c750285116893878089' title='comment permalink'>
+November 9, 2010 12:20 AM
+</a>
+<span class='item-control blog-admin pid-243916114'>
+<a href='http://www.blogger.com/delete-comment.g?blogID=9040940768980958235&postID=750285116893878089' title='Delete Comment'>
+<img src='http://www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c8106858605586898163'>
+<a name='c8106858605586898163'></a>
+Anonymous
+said...
+</dt>
+<dd class='comment-body'>
+<p>hi do u have any idea for creating fingerprint scanning in android application</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://www.ceveni.com/2009/08/android-gestures-detection-sample-code.html?showComment=1291807403405#c8106858605586898163' title='comment permalink'>
+December 8, 2010 3:23 AM
+</a>
+<span class='item-control blog-admin pid-1053558204'>
+<a href='http://www.blogger.com/delete-comment.g?blogID=9040940768980958235&postID=8106858605586898163' title='Delete Comment'>
+<img src='http://www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c3505106180261020122'>
+<a name='c3505106180261020122'></a>
+<a href='http://www.blogger.com/profile/02191077094540662479' rel='nofollow'>jeet</a>
+said...
+</dt>
+<dd class='comment-body'>
+<p>i also have the same question i want to trace my fingerprint over screen ,can any one tell me how can i do this</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://www.ceveni.com/2009/08/android-gestures-detection-sample-code.html?showComment=1292836964646#c3505106180261020122' title='comment permalink'>
+December 20, 2010 1:22 AM
+</a>
+<span class='item-control blog-admin pid-1254957098'>
+<a href='http://www.blogger.com/delete-comment.g?blogID=9040940768980958235&postID=3505106180261020122' title='Delete Comment'>
+<img src='http://www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c1559156625046988688'>
+<a name='c1559156625046988688'></a>
+<a href='http://www.sendsms.pk' rel='nofollow'>danial</a>
+said...
+</dt>
+<dd class='comment-body'>
+<p>Very very helpful. It resolved all problems in gesture detection! ... Can you also provide another sample code for motion detection?</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://www.ceveni.com/2009/08/android-gestures-detection-sample-code.html?showComment=1293708958574#c1559156625046988688' title='comment permalink'>
+December 30, 2010 3:35 AM
+</a>
+<span class='item-control blog-admin pid-1766829959'>
+<a href='http://www.blogger.com/delete-comment.g?blogID=9040940768980958235&postID=1559156625046988688' title='Delete Comment'>
+<img src='http://www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c7712744939211357063'>
+<a name='c7712744939211357063'></a>
+Anonymous
+said...
+</dt>
+<dd class='comment-body'>
+<p>helped a lot. Thanks :)</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://www.ceveni.com/2009/08/android-gestures-detection-sample-code.html?showComment=1302502322366#c7712744939211357063' title='comment permalink'>
+April 10, 2011 11:12 PM
+</a>
+<span class='item-control blog-admin pid-759311049'>
+<a href='http://www.blogger.com/delete-comment.g?blogID=9040940768980958235&postID=7712744939211357063' title='Delete Comment'>
+<img src='http://www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c5831022942654530432'>
+<a name='c5831022942654530432'></a>
+Anonymous
+said...
+</dt>
+<dd class='comment-body'>
+<p>Hi.. Thanks for the great sample. It solved my app purpose.. good work done.. Please keep posting several samples on gestures.. Sai :)</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://www.ceveni.com/2009/08/android-gestures-detection-sample-code.html?showComment=1303289168776#c5831022942654530432' title='comment permalink'>
+April 20, 2011 1:46 AM
+</a>
+<span class='item-control blog-admin pid-309754244'>
+<a href='http://www.blogger.com/delete-comment.g?blogID=9040940768980958235&postID=5831022942654530432' title='Delete Comment'>
+<img src='http://www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c558908949030502367'>
+<a name='c558908949030502367'></a>
+<a href='http://www.blogger.com/profile/06795675801919808847' rel='nofollow'>jayachandran</a>
+said...
+</dt>
+<dd class='comment-body'>
+<p>Thank you.....<br />Great code.....<br />Very useful for me......<br />by  Jai.</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://www.ceveni.com/2009/08/android-gestures-detection-sample-code.html?showComment=1307619029132#c558908949030502367' title='comment permalink'>
+June 9, 2011 4:30 AM
+</a>
+<span class='item-control blog-admin pid-2026906889'>
+<a href='http://www.blogger.com/delete-comment.g?blogID=9040940768980958235&postID=558908949030502367' title='Delete Comment'>
+<img src='http://www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c3205207319944548405'>
+<a name='c3205207319944548405'></a>
+Venkateshwara Rao
+said...
+</dt>
+<dd class='comment-body'>
+<p>Good one.. Exactly what i was looking for..</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://www.ceveni.com/2009/08/android-gestures-detection-sample-code.html?showComment=1310102399516#c3205207319944548405' title='comment permalink'>
+July 7, 2011 10:19 PM
+</a>
+<span class='item-control blog-admin pid-1495962108'>
+<a href='http://www.blogger.com/delete-comment.g?blogID=9040940768980958235&postID=3205207319944548405' title='Delete Comment'>
+<img src='http://www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c8494435092098538171'>
+<a name='c8494435092098538171'></a>
+Anonymous
+said...
+</dt>
+<dd class='comment-body'>
+<p>great sample code<br />exactly what I was looking for.<br /><br />Thanks a lot,<br />Michael</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://www.ceveni.com/2009/08/android-gestures-detection-sample-code.html?showComment=1310328111235#c8494435092098538171' title='comment permalink'>
+July 10, 2011 1:01 PM
+</a>
+<span class='item-control blog-admin pid-1458216735'>
+<a href='http://www.blogger.com/delete-comment.g?blogID=9040940768980958235&postID=8494435092098538171' title='Delete Comment'>
+<img src='http://www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+</dl>
+<p class='comment-footer'>
+<div class='comment-form'>
+<a name='comment-form'></a>
+<h4 id='comment-post-message'>Post a Comment</h4>
+<p>
+</p>
+<a href='http://www.blogger.com/comment-iframe.g?blogID=9040940768980958235&postID=8835744555143189398' id='comment-editor-src'></a>
+<iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' frameborder='0' height='275' id='comment-editor' name='comment-editor' scrolling='no' src='' width='100%'></iframe>
+<script type="text/javascript" src="http://www.blogger.com/static/v1/jsbin/2743853637-comment_from_post_iframe.js"></script>
+<script type='text/javascript'>
+      BLOG_CMT_createIframe('http://www.blogger.com/rpc_relay.html', '07064294721618692082');
+    </script>
+</div>
+</p>
+<div id='backlinks-container'>
+<div id='Blog1_backlinks-container'>
+<a name='links'></a><h4>
+</h4>
+<p class='comment-footer'>
+<a class='comment-link' href='' id='Blog1_backlinks-create-link' target='_blank'>
+</a>
+</p>
+</div>
+</div>
+</div>
+<div id="latency-8835744555143189398"></div><script type="text/javascript">if (window['tickAboveFold']) {window['tickAboveFold'](document.getElementById("latency-8835744555143189398")); } </script>
+<!-- google_ad_section_end -->
+</div>
+<div class='blog-pager' id='blog-pager'>
+<span id='blog-pager-newer-link'>
+<a class='blog-pager-newer-link' href='http://www.ceveni.com/2009/08/anti-gravity-experiment-for-school.html' id='Blog1_blog-pager-newer-link' title='Newer Post'>Newer Post</a>
+</span>
+<span id='blog-pager-older-link'>
+<a class='blog-pager-older-link' href='http://www.ceveni.com/2009/08/is-influenz-200-answer-to-swine-flu.html' id='Blog1_blog-pager-older-link' title='Older Post'>Older Post</a>
+</span>
+<a class='home-link' href='http://www.ceveni.com/'>Home</a>
+</div>
+<div class='clear'></div>
+<div class='post-feeds'>
+<div class='feed-links'>
+Subscribe to:
+<a class='feed-link' href='http://www.ceveni.com/feeds/8835744555143189398/comments/default' target='_blank' type='application/atom+xml'>Post Comments (Atom)</a>
+</div>
+</div>
+</div><div class='widget Blog' id='Blog2'>
+<div class='widget-content'>
+<h2>Other Interesting Articles</h2>
+<div id='data2007'></div><br/><br/>
+<h6>Related Article Widget by <u><a href='http://www.ceveni.com/'>ceveni</a></u></h6>
+<script type='text/javascript'>
+
+
+// Incorporating modified by Jackbook to the next line, thank you very much.
+var homeUrl = "http://www.ceveni.com/";
+var maxNumberOfPostsPerLabel = 8;
+var maxNumberOfLabels = 10;
+var urlArray = new Array();
+
+maxNumberOfPostsPerLabel = 15;
+
+maxNumberOfLabels = 4;
+
+var titleArray = new Array();
+var titleTest = 0;
+
+function relInitialize() {
+var labelArray = new Array();
+var numLabel = 0;
+
+
+textLabel = "programming";
+
+
+var test = 0;
+// Do not add identical labels from posts
+for (var i = 0; i < labelArray.length; i++)
+if (labelArray[i] == textLabel) test = 1;
+if (test == 0) {
+labelArray.push(textLabel);
+var maxLabels = (labelArray.length <= maxNumberOfLabels) ?
+labelArray.length : maxNumberOfLabels;
+
+if (numLabel < maxLabels) {
+      var url = homeUrl + 'feeds/posts/default/-/'
+ + encodeURIComponent(textLabel);
+      var feed = new google.feeds.Feed(url);
+      feed.setNumEntries(maxNumberOfPostsPerLabel);
+      feed.load(function(result) {
+        if (!result.error) {
+          var container = document.getElementById("data2007");
+          for (var i = 0; i < result.feed.entries.length; i++) {
+            var entry = result.feed.entries[i];
+            titleTest = 0;
+            for (var i = 0; i < titleArray.length; i++) 
+              if ( titleArray[i] == entry["title"] ) titleTest = 1;
+            if (titleTest == 0 ) {
+              titleArray.push(entry["title"]);
+              var div = document.createElement('div');
+              var a = document.createElement('a');
+              a.href = entry["link"];
+              // Adding an if statement to exclude current post. 
+              // Addition from Jackbook.com. Thank you
+              if( a.href!=location.href ) {
+                var txt = document.createTextNode(entry["title"]);
+                a.appendChild(txt);
+                div.appendChild(a);
+                container.appendChild(div);
+              } // if not home page
+            }// if titleTest
+          } // for
+        }// if result is not error
+      }); // feed.load
+   
+      numLabel++;
+     }
+    }
+    
+
+   }
+   google.load("feeds", "1");
+   google.setOnLoadCallback(relInitialize);
+</script>
+</div>
+</div><div class='widget HTML' id='HTML11'>
+<h2 class='title'>Search Powered by Google</h2>
+<div class='widget-content'>
+<form id="cse-search-box" action="http://www.google.com/cse" target="_blank">
+  <div>
+    <input value="partner-pub-3165976012109915:lmhq4vmuixh" name="cx" type="hidden"/>
+    <input value="ISO-8859-1" name="ie" type="hidden"/>
+    <input name="q" size="70" type="text"/>
+    <input value="Search" name="sa" type="submit"/>
+  </div>
+</form>
+
+<script src="http://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=en" type="text/javascript"></script>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=9040940768980958235&widgetType=HTML&widgetId=HTML11&action=editWidget&sectionId=main' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML11"));' target='configHTML11' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div></div>
+</div>
+<div id='sidebar-wrapper'>
+<div class='sidebar section' id='sidebar'><div class='widget HTML' id='HTML3'>
+<h2 class='title'>Consider Subscribing to feeds</h2>
+<div class='widget-content'>
+<form action="http://www.feedburner.com/fb/a/emailverify" style="border: 1px solid rgb(204, 204, 204); padding: 3px; text-align: center;" target="popupwindow" method="post" onsubmit="window.open('http://www.feedburner.com/fb/a/emailverifySubmit?feedId=2053177', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><p>Enter your email address:</p><p><input style="width: 140px;" name="email" type="text" /></p><input value="http://feeds.feedburner.com/~e?ffid=2053177" name="url" type="hidden" /><input value="Need to Know" name="title" type="hidden" /><input value="en_US" name="loc" type="hidden" /><input value="Subscribe" type="submit" />
+<p><a href="http://feeds.feedburner.com/blogspot/TGjQ"><img style="border: 0pt none ;" alt="" src="http://feeds.feedburner.com/%7Efc/blogspot/TGjQ?bg=99CCFF&amp;fg=444444&amp;anim=0" width="88" height="26" /></a></p></form>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=9040940768980958235&widgetType=HTML&widgetId=HTML3&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML3"));' target='configHTML3' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget HTML' id='HTML5'>
+<div class='widget-content'>
+<script type="text/javascript"><!--
+google_ad_client = "pub-3165976012109915";
+google_ad_host = "pub-1556223355139109";
+/* 250x250, created 5/1/09 */
+google_ad_slot = "9924736793";
+google_ad_width = 250;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=9040940768980958235&widgetType=HTML&widgetId=HTML5&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML5"));' target='configHTML5' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget Label' id='Label1'>
+<h2>Labels</h2>
+<div class='widget-content'>
+<ul>
+<li>
+<a dir='ltr' href='http://www.ceveni.com/search/label/Tech%20Tips'>Tech Tips</a>
+<span dir='ltr'>(502)</span>
+</li>
+<li>
+<a dir='ltr' href='http://www.ceveni.com/search/label/interesting%20facts'>interesting facts</a>
+<span dir='ltr'>(292)</span>
+</li>
+<li>
+<a dir='ltr' href='http://www.ceveni.com/search/label/Information'>Information</a>
+<span dir='ltr'>(164)</span>
+</li>
+<li>
+<a dir='ltr' href='http://www.ceveni.com/search/label/Mystery'>Mystery</a>
+<span dir='ltr'>(131)</span>
+</li>
+<li>
+<a dir='ltr' href='http://www.ceveni.com/search/label/programming'>programming</a>
+<span dir='ltr'>(71)</span>
+</li>
+<li>
+<a dir='ltr' href='http://www.ceveni.com/search/label/Google'>Google</a>
+<span dir='ltr'>(54)</span>
+</li>
+<li>
+<a dir='ltr' href='http://www.ceveni.com/search/label/funny'>funny</a>
+<span dir='ltr'>(41)</span>
+</li>
+<li>
+<a dir='ltr' href='http://www.ceveni.com/search/label/Science'>Science</a>
+<span dir='ltr'>(26)</span>
+</li>
+<li>
+<a dir='ltr' href='http://www.ceveni.com/search/label/commercials'>commercials</a>
+<span dir='ltr'>(9)</span>
+</li>
+<li>
+<a dir='ltr' href='http://www.ceveni.com/search/label/Conversion%20Charts'>Conversion Charts</a>
+<span dir='ltr'>(8)</span>
+</li>
+<li>
+<a dir='ltr' href='http://www.ceveni.com/search/label/movies'>movies</a>
+<span dir='ltr'>(8)</span>
+</li>
+<li>
+<a dir='ltr' href='http://www.ceveni.com/search/label/Time%20Pass'>Time Pass</a>
+<span dir='ltr'>(6)</span>
+</li>
+<li>
+<a dir='ltr' href='http://www.ceveni.com/search/label/Coversion%20tips'>Coversion tips</a>
+<span dir='ltr'>(5)</span>
+</li>
+<li>
+<a dir='ltr' href='http://www.ceveni.com/search/label/Cricket'>Cricket</a>
+<span dir='ltr'>(5)</span>
+</li>
+</ul>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=9040940768980958235&widgetType=Label&widgetId=Label1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("Label1"));' target='configLabel1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget HTML' id='HTML1'>
+<div class='widget-content'>
+<script type="text/javascript"><!--
+google_ad_client = "pub-3165976012109915";
+google_ad_host = "pub-1556223355139109";
+/* 120x600, created 4/25/11 */
+google_ad_slot = "4091902351";
+google_ad_width = 120;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=9040940768980958235&widgetType=HTML&widgetId=HTML1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML1"));' target='configHTML1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget Profile' id='Profile1'>
+<h2>Meet the Author</h2>
+<div class='widget-content'>
+<a href='http://www.blogger.com/profile/10230278254360556497'><img alt='My Photo' class='profile-img' height='80' src='http://2.bp.blogspot.com/_A_FNfqyuLTQ/S1wIrQ8qHYI/AAAAAAAADvc/9wVyqVXvyWE/S220/Manjunath.JPG' width='79'/></a>
+<dl class='profile-datablock'>
+<dt class='profile-data'>
+<a class='profile-name-link' href='http://www.blogger.com/profile/10230278254360556497' rel='author'>
+Manjunath
+</a>
+</dt>
+<dd class='profile-textblock'>Manjunath is from namma bengaluru working as Mobile Application Developer... Blogging has been his passion since late 2007 he thinks blogging is one of the powerful medium to share knowledge and idea....
+
+you can KOnTacT mE@ :  feedback[AT]ceveni.com</dd>
+</dl>
+<a class='profile-link' href='http://www.blogger.com/profile/10230278254360556497' rel='author'>View my complete profile</a>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=9040940768980958235&widgetType=Profile&widgetId=Profile1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("Profile1"));' target='configProfile1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget Image' id='Image1'>
+<h2>If you want to write to me you can email me at below id will try to reply within a day</h2>
+<div class='widget-content'>
+<img alt='If you want to write to me you can email me at below id will try to reply within a day' height='34' id='Image1_img' src='http://3.bp.blogspot.com/_A_FNfqyuLTQ/TSx6DoKSBHI/AAAAAAAAELo/BkpgAJJfHAQ/S1600-R/images2.jpg' width='187'/>
+<br/>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=9040940768980958235&widgetType=Image&widgetId=Image1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("Image1"));' target='configImage1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget HTML' id='HTML8'>
+<h2 class='title'>Join Mystery Forums on Orkut</h2>
+<div class='widget-content'>
+<a target="_blank" href="http://www.orkut.co.in/Main#Community?cmm=31229528"><img border="0" width="121" alt="ceveni.com" src="http://cvrajeshwari.googlepages.com/explore-the-unknown-ork-pic.jpg" height="160"/></a>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=9040940768980958235&widgetType=HTML&widgetId=HTML8&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML8"));' target='configHTML8' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div></div>
+</div>
+<!-- spacer for skins that want sidebar and main to be the same height-->
+<div class='clear'>&#160;</div>
+</div>
+<!-- end content-wrapper -->
+<div id='footer-wrapper'>
+<div class='footer section' id='footer'><div class='widget HTML' id='HTML12'>
+<div class='widget-content'>
+<!-- Site Meter -->
+<script src="http://sm2.sitemeter.com/js/counter.js?site=sm2niche" type="text/javascript">
+</script>
+<noscript>
+<a href="http://sm2.sitemeter.com/stats.asp?site=sm2niche" target="_top">
+<img border="0" alt="Site Meter" src="http://sm2.sitemeter.com/meter.asp?site=sm2niche"/></a>
+</noscript>
+<!-- Copyright (c)2009 Site Meter -->
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=9040940768980958235&widgetType=HTML&widgetId=HTML12&action=editWidget&sectionId=footer' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML12"));' target='configHTML12' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget HTML' id='HTML14'>
+<div class='widget-content'>
+<!-- Start Quantcast tag -->
+<script type="text/javascript">
+_qoptions={
+qacct:"p-f4xrr4MnBc9p6"
+};
+</script>
+<script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+<noscript>
+<img src="http://pixel.quantserve.com/pixel/p-f4xrr4MnBc9p6.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast" />
+</noscript>
+<!-- End Quantcast tag -->
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=9040940768980958235&widgetType=HTML&widgetId=HTML14&action=editWidget&sectionId=footer' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML14"));' target='configHTML14' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget HTML' id='HTML7'>
+<div class='widget-content'>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-3891516-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=9040940768980958235&widgetType=HTML&widgetId=HTML7&action=editWidget&sectionId=footer' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML7"));' target='configHTML7' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget HTML' id='HTML2'>
+<div class='widget-content'>
+<!-- Histats.com  START  (standard)-->
+<script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script>
+<a href="http://www.histats.com" target="_blank" title="page hit counter" ><script  type="text/javascript" >
+try {Histats.start(1,1076301,4,700,10,10,"00000000");
+Histats.track_hits();} catch(err){};
+</script></a>
+<noscript><a href="http://www.histats.com" target="_blank"><img src="http://sstatic1.histats.com/0.gif?1076301&amp;101" alt="page hit counter" border="0" /></a></noscript>
+<!-- Histats.com  END  -->
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=9040940768980958235&widgetType=HTML&widgetId=HTML2&action=editWidget&sectionId=footer' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML2"));' target='configHTML2' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget Text' id='Text1'>
+<div class='widget-content'>
+&#169; 2008-2011  Ceveni.
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=9040940768980958235&widgetType=Text&widgetId=Text1&action=editWidget&sectionId=footer' onclick='return _WidgetManager._PopupConfig(document.getElementById("Text1"));' target='configText1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div></div>
+</div>
+</div></div>
+<!-- end outer-wrapper -->
+<script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('widgetJsBefore');
+</script><script type="text/javascript" src="http://www.blogger.com/static/v1/widgets/3067356616-widgets.js"></script>
+<script type='text/javascript'>
+if (typeof(BLOG_attachCsiOnload) != 'undefined' && BLOG_attachCsiOnload != null) { window['blogger_templates_experiment_id'] = "templatesV1";window['blogger_blog_id'] = '9040940768980958235';BLOG_attachCsiOnload('item_'); }_WidgetManager._Init('http://www.blogger.com/rearrange?blogID=9040940768980958235','http://www.ceveni.com/2009/08/android-gestures-detection-sample-code.html','9040940768980958235');
+_WidgetManager._SetPageActionUrl('http://www.blogger.com/display?blogID=9040940768980958235','APq4FmDT6ydgqRRJoKqnCIJZ-5HqADGaiqtGbNKm7G2715MU5HYF_xEQATe9cwmZnR8cdOqjST0MfVxo3nhr42sa4uqZXrq4Zo11S4F5YYSxUni_rCAOawU=','AOuZoY5lFwAbDOZBFcxR4QhJ_h8MY9-SxA:1310731969039');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'title': 'Technology blog, Science and Mystery', 'pageType': 'item', 'url': 'http://www.ceveni.com/2009/08/android-gestures-detection-sample-code.html', 'canonicalUrl': 'http://www.ceveni.com/2009/08/android-gestures-detection-sample-code.html', 'homepageUrl': 'http://www.ceveni.com/', 'blogspotFaviconUrl': 'http://www.ceveni.com/favicon.ico', 'enabledCommentProfileImages': true, 'searchLabel': '', 'searchQuery': '', 'pageName': 'Android gestures detection sample code', 'pageTitle': 'Technology blog, Science and Mystery: Android gestures detection sample code', 'encoding': 'UTF-8', 'locale': 'en-US', 'isPrivate': false, 'isMobile': false, 'mobileClass': '', 'languageDirection': 'ltr', 'feedLinks': '\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42Technology blog, Science and Mystery - Atom\42 href\75\42http://www.ceveni.com/feeds/posts/default\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/rss+xml\42 title\75\42Technology blog, Science and Mystery - RSS\42 href\75\42http://www.ceveni.com/feeds/posts/default?alt\75rss\42 /\76\n\74link rel\75\42service.post\42 type\75\42application/atom+xml\42 title\75\42Technology blog, Science and Mystery - Atom\42 href\75\42http://www.blogger.com/feeds/9040940768980958235/posts/default\42 /\76\n\74link rel\75\42EditURI\42 type\75\42application/rsd+xml\42 title\75\42RSD\42 href\75\42http://www.blogger.com/rsd.g?blogID\759040940768980958235\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42Technology blog, Science and Mystery - Atom\42 href\75\42http://www.ceveni.com/feeds/8835744555143189398/comments/default\42 /\76\n', 'meTag': '', 'openIdOpTag': '', 'imageSrcTag': '', 'latencyHeadScript': '\74script type\75\42text/javascript\42\76(function() { var a\75window;function c(b){this.t\75{};this.tick\75function(b,i,d){d\75d!\75void 0?d:(new Date).getTime();this.t[b]\75[d,i]};this.tick(\42start\42,null,b)}var e\75new c;a.jstiming\75{Timer:c,load:e};try{var g\75null;a.chrome\46\46a.chrome.csi\46\46(g\75Math.floor(a.chrome.csi().pageT));g\75\75null\46\46a.gtbExternal\46\46(g\75a.gtbExternal.pageT());g\75\75null\46\46a.external\46\46(g\75a.external.pageT);g\46\46(a.jstiming.pt\75g)}catch(h){};a.tickAboveFold\75function(b){var f\0750;if(b.offsetParent){do f+\75b.offsetTop;while(b\75b.offsetParent)}b\75f;b\74\075750\46\46a.jstiming.load.tick(\42aft\42)};var j\75!1;function k(){j||(j\75!0,a.jstiming.load.tick(\42firstScrollTime\42))}a.addEventListener?a.addEventListener(\42scroll\42,k,!1):a.attachEvent(\42onscroll\42,k);\n })();\74/script\076', 'mobileHeadScript': ''}}]);
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML12', 'footer', null, document.getElementById('HTML12'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML14', 'footer', null, document.getElementById('HTML14'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML7', 'footer', null, document.getElementById('HTML7'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML2', 'footer', null, document.getElementById('HTML2'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_TextView', new _WidgetInfo('Text1', 'footer', null, document.getElementById('Text1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML3', 'sidebar', null, document.getElementById('HTML3'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML5', 'sidebar', null, document.getElementById('HTML5'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LabelView', new _WidgetInfo('Label1', 'sidebar', null, document.getElementById('Label1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'sidebar', null, document.getElementById('HTML1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_ProfileView', new _WidgetInfo('Profile1', 'sidebar', null, document.getElementById('Profile1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_ImageView', new _WidgetInfo('Image1', 'sidebar', null, document.getElementById('Image1'), {'resize': false}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML8', 'sidebar', null, document.getElementById('HTML8'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML4', 'header', null, document.getElementById('HTML4'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'navbar'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML10', 'main', null, document.getElementById('HTML10'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', null, document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'showBacklinks': true, 'postId': '8835744555143189398'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog2', 'main', null, document.getElementById('Blog2'), {'cmtInteractionsEnabled': false, 'showBacklinks': true, 'postId': '8835744555143189398'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML11', 'main', null, document.getElementById('HTML11'), {}, 'displayModeFull'));
+</script>
+</body>
+</html>

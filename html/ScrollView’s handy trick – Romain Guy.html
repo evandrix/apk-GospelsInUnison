@@ -1,0 +1,919 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head profile="http://gmpg.org/xfn/11">
+
+    <title>ScrollView&#8217;s handy trick &#8211; Romain Guy</title>
+	
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta name="description" content="" />
+	
+        <link href="http://www.curious-creature.org/script/prettify.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="http://www.curious-creature.org/script/prettify.js"></script>
+        <script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+    
+<!-- BeginStyle -->
+	<link rel="stylesheet" type="text/css" href="http://www.curious-creature.org/blog/wp-content/themes/modularity/style.css" />
+	<link rel="stylesheet" href="http://www.curious-creature.org/blog/wp-content/themes/modularity/styles/print.css" type="text/css" media="print" />
+	<!--[if IE]><link rel="stylesheet" href="http://www.curious-creature.org/blog/wp-content/themes/modularity/styles/ie.css" type="text/css" media="screen, projection" /><![endif]-->
+	<!--[if IE 7]><link rel="stylesheet" href="http://www.curious-creature.org/blog/wp-content/themes/modularity/styles/ie7.css" type="text/css" media="screen, projection" /><![endif]-->
+        <link rel="stylesheet" type="text/css" href="http://www.curious-creature.org/blog/wp-content/themes/romainguy/style.css" />
+<!-- EndStyle -->
+
+
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.curious-creature.org/feed/" />
+	<link rel="pingback" href="http://www.curious-creature.org/blog/xmlrpc.php" />
+
+	<link rel="alternate" type="application/rss+xml" title="Romain Guy &raquo; ScrollView&#8217;s handy trick Comments Feed" href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/feed/" />
+<link rel='stylesheet' id='sociable-front-css-css'  href='http://www.curious-creature.org/blog/wp-content/plugins/sociable/sociable.css?ver=3.2.1' type='text/css' media='all' />
+<script type='text/javascript' src='http://www.curious-creature.org/blog/wp-includes/js/l10n.js?ver=20101110'></script>
+<script type='text/javascript' src='http://www.curious-creature.org/blog/wp-includes/js/jquery/jquery.js?ver=1.6.1'></script>
+<script type='text/javascript' src='http://www.curious-creature.org/blog/wp-content/themes/modularity/includes/js/jquery-ui-1.7.2.custom.min.js?ver=3.2.1'></script>
+<script type='text/javascript' src='http://www.curious-creature.org/blog/wp-content/themes/modularity/includes/js/nav/superfish.js?ver=3.2.1'></script>
+<script type='text/javascript' src='http://www.curious-creature.org/blog/wp-content/themes/modularity/includes/js/nav/supersubs.js?ver=3.2.1'></script>
+<script type='text/javascript' src='http://www.curious-creature.org/blog/wp-content/themes/modularity/includes/js/search.js?ver=3.2.1'></script>
+<script type='text/javascript' src='http://www.curious-creature.org/blog/wp-includes/js/swfobject.js?ver=2.2'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.curious-creature.org/blog/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.curious-creature.org/blog/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Romain Guy' href='http://www.curious-creature.org/' />
+<link rel='start' title='Wave UI' href='http://www.curious-creature.org/2005/02/12/wave-ui/' />
+<link rel='prev' title='Caterpillar' href='http://www.curious-creature.org/2010/08/08/caterpillar/' />
+<link rel='next' title='Mission Store' href='http://www.curious-creature.org/2010/08/30/mission-store/' />
+<meta name="generator" content="WordPress 3.2.1" />
+<link rel='canonical' href='http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/' />
+<link rel='shortlink' href='http://wp.me/p4tSM-hw' />
+<meta name="generator" content="Modularity 2.5.2" />
+<meta name="generator" content="Graph Paper Press Framework Version 1.0" />
+<meta name="ps_configurator" content="thmNm=Modularity;thmVsn=2.5.2;thmFmly=;hd_bgn=BeginHeader;hd_end=EndHeader;ft_bgn=BeginFooter;ft_end=EndFooter;scptInc=http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js;scptInc=http://www.curious-creature.org/blog/wp-content/themes/modularity/includes/js/nav/superfish.js;scptInc=http://www.curious-creature.org/blog/wp-content/themes/modularity/includes/js/nav/suckerfish.init.js;lnkInc=http://www.curious-creature.org/blog/wp-content/themes/modularity/style.css;lnkInc=http://www.curious-creature.org/blog/wp-content/themes/modularity/includes/custom-styles.php" />
+
+	<script type="text/javascript">
+		jQuery(document).ready(function(){
+		
+	        jQuery("ul.sf-menu").supersubs({ 
+	            minWidth:    12,
+	            maxWidth:    27,
+	            extraWidth:  1
+	        }).superfish({
+	        		delay:       500,
+					animation:   {opacity:"show",height:"show"},
+					speed:       "fast",
+					autoArrows:  true,
+					dropShadows: true
+	        });});
+	</script>
+			<link href="http://www.curious-creature.org/blog/wp-content/themes/modularity/custom.css" rel="stylesheet" type="text/css" />
+	<!-- Conditional Javascripts -->
+	<!--[if IE 6]>
+	<script src="http://www.curious-creature.org/blog/wp-content/themes/modularity/includes/js/pngfix.js"></script>	
+	<![endif]-->
+	<!-- End Conditional Javascripts -->
+
+	
+</head>
+
+<body class="single single-post postid-1086 single-format-standard" onload="prettyPrint()">
+
+<!-- BeginHeader -->
+<div id="top">
+<div id="masthead">
+    <div id="logo">
+            <h1 class="sitename"><a href="http://www.curious-creature.org" title="">Romain Guy</a></h1>
+    </div>
+            <div class="description"></div>
+
+</div>
+
+<!-- Navigation -->
+<ul class="sf-menu">
+    <li>
+	    <a href="http://www.flickr.com/photos/romainguy">photography</a>
+    </li>
+    <li>
+	    <a href="http://www.curious-creature.org/about/">about</a>
+    </li>
+    <li>
+	    <a href="http://www.curious-creature.org/feed/"><img src="http://www.curious-creature.org/blog/wp-content/plugins/smbp/icons/16/rss.png" width="16" height="16" /></a>
+    </li>
+    <li>
+	    <a href="http://twitter.com/romainguy"><img src="http://www.curious-creature.org/blog/wp-content/plugins/smbp/icons/16/twitter.png" width="16" height="16" /></a>
+    </li>
+    <li>
+            <a rel="author" href="https://profiles.google.com/111962077049890418486">
+                <img src="http://www.google.com/images/icons/ui/gprofile_button-16.png">
+            </a>
+    </li>
+    <li>
+            <div style="padding: 9px; padding-right: 0px; margin-right: -10px;"><g:plusone size="small"></g:plusone></div>
+    </li>
+
+ 
+    
+ 
+<!--
+  <li>
+      			<div id="search">
+	<form method="get" id="searchform" action="http://www.curious-creature.org/">
+		<div>
+			<input type="text" name="s" id="s" value="Search" onfocus="clearInput('s', 'Search')" onblur="clearInput('s', 'Search')" class="png_bg" /> 
+		</div>
+	</form>
+</div>
+			  </li>
+-->
+	</ul>
+
+<div class="clear"></div>
+</div>
+<!-- EndHeader -->
+
+<div class="container">
+<div class="container-inner">
+
+<!-- BeginContent -->
+<div class="span-24 last">
+
+<div class="post-1086 post type-post status-publish format-standard hentry category-android">
+
+	<h2>ScrollView&#8217;s handy trick</h2>
+	<p class="postmetadata alt">
+		<small>
+						Sunday, August 15th, 2010 at 9:12 pm,
+		        <a href="http://www.curious-creature.org/category/android/" title="View all posts in Android" rel="category tag">Android</a>.
+			 			<br/>Written by <a rel="author" href="https://profiles.google.com/111962077049890418486">Romain Guy</a>
+		</small>
+	</p>
+			<p><a href="http://d.android.com/reference/android/widget/ScrollView.html">ScrollView</a> is one of Android’s most commonly used widget and is also one of the easiest to use. When something is too big to fit on screen, drop it inside a <code>ScrollView</code> and you’re done. You can’t even get it wrong since a <code>ScrollView</code> accepts only one child at a time. There is, however, one use case a bit trickier to get right; unless you’ve carefully read the documentation.</p>
+<p>Let’s imagine that your application needs to display a piece of text and a couple of buttons. The length of the text can vary and be longer or shorter than the screen. You want to put the text inside a scroll view and you want the buttons to scroll along with the text, probably to encourage the user to read the text before clicking any of the button. Depending on the length of the text, your application would look like one of the following screenshots:</p>
+<p><span id="more-1086"></span></p>
+<p>
+<div style="text-align:center;"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/scrollview1/" rel="attachment wp-att-1088" style="margin-right: 20px;"><img src="http://www.curious-creature.org/blog/wp-content/uploads/2010/08/scrollview1.png" alt="ScrollView with short text" title="ScrollView with short text" width="320" height="480" class="size-full wp-image-1088" /></a><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/scrollview2/" rel="attachment wp-att-1089"><img src="http://www.curious-creature.org/blog/wp-content/uploads/2010/08/scrollview2.png" alt="ScrollView with long text" title="ScrollView with long text" width="320" height="480" class="size-full wp-image-1089" /></a></div>
+</p>
+<p>In attempt to achieve this effect, I have seen several Android developers try to set the height of the view inside the scroll view to <code>fill_parent</code>. Doing so does not work and leads to the following result:</p>
+<p><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/scrollview3/" rel="attachment wp-att-1096"><img src="http://www.curious-creature.org/blog/wp-content/uploads/2010/08/scrollview3.png" alt="ScrollView without fillViewport" title="ScrollView without fillViewport" width="320" height="480" class="aligncenter size-full wp-image-1096" /></a></p>
+<p>To understand this result, you must remember that <code>android:layout_height=”fill_parent”</code> means “set the height to the height of the parent.” This is obviously not what you want when using a ScrollView. After all, the ScrollView would become useless if its content was always as tall as itself. To work around this, you need to use the ScrollView attribute called <code>android:fillViewport</code>. When set to true, this attribute causes the scroll view&#8217;s child to expand to the height of the <code>ScrollView</code> if needed. When the child is taller than the <code>ScrollView</code>, the attribute has no effect.</p>
+<p>The XML I wrote to create the correct version of this example can be found below. In line 32, I’ve set the android:layout_weight of the TextView to 1.0. By doing so I am forcing the text to use the available empty space when it is shorter than the <code>ScrollView</code>. This can only work when <code>android:fillViewport=”true”</code> is set on the scroll view.</p>
+<pre class="prettyprint lang-xml">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+
+&lt;ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroller"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true" &gt;
+    &lt;LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"&gt;
+        &lt;TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="6dip"
+            android:paddingRight="6dip"
+            android:paddingTop="6dip"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Welcome to My Application" /&gt;
+
+        &lt;View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="#ff106510"
+            android:layout_marginLeft="6dip"
+            android:layout_marginRight="6dip"
+            android:layout_marginTop="6dip"
+            android:layout_marginBottom="12dip" /&gt;
+
+        &lt;TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+
+            android:paddingLeft="6dip"
+            android:paddingRight="6dip"
+            android:paddingBottom="6dip"
+
+            android:text="@string/hello" /&gt;
+
+        &lt;LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@android:drawable/bottom_bar"
+            android:gravity="center_vertical"&gt;
+            &lt;Button
+                android:layout_width="0dip"
+                android:layout_weight="1.0"
+                android:layout_height="wrap_content" 
+
+                android:text="Accept" /&gt;
+            &lt;Button
+                android:layout_width="0dip"
+                android:layout_weight="1.0"
+                android:layout_height="wrap_content" 
+
+                android:text="Refuse" /&gt;
+        &lt;/LinearLayout&gt;
+    &lt;/LinearLayout&gt;
+&lt;/ScrollView&gt;
+</pre>
+<p>Last but not least, I realized while writing this that the documentation of ScrollView does not mention the fillViewport XML attribute, even though it shows the equivalent Java API, <a href="http://d.android.com/reference/android/widget/ScrollView.html#setFillViewport(boolean)">setFillViewport()</a>. This is a stupid mistake on my part that I <strike>will fix next week for a future release of Android. In the meantime, please accept my apologies :)</strike> just fixed.</p>
+
+<div class="sociable">
+<div class="sociable_tagline">
+<strong>Share and Enjoy:</strong>
+</div>
+<ul>
+	<li class="sociablefirst"><a rel="nofollow"  href="http://twitter.com/home?status=ScrollView%27s%20handy%20trick%20-%20http%3A%2F%2Fwww.curious-creature.org%2F2010%2F08%2F15%2Fscrollviews-handy-trick%2F" title="Twitter"><img src="http://www.curious-creature.org/blog/wp-content/plugins/sociable/images/services-sprite.gif" title="Twitter" alt="Twitter" style="width: 16px; height: 16px; background: transparent url(http://www.curious-creature.org/blog/wp-content/plugins/sociable/images/services-sprite.png) no-repeat; background-position:-343px -55px" /></a></li>
+	<li><a rel="nofollow"  href="http://www.facebook.com/share.php?u=http%3A%2F%2Fwww.curious-creature.org%2F2010%2F08%2F15%2Fscrollviews-handy-trick%2F&amp;t=ScrollView%27s%20handy%20trick" title="Facebook"><img src="http://www.curious-creature.org/blog/wp-content/plugins/sociable/images/services-sprite.gif" title="Facebook" alt="Facebook" style="width: 16px; height: 16px; background: transparent url(http://www.curious-creature.org/blog/wp-content/plugins/sociable/images/services-sprite.png) no-repeat; background-position:-343px -1px" /></a></li>
+	<li><a rel="nofollow"  href="http://www.tumblr.com/share?v=3&amp;u=http%3A%2F%2Fwww.curious-creature.org%2F2010%2F08%2F15%2Fscrollviews-handy-trick%2F&amp;t=ScrollView%27s%20handy%20trick&amp;s=ScrollView%20is%20one%20of%20Android%E2%80%99s%20most%20commonly%20used%20widget%20and%20is%20also%20one%20of%20the%20easiest%20to%20use.%20When%20something%20is%20too%20big%20to%20fit%20on%20screen%2C%20drop%20it%20inside%20a%20ScrollView%20and%20you%E2%80%99re%20done.%20You%20can%E2%80%99t%20even%20get%20it%20wrong%20since%20a%20ScrollView%20accepts%20only" title="Tumblr"><img src="http://www.curious-creature.org/blog/wp-content/plugins/sociable/images/services-sprite.gif" title="Tumblr" alt="Tumblr" style="width: 16px; height: 16px; background: transparent url(http://www.curious-creature.org/blog/wp-content/plugins/sociable/images/services-sprite.png) no-repeat; background-position:-325px -55px" /></a></li>
+	<li><a rel="nofollow"  href="http://www.curious-creature.org/feed/" title="RSS"><img src="http://www.curious-creature.org/blog/wp-content/plugins/sociable/images/services-sprite.gif" title="RSS" alt="RSS" style="width: 16px; height: 16px; background: transparent url(http://www.curious-creature.org/blog/wp-content/plugins/sociable/images/services-sprite.png) no-repeat; background-position:-73px -55px" /></a></li>
+	<li><a rel="nofollow"  href="http://digg.com/submit?phase=2&amp;url=http%3A%2F%2Fwww.curious-creature.org%2F2010%2F08%2F15%2Fscrollviews-handy-trick%2F&amp;title=ScrollView%27s%20handy%20trick&amp;bodytext=ScrollView%20is%20one%20of%20Android%E2%80%99s%20most%20commonly%20used%20widget%20and%20is%20also%20one%20of%20the%20easiest%20to%20use.%20When%20something%20is%20too%20big%20to%20fit%20on%20screen%2C%20drop%20it%20inside%20a%20ScrollView%20and%20you%E2%80%99re%20done.%20You%20can%E2%80%99t%20even%20get%20it%20wrong%20since%20a%20ScrollView%20accepts%20only" title="Digg"><img src="http://www.curious-creature.org/blog/wp-content/plugins/sociable/images/services-sprite.gif" title="Digg" alt="Digg" style="width: 16px; height: 16px; background: transparent url(http://www.curious-creature.org/blog/wp-content/plugins/sociable/images/services-sprite.png) no-repeat; background-position:-235px -1px" /></a></li>
+	<li class="sociablelast"><a rel="nofollow"  href="http://www.google.com/bookmarks/mark?op=edit&amp;bkmk=http%3A%2F%2Fwww.curious-creature.org%2F2010%2F08%2F15%2Fscrollviews-handy-trick%2F&amp;title=ScrollView%27s%20handy%20trick&amp;annotation=ScrollView%20is%20one%20of%20Android%E2%80%99s%20most%20commonly%20used%20widget%20and%20is%20also%20one%20of%20the%20easiest%20to%20use.%20When%20something%20is%20too%20big%20to%20fit%20on%20screen%2C%20drop%20it%20inside%20a%20ScrollView%20and%20you%E2%80%99re%20done.%20You%20can%E2%80%99t%20even%20get%20it%20wrong%20since%20a%20ScrollView%20accepts%20only" title="Google Bookmarks"><img src="http://www.curious-creature.org/blog/wp-content/plugins/sociable/images/services-sprite.gif" title="Google Bookmarks" alt="Google Bookmarks" style="width: 16px; height: 16px; background: transparent url(http://www.curious-creature.org/blog/wp-content/plugins/sociable/images/services-sprite.png) no-repeat; background-position:-91px -19px" /></a></li>
+</ul>
+</div>
+
+	<div class="clear"></div>
+
+	<div class="navi prev left"><a href="http://www.curious-creature.org/2010/08/08/caterpillar/" rel="prev">&larr; Previous post</a></div>
+	<div class="navi next right"><a href="http://www.curious-creature.org/2010/08/30/mission-store/" rel="next">Next post &rarr;</a></div>
+	<div class="clear"></div>
+	
+</div>
+
+	
+<!-- You can start editing here. -->
+
+	<h3 id="comments">33 Responses to &#8220;ScrollView&#8217;s handy trick&#8221;</h3>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+	<ol class="commentlist">
+			<li class="comment even thread-even depth-1" id="comment-3973">
+				<div id="div-comment-3973" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/08c040c3d84187afcabe1ebb2fb5b476?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />		<cite class="fn"><a href='http://frandroid.com' rel='external nofollow' class='url'>bactisme</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-3973">
+			August 15, 2010 at 10:31 pm</a>		</div>
+
+		<p>(de l&#8217;art d&#8217;etre hors-sujet)</p>
+<p>&#8230; 8h40pm &#8230; your working to late &#8230;  :P</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3974">
+				<div id="div-comment-3974" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/63416d24ef3272cff16c89b84be48316?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />		<cite class="fn">Jumonline</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-3974">
+			August 16, 2010 at 1:24 am</a>		</div>
+
+		<p>I might be wrong, but i think you forgot the android:fillViewport on the ScrollView in your exemple.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment even thread-even depth-1" id="comment-3975">
+				<div id="div-comment-3975" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/2c18d0bfa60d83bb9839d77bd8f322f9?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />		<cite class="fn">drjunior</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-3975">
+			August 16, 2010 at 2:26 am</a>		</div>
+
+		<p>@Jumonline Yeah, true. </p>
+<p>The attribute android:fillViewport=&#8221;true&#8221; should applied to the first LinearLayout that appears within the ScrollView.</p>
+<p>Exemple:<br />
+&#8230;</p>
+<p>&#8230;</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3976">
+				<div id="div-comment-3976" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/52585c055d24fca3520ea476e9a43b0d?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />		<cite class="fn"><a href='http://androidblogger.blogspot.com/' rel='external nofollow' class='url'>Alocaly</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-3976">
+			August 16, 2010 at 4:35 am</a>		</div>
+
+		<p>@ drjunior :<br />
+Are you sure ?<br />
+I understand this article as &#8216;You need to add android:fillViewport=”true” to your scrollview&#8217;.<br />
+And setFillViewport is a method of scrollview, not of any view&#8230;</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="pingback even thread-even depth-1" id="comment-3979">
+				<div id="div-comment-3979" class="comment-body">
+				<div class="comment-author vcard">
+				<cite class="fn"><a href='http://devicefms.ro/scrollview-and-fillviewport.html' rel='external nofollow' class='url'>ScrollView and fillViewport | Sebastian - Android developer</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-3979">
+			August 16, 2010 at 8:33 am</a>		</div>
+
+		<p>[...] : <a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/" rel="nofollow">http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/</a>   fillViewport, [...]</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3980">
+				<div id="div-comment-3980" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/18910207650685d4592d9a6a71528180?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />		<cite class="fn"><a href='http://ciarang.com' rel='external nofollow' class='url'>Ciaran</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-3980">
+			August 16, 2010 at 8:52 am</a>		</div>
+
+		<p>&#8220;probably to encourage the user to read the text&#8221; &#8211; I&#8217;ve only seen such a thing in the context of some kind of license agreement, so I think you mean &#8220;to force the user to scroll through all the text without reading it, before being allowed to press the button&#8221;. ;)</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1" id="comment-3981">
+				<div id="div-comment-3981" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/237be48129b762b31847d6167597366d?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />		<cite class="fn"><a href='http://www.curious-creature.org' rel='external nofollow' class='url'>Romain Guy</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-3981">
+			August 16, 2010 at 8:57 am</a>		</div>
+
+		<p>I did forget fillViewport=&#8221;true&#8221; on the ScrollView tag. Sorry about that, it&#8217;s fixed now.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3982">
+				<div id="div-comment-3982" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/2c18d0bfa60d83bb9839d77bd8f322f9?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />		<cite class="fn">drjunior</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-3982">
+			August 16, 2010 at 9:07 am</a>		</div>
+
+		<p>My mistake! Sorry..</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment even thread-even depth-1" id="comment-3983">
+				<div id="div-comment-3983" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/e2fa7bbae749f4235a0abf3d57c56791?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />		<cite class="fn"><a href='http://teodorfilimon.com' rel='external nofollow' class='url'>Teo</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-3983">
+			August 16, 2010 at 9:19 am</a>		</div>
+
+		<p>Is it possible to have ScrollView generate a prominent thumb thingie like you can see in the Contacts app? The android:scrollbarSize attribute doesn&#8217;t seem to work that way&#8230;</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3984">
+				<div id="div-comment-3984" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/58385b80cebaa58245c4566c69886066?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />		<cite class="fn">Dan</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-3984">
+			August 16, 2010 at 9:59 am</a>		</div>
+
+		<p>You guys (Android Team) make life so much easier!<br />
+You have helped put the Open in Open Source, Thanks again!</p>
+<p>Peace,<br />
+Dan</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment even thread-even depth-1" id="comment-3987">
+				<div id="div-comment-3987" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/4eaf509dc247329c18dd0473f62d7b99?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />		<cite class="fn"><a href='http://zrgiu.com' rel='external nofollow' class='url'>sergiu</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-3987">
+			August 16, 2010 at 10:18 am</a>		</div>
+
+		<p>I might be missing something, but in your case, wouldn&#8217;t layout_width=&#8221;fill_parent&#8221; on the ScrollView do the job ?</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3988">
+				<div id="div-comment-3988" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/552f101b112f1b404a8d76312e198979?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />		<cite class="fn"><a href='http://www.curious-creature.org' rel='external nofollow' class='url'>Romain Guy</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-3988">
+			August 16, 2010 at 10:21 am</a>		</div>
+
+		<p>The problem here is the height, not the width. And if you think layout_height=&#8221;fill_parent&#8221; would solve the issue, you did not read the article :)</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="pingback even thread-even depth-1" id="comment-3989">
+				<div id="div-comment-3989" class="comment-body">
+				<div class="comment-author vcard">
+				<cite class="fn"><a href='http://www.theandroider.com/2010/08/16/two-simple-questions/' rel='external nofollow' class='url'>Two Simple Questions | The Androider</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-3989">
+			August 16, 2010 at 10:48 am</a>		</div>
+
+		<p>[...] one does have a simple answer, and our Romain Guy offers it in ScrollView’s handy trick. It&#8217;s easy enough to do once you know how, which is harder to find out than you might think, [...]</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-admin bypostauthor odd alt thread-odd thread-alt depth-1" id="comment-3991">
+				<div id="div-comment-3991" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/237be48129b762b31847d6167597366d?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />		<cite class="fn"><a href='http://www.curious-creature.org' rel='external nofollow' class='url'>Romain Guy</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-3991">
+			August 16, 2010 at 10:54 am</a>		</div>
+
+		<p>@Teo: You need to use a FastScroller, but it&#8217;s intended mostly for ListView.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="pingback even thread-even depth-1" id="comment-3992">
+				<div id="div-comment-3992" class="comment-body">
+				<div class="comment-author vcard">
+				<cite class="fn"><a href='http://www.androidapplication.us/two-simple-questions.html' rel='external nofollow' class='url'>Two Simple Questions | Android Application [dot] us</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-3992">
+			August 16, 2010 at 11:12 am</a>		</div>
+
+		<p>[...] one does have a simple answer, and our Romain Guy offers it in ScrollView’s handy trick. It&#8217;s easy enough to do once you know how, which is harder to find out than you might think, [...]</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-3993">
+				<div id="div-comment-3993" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/309333b709491e827b213a79216dbbea?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />		<cite class="fn">vovkab</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-3993">
+			August 16, 2010 at 11:13 am</a>		</div>
+
+		<p>Helpfull for novice, but nothing new to devs.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment even thread-even depth-1" id="comment-3996">
+				<div id="div-comment-3996" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/2863e506256679592c6d824b2a1b69a5?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />		<cite class="fn"><a href='http://it-ride.blogspot.com/' rel='external nofollow' class='url'>Felix</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-3996">
+			August 16, 2010 at 12:53 pm</a>		</div>
+
+		<p>This would&#8217;ve saved a lot of headaches if I had read it two months ago. I think I banged my head against this specific problem a whole day or so.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="pingback odd alt thread-odd thread-alt depth-1" id="comment-4008">
+				<div id="div-comment-4008" class="comment-body">
+				<div class="comment-author vcard">
+				<cite class="fn"><a href='http://android-mobile-device.com/2010/08/two-simple-questions/' rel='external nofollow' class='url'>Two Simple Questions | Android Mobile Device</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-4008">
+			August 17, 2010 at 5:03 am</a>		</div>
+
+		<p>[...] one does have a simple answer, and our Romain Guy offers it in ScrollView’s handy trick. It&#8217;s easy enough to do once you know how, which is harder to find out than you might think, [...]</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="pingback even thread-even depth-1" id="comment-4049">
+				<div id="div-comment-4049" class="comment-body">
+				<div class="comment-author vcard">
+				<cite class="fn"><a href='http://itneverrains.co.uk/two-simple-questions' rel='external nofollow' class='url'>Two Simple Questions</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-4049">
+			August 21, 2010 at 8:20 pm</a>		</div>
+
+		<p>[...] one does have a simple answer, and our Romain Guy offers it in ScrollView’s handy trick. It&#8217;s easy enough to do once you know how, which is harder to find out than you might think, [...]</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4057">
+				<div id="div-comment-4057" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/c46042ce35dacd8c50ab64ae7db97898?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />		<cite class="fn">Barsum</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-4057">
+			August 24, 2010 at 5:21 am</a>		</div>
+
+		<p>Good what you&#8217;re blogging about coding again. Photos are nice, but coding is nicer :D</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment byuser comment-author-admin bypostauthor even thread-even depth-1" id="comment-4105">
+				<div id="div-comment-4105" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/237be48129b762b31847d6167597366d?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />		<cite class="fn"><a href='http://www.curious-creature.org' rel='external nofollow' class='url'>Romain Guy</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-4105">
+			August 29, 2010 at 9:40 pm</a>		</div>
+
+		<p>@Barsum: I disagree, photos are nicer and more interesting :P</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="pingback odd alt thread-odd thread-alt depth-1" id="comment-4172">
+				<div id="div-comment-4172" class="comment-body">
+				<div class="comment-author vcard">
+				<cite class="fn"><a href='http://www.flyppdevportal.com/2010/09/02/two-simple-questions/' rel='external nofollow' class='url'>Mobile Development Resources &raquo; Two Simple Questions</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-4172">
+			September 6, 2010 at 2:42 pm</a>		</div>
+
+		<p>[...] one does have a simple answer, and our Romain Guy offers it in ScrollView?s handy trick. It&#8217;s easy enough to do once you know how, which is harder to find out than you might think, [...]</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="pingback even thread-even depth-1" id="comment-4443">
+				<div id="div-comment-4443" class="comment-body">
+				<div class="comment-author vcard">
+				<cite class="fn"><a href='http://ii.web.id/mobile-techno/two-simple-questions.html' rel='external nofollow' class='url'>Two Simple Questions | teknology</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-4443">
+			October 5, 2010 at 3:31 am</a>		</div>
+
+		<p>[...] does have a s&amp;#105&amp;#109ple answer, and o&amp;#117r &amp;#82o&amp;#109a&amp;#105n G&amp;#117y offers &amp;#105&amp;#116 &amp;#105n ScrollView’&amp;#115 handy tric&amp;#107. It&#8217;s eas&amp;#121 enough to do once &amp;#121ou know how, wh&amp;#105ch &amp;#105s ha&amp;#114de&amp;#114 to [...]</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="pingback odd alt thread-odd thread-alt depth-1" id="comment-4461">
+				<div id="div-comment-4461" class="comment-body">
+				<div class="comment-author vcard">
+				<cite class="fn"><a href='http://www.andorfi.net/2010/10/two-simple-questions/' rel='external nofollow' class='url'>Two Simple Questions | Andorfi Istvan</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-4461">
+			October 9, 2010 at 12:01 am</a>		</div>
+
+		<p>[...] do I make a ScrollView behave?This one does have a simple answer, and our Romain Guy offers it in ScrollView’s handy trick. It&#8217;s easy enough to do once you know how, which is harder to find out than you might think, [...]</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="pingback even thread-even depth-1" id="comment-4555">
+				<div id="div-comment-4555" class="comment-body">
+				<div class="comment-author vcard">
+				<cite class="fn"><a href='http://thexyzend.com/archives/104' rel='external nofollow' class='url'>&#124; Blog &#124; Two Simple Questions</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-4555">
+			October 29, 2010 at 9:30 am</a>		</div>
+
+		<p>[...] one does have a simple answer, and our Romain Guy offers it in ScrollView’s handy trick. It&#8217;s easy enough to do once you know how, which is harder to find out than you might think, [...]</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4846">
+				<div id="div-comment-4846" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/24b346a618ba272e09458906e3641167?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />		<cite class="fn"><a href='http://www.crosswalktalk.com' rel='external nofollow' class='url'>AndroidLashious</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-4846">
+			November 28, 2010 at 11:15 pm</a>		</div>
+
+		<p>I&#8217;ve been coding for several hours now and my eyes crossed have been doing backflips.  So, I came to a big UI problem with a small fix (as it usually happens right).</p>
+<p>All I needed was android:orientation=&#8221;vertical&#8221;.  I did not have that in my nested layout views UI XML code&#8217;s LinearLayout.</p>
+<p>Oh, the pain.  I kept only seeing the first element in my ScrollView&#8217;s content.</p>
+<p>Lesson learned&#8230; and moving on.</p>
+<p>FWIW, thanks for the code, it got me the answer I needed (and I was about to wrap it up for the night without the solution).</p>
+<p>:-)</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment even thread-even depth-1" id="comment-4854">
+				<div id="div-comment-4854" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/2863e506256679592c6d824b2a1b69a5?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />		<cite class="fn">Felix</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-4854">
+			November 30, 2010 at 11:38 am</a>		</div>
+
+		<p>This actually took me 20 hours and 51 minutes to figure out (before your post), according to this StackOverflow question (which I ended up answering myself):</p>
+<p><a href="http://stackoverflow.com/questions/2599837/linearlayout-not-expanding-inside-a-scrollview" rel="nofollow">http://stackoverflow.com/questions/2599837/linearlayout-not-expanding-inside-a-scrollview</a></p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-5188">
+				<div id="div-comment-5188" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/d926fd9858e661235a1b1eb952428b54?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />		<cite class="fn">Braj</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-5188">
+			December 9, 2010 at 11:36 am</a>		</div>
+
+		<p>I want to fix the height of ScrollView means in this example fix the button (Accept and Refuse) at the bottom of the Screen and ScrollView only applied within text area.When i scroll then only text area will be scrolled not the last button .</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment even thread-even depth-1" id="comment-5470">
+				<div id="div-comment-5470" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/3fd6d93b8bcb6e8b59a457e9f5a145dc?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />		<cite class="fn">schwiz</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-5470">
+			December 29, 2010 at 9:23 pm</a>		</div>
+
+		<p>can&#8217;t seem to get this to work :(</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-5471">
+				<div id="div-comment-5471" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://1.gravatar.com/avatar/3fd6d93b8bcb6e8b59a457e9f5a145dc?s=32&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />		<cite class="fn">schwiz</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-5471">
+			December 29, 2010 at 9:29 pm</a>		</div>
+
+		<p>key part of this is that textview has a weight of 1 doesn&#8217;t work without it</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment even thread-even depth-1" id="comment-5482">
+				<div id="div-comment-5482" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/6148edff748af0a7a734c434b6f54a4b?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />		<cite class="fn">anticafe</cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-5482">
+			December 30, 2010 at 9:53 pm</a>		</div>
+
+		<p>Very useful article.</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-5566">
+				<div id="div-comment-5566" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/a9c652ecabd2637b05f9a5e1c5bdac04?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />		<cite class="fn"><a href='http://chndrandroid.com' rel='external nofollow' class='url'>RamaChandrareddy</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-5566">
+			January 18, 2011 at 10:54 pm</a>		</div>
+
+		<p>add scroll view to one more Linearlayout (root) . then it will work fine</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="comment even thread-even depth-1" id="comment-5616">
+				<div id="div-comment-5616" class="comment-body">
+				<div class="comment-author vcard">
+		<img alt='' src='http://0.gravatar.com/avatar/ebf7667adca9f4d2ced8a6f48f4baa41?s=32&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D32&amp;r=G' class='avatar avatar-32 photo' height='32' width='32' />		<cite class="fn"><a href='http://www.blundell-apps.com' rel='external nofollow' class='url'>Blundell</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.curious-creature.org/2010/08/15/scrollviews-handy-trick/comment-page-1/#comment-5616">
+			February 8, 2011 at 9:53 am</a>		</div>
+
+		<p>Thanking you sir!!</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+	</ol>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+ 
+
+	<div class="ad-sidebar">
+</div></div>
+
+
+<!-- Begin Footer -->
+<div class="clear"></div>
+</div>
+</div>
+
+<!-- BeginFooter -->
+<div id="footer-wrap">
+<div id="footer">
+<!-- Category Columns -->
+
+<div class="app">
+<div class="clear"></div>
+<div id="category-section">
+
+<div class="column span-7 colborder post-1086">
+			<h3 class="sub"><a href="http://www.curious-creature.org/author/admin/">All</a></h3>
+		<h6><a href="http://www.curious-creature.org/2011/07/14/join-me-on-google/" rel="bookmark" title="Permanent Link to Join me on Google+">Join me on Google+</a></h6>
+				<p class="byline">Jul 14, 2011 | <a href="http://www.curious-creature.org/2011/07/14/join-me-on-google/#respond" title="Comment on Join me on Google+">Discuss</a></p>
+		<p></p>
+		<h6 class="sub"><a href="http://www.curious-creature.org/author/admin/">More</a></h6>
+	<ul>
+							<li><a href="http://www.curious-creature.org/2011/06/02/android-apps-magic-hour-and-x-men/" rel="bookmark" title="Permanent Link to Android apps: Magic Hour and X-Men" class="title">Android apps: Magic Hour and X-Men</a></li>
+					<li><a href="http://www.curious-creature.org/2011/05/12/android-presentations-at-google-io-2011/" rel="bookmark" title="Permanent Link to Android presentations at Google I/O 2011" class="title">Android presentations at Google I/O 2011</a></li>
+					<li><a href="http://www.curious-creature.org/2011/02/22/source-code-for-android-3-0-animation-demo/" rel="bookmark" title="Permanent Link to Source code for Android 3.0 animation demo" class="title">Source code for Android 3.0 animation demo</a></li>
+					<li><a href="http://www.curious-creature.org/2011/02/18/android-3-0-animations-demo/" rel="bookmark" title="Permanent Link to Android 3.0 animations demo" class="title">Android 3.0 animations demo</a></li>
+					<li><a href="http://www.curious-creature.org/2011/02/14/antelope-butte/" rel="bookmark" title="Permanent Link to Antelope Butte" class="title">Antelope Butte</a></li>
+					<li><a href="http://www.curious-creature.org/2010/12/08/bitmap-quality-banding-and-dithering/" rel="bookmark" title="Permanent Link to Bitmap quality, banding and dithering" class="title">Bitmap quality, banding and dithering</a></li>
+					<li><a href="http://www.curious-creature.org/2010/12/04/gingerbread-and-32-bits-windows/" rel="bookmark" title="Permanent Link to Gingerbread and 32 bits windows" class="title">Gingerbread and 32 bits windows</a></li>
+			</ul>
+</div>
+
+
+<div class="column span-7 colborder post-1205">
+			<h3 class="sub"><a href="http://www.curious-creature.org/category/photos/">Photos</a></h3>
+		<h6><a href="http://www.curious-creature.org/2011/07/07/mount-whitney/" rel="bookmark" title="Permanent Link to Sierra Sunset">Sierra Sunset</a></h6>
+		<a href="http://www.curious-creature.org/2011/07/07/mount-whitney/" title="Sierra Sunset"><img src="http://www.curious-creature.org/blog/wp-content/uploads/2011/07/5911366388_f3d2d6fcba_m-150x150.jpg" alt="Sierra Sunset" class="thumbnail thumbnail " width="75" height="75" /></a>		<p class="byline">Jul 07, 2011 | <a href="http://www.curious-creature.org/2011/07/07/mount-whitney/#respond" title="Comment on Sierra Sunset">Discuss</a></p>
+		<p></p>
+		<h6 class="sub"><a href="http://www.curious-creature.org/category/photos/">More</a></h6>
+	<ul>
+							<li><a href="http://www.curious-creature.org/2011/07/07/tenaya-lake/" rel="bookmark" title="Permanent Link to Tenaya Lake" class="title">Tenaya Lake</a></li>
+					<li><a href="http://www.curious-creature.org/2011/07/06/lone-pine-sunset/" rel="bookmark" title="Permanent Link to Lone Pine Sunset" class="title">Lone Pine Sunset</a></li>
+					<li><a href="http://www.curious-creature.org/2011/02/14/antelope-butte/" rel="bookmark" title="Permanent Link to Antelope Butte" class="title">Antelope Butte</a></li>
+					<li><a href="http://www.curious-creature.org/2010/10/31/sudden-stop/" rel="bookmark" title="Permanent Link to Sudden stop" class="title">Sudden stop</a></li>
+					<li><a href="http://www.curious-creature.org/2010/10/19/up-and-forward/" rel="bookmark" title="Permanent Link to Up and Forward" class="title">Up and Forward</a></li>
+					<li><a href="http://www.curious-creature.org/2010/10/02/lick-observatory/" rel="bookmark" title="Permanent Link to Lick Observatory" class="title">Lick Observatory</a></li>
+					<li><a href="http://www.curious-creature.org/2010/09/27/4-million-story-of-a-reject/" rel="bookmark" title="Permanent Link to 8 million, story of a reject" class="title">8 million, story of a reject</a></li>
+			</ul>
+</div>
+
+
+<div class="column  post-1170 span-4 last">
+			<h3 class="sub"><a href="http://www.curious-creature.org/category/android/">Android</a></h3>
+		<h6><a href="http://www.curious-creature.org/2011/06/02/android-apps-magic-hour-and-x-men/" rel="bookmark" title="Permanent Link to Android apps: Magic Hour and X-Men">Android apps: Magic Hour and X-Men</a></h6>
+		<a href="http://www.curious-creature.org/2011/06/02/android-apps-magic-hour-and-x-men/" title="Android apps: Magic Hour and X-Men"><img src="http://www.curious-creature.org/blog/wp-content/uploads/2011/06/magichour-150x150.png" alt="Android apps: Magic Hour and X-Men" class="thumbnail thumbnail " width="75" height="75" /></a>		<p class="byline">Jun 02, 2011 | <a href="http://www.curious-creature.org/2011/06/02/android-apps-magic-hour-and-x-men/#respond" title="Comment on Android apps: Magic Hour and X-Men">Discuss</a></p>
+		<p>I was delighted to find these two applications on Android Market today. The first, Magic Hour is a g[&hellip;]</p>
+		<h6 class="sub"><a href="http://www.curious-creature.org/category/android/">More</a></h6>
+	<ul>
+							<li><a href="http://www.curious-creature.org/2011/05/12/android-presentations-at-google-io-2011/" rel="bookmark" title="Permanent Link to Android presentations at Google I/O 2011" class="title">Android presentations at Google I/O 2011</a></li>
+					<li><a href="http://www.curious-creature.org/2011/02/22/source-code-for-android-3-0-animation-demo/" rel="bookmark" title="Permanent Link to Source code for Android 3.0 animation demo" class="title">Source code for Android 3.0 animation demo</a></li>
+					<li><a href="http://www.curious-creature.org/2011/02/18/android-3-0-animations-demo/" rel="bookmark" title="Permanent Link to Android 3.0 animations demo" class="title">Android 3.0 animations demo</a></li>
+					<li><a href="http://www.curious-creature.org/2010/12/08/bitmap-quality-banding-and-dithering/" rel="bookmark" title="Permanent Link to Bitmap quality, banding and dithering" class="title">Bitmap quality, banding and dithering</a></li>
+					<li><a href="http://www.curious-creature.org/2010/12/04/gingerbread-and-32-bits-windows/" rel="bookmark" title="Permanent Link to Gingerbread and 32 bits windows" class="title">Gingerbread and 32 bits windows</a></li>
+					<li><a href="http://www.curious-creature.org/2010/12/02/android-graphics-animations-and-tips-tricks/" rel="bookmark" title="Permanent Link to Android Graphics, Animations and Tips &#038; Tricks" class="title">Android Graphics, Animations and Tips &#038; Tricks</a></li>
+					<li><a href="http://www.curious-creature.org/2010/09/11/android-app-retro-camera/" rel="bookmark" title="Permanent Link to Android app: Retro Camera" class="title">Android app: Retro Camera</a></li>
+			</ul>
+</div>
+
+<div class="clear"></div>
+<div id="footer-divider"></div>
+</div>
+</div>
+
+<div class="span-3 append-1 small">
+<div class="item"><h3 class="sub">Contact</h3>			<div class="textwidget"><a href="mailto:romain.guy@mac.com">romain.guy@mac.com</a></div>
+		</div></div>
+<div class="column span-3 append-1 small">
+<div class="item"><h3 class="sub">Archives</h3>		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='http://www.curious-creature.org/2011/07/'> July 2011 </option>
+	<option value='http://www.curious-creature.org/2011/06/'> June 2011 </option>
+	<option value='http://www.curious-creature.org/2011/05/'> May 2011 </option>
+	<option value='http://www.curious-creature.org/2011/02/'> February 2011 </option>
+	<option value='http://www.curious-creature.org/2010/12/'> December 2010 </option>
+	<option value='http://www.curious-creature.org/2010/10/'> October 2010 </option>
+	<option value='http://www.curious-creature.org/2010/09/'> September 2010 </option>
+	<option value='http://www.curious-creature.org/2010/08/'> August 2010 </option>
+	<option value='http://www.curious-creature.org/2010/07/'> July 2010 </option>
+	<option value='http://www.curious-creature.org/2010/06/'> June 2010 </option>
+	<option value='http://www.curious-creature.org/2010/05/'> May 2010 </option>
+	<option value='http://www.curious-creature.org/2010/03/'> March 2010 </option>
+	<option value='http://www.curious-creature.org/2010/02/'> February 2010 </option>
+	<option value='http://www.curious-creature.org/2010/01/'> January 2010 </option>
+	<option value='http://www.curious-creature.org/2009/12/'> December 2009 </option>
+	<option value='http://www.curious-creature.org/2009/11/'> November 2009 </option>
+	<option value='http://www.curious-creature.org/2009/10/'> October 2009 </option>
+	<option value='http://www.curious-creature.org/2009/09/'> September 2009 </option>
+	<option value='http://www.curious-creature.org/2009/08/'> August 2009 </option>
+	<option value='http://www.curious-creature.org/2009/07/'> July 2009 </option>
+	<option value='http://www.curious-creature.org/2009/06/'> June 2009 </option>
+	<option value='http://www.curious-creature.org/2009/05/'> May 2009 </option>
+	<option value='http://www.curious-creature.org/2009/04/'> April 2009 </option>
+	<option value='http://www.curious-creature.org/2009/03/'> March 2009 </option>
+	<option value='http://www.curious-creature.org/2009/02/'> February 2009 </option>
+	<option value='http://www.curious-creature.org/2009/01/'> January 2009 </option>
+	<option value='http://www.curious-creature.org/2008/12/'> December 2008 </option>
+	<option value='http://www.curious-creature.org/2008/11/'> November 2008 </option>
+	<option value='http://www.curious-creature.org/2008/10/'> October 2008 </option>
+	<option value='http://www.curious-creature.org/2008/09/'> September 2008 </option>
+	<option value='http://www.curious-creature.org/2008/08/'> August 2008 </option>
+	<option value='http://www.curious-creature.org/2008/07/'> July 2008 </option>
+	<option value='http://www.curious-creature.org/2008/06/'> June 2008 </option>
+	<option value='http://www.curious-creature.org/2008/05/'> May 2008 </option>
+	<option value='http://www.curious-creature.org/2008/04/'> April 2008 </option>
+	<option value='http://www.curious-creature.org/2008/03/'> March 2008 </option>
+	<option value='http://www.curious-creature.org/2008/02/'> February 2008 </option>
+	<option value='http://www.curious-creature.org/2007/12/'> December 2007 </option>
+	<option value='http://www.curious-creature.org/2007/11/'> November 2007 </option>
+	<option value='http://www.curious-creature.org/2007/10/'> October 2007 </option>
+	<option value='http://www.curious-creature.org/2007/09/'> September 2007 </option>
+	<option value='http://www.curious-creature.org/2007/08/'> August 2007 </option>
+	<option value='http://www.curious-creature.org/2007/07/'> July 2007 </option>
+	<option value='http://www.curious-creature.org/2007/06/'> June 2007 </option>
+	<option value='http://www.curious-creature.org/2007/05/'> May 2007 </option>
+	<option value='http://www.curious-creature.org/2007/04/'> April 2007 </option>
+	<option value='http://www.curious-creature.org/2007/03/'> March 2007 </option>
+	<option value='http://www.curious-creature.org/2007/02/'> February 2007 </option>
+	<option value='http://www.curious-creature.org/2007/01/'> January 2007 </option>
+	<option value='http://www.curious-creature.org/2006/12/'> December 2006 </option>
+	<option value='http://www.curious-creature.org/2006/11/'> November 2006 </option>
+	<option value='http://www.curious-creature.org/2006/10/'> October 2006 </option>
+	<option value='http://www.curious-creature.org/2006/09/'> September 2006 </option>
+	<option value='http://www.curious-creature.org/2006/08/'> August 2006 </option>
+	<option value='http://www.curious-creature.org/2006/07/'> July 2006 </option>
+	<option value='http://www.curious-creature.org/2006/06/'> June 2006 </option>
+	<option value='http://www.curious-creature.org/2006/05/'> May 2006 </option>
+	<option value='http://www.curious-creature.org/2006/04/'> April 2006 </option>
+	<option value='http://www.curious-creature.org/2006/03/'> March 2006 </option>
+	<option value='http://www.curious-creature.org/2006/02/'> February 2006 </option>
+	<option value='http://www.curious-creature.org/2006/01/'> January 2006 </option>
+	<option value='http://www.curious-creature.org/2005/12/'> December 2005 </option>
+	<option value='http://www.curious-creature.org/2005/11/'> November 2005 </option>
+	<option value='http://www.curious-creature.org/2005/10/'> October 2005 </option>
+	<option value='http://www.curious-creature.org/2005/09/'> September 2005 </option>
+	<option value='http://www.curious-creature.org/2005/08/'> August 2005 </option>
+	<option value='http://www.curious-creature.org/2005/07/'> July 2005 </option>
+	<option value='http://www.curious-creature.org/2005/06/'> June 2005 </option>
+	<option value='http://www.curious-creature.org/2005/05/'> May 2005 </option>
+	<option value='http://www.curious-creature.org/2005/04/'> April 2005 </option>
+	<option value='http://www.curious-creature.org/2005/03/'> March 2005 </option>
+	<option value='http://www.curious-creature.org/2005/02/'> February 2005 </option>
+ </select>
+</div></div>
+<div class="column span-10 append-1 small">
+<h3 class="sub">Copyright</h3>
+<p class="nomargin">Some photographs at curious-creature.org are licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/deed.en">Creative Commons Attribution-Noncommercial-Share Alike 2.0</a>.
+All other photographs and all text at curious-creature.org are copyright Romain Guy and are presented for web browser viewing only.</p></div>
+<div class="column span-5 small last">
+<div class="credits">
+<h3 class="sub">Credits</h3>
+<p class="quiet">
+                <!-- Archive by
+<a href="http://photoshelter.com"><img src="http://www.curious-creature.org/blog/wp-content/themes/romainguy/images/logo-ps.png" alt="PhotoShelter" title="Archive by PhotoShelter"></a>-->
+		All content &copy; 2011 by Romain Guy                <a href="http://www.curious-creature.org/about/">Read more about me</a>
+</p>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<!--stats_footer_test--><script src="http://stats.wordpress.com/e-201128.js" type="text/javascript"></script>
+<script type="text/javascript">
+st_go({blog:'1068184',v:'ext',post:'1086'});
+var load_cmc = function(){linktracker_init(1068184,1086,2);};
+if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+else load_cmc();
+</script>
+<!-- EndFooter -->
+</body>
+</html>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">The Gospels in Unison</string>
+
+	<string name="database_name">injil-tuhan-yesus.db</string>
+	<string name="open_helper_classname">net.terang.dunia.gospels.in.unison.db.DatabaseHelper
+	</string>
+	<string name="titlebar_text">Injil Tuhan Yesus</string>
+
+</resources>

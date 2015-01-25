@@ -1,0 +1,836 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta name="verify-v1" content="xNFm+kCCO0/orV1QT67QqDV1uRYFNnb80MbmGhGGASo=" />
+<LINK REL="SHORTCUT ICON" HREF="http://www.jmstudio.org/wp-content/plugins/admin-favicon/favicon.ico">
+<meta name="description" content="Joao Machete Studio - 3D artist, VFX Artist , Computer Science Engineering." />
+<meta name="keywords" content="Joao Machete, Freelancer, 3D, 2D, VFX, Visual Effects, matte painting, Post-production, Particles, Maya, Houdini, Digital Fusion, Shake, Zbrush, Photoshop, Nuke, Setubal, Portugal, Computer Sciense, Informatica, Engenharia Informatica, Joao, Machete."/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"  />
+<title>Android Swipe/Fling with Scrollview - João Machete</title>
+<meta name="generator" content="WordPress 3.2.1" />
+<meta name="robots" content="follow, all" />
+<link rel="stylesheet" href="http://www.jmstudio.org/wp-content/themes/pixeled/style.css" type="text/css" media="screen" />
+<link rel="alternate" type="application/rss+xml" title="João Machete RSS Feed" href="http://www.jmstudio.org/feed" />
+<link rel="pingback" href="http://www.jmstudio.org/xmlrpc.php" />
+<link rel="alternate" type="application/rss+xml" title="João Machete &raquo; Android Swipe/Fling with Scrollview Comments Feed" href="http://www.jmstudio.org/archives/391/feed" />
+<link rel='stylesheet' id='NextGEN-css'  href='http://www.jmstudio.org/wp-content/plugins/nextgen-gallery/css/nggallery.css?ver=1.0.0' type='text/css' media='screen' />
+<link rel='stylesheet' id='shutter-css'  href='http://www.jmstudio.org/wp-content/plugins/nextgen-gallery/shutter/shutter-reloaded.css?ver=1.3.2' type='text/css' media='screen' />
+<link rel='stylesheet' id='codecolorer-css'  href='http://www.jmstudio.org/wp-content/plugins/codecolorer/codecolorer.css?ver=0.9.9' type='text/css' media='screen' />
+<script type='text/javascript' src='http://www.jmstudio.org/wp-includes/js/l10n.js?ver=20101110'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var shutterSettings = {
+	msgLoading: "L O A D I N G",
+	msgClose: "Click to Close",
+	imageCount: "1"
+};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.jmstudio.org/wp-content/plugins/nextgen-gallery/shutter/shutter-reloaded.js?ver=1.3.2'></script>
+<script type='text/javascript' src='http://www.jmstudio.org/wp-includes/js/swfobject.js?ver=2.2'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.jmstudio.org/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.jmstudio.org/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='João Machete' href='http://www.jmstudio.org' />
+<link rel='start' title='New Year and new fresh site' href='http://www.jmstudio.org/archives/1' />
+<link rel='prev' title='Pie Graph with QT and Opengl' href='http://www.jmstudio.org/archives/376' />
+<meta name="generator" content="WordPress 3.2.1" />
+<link rel='canonical' href='http://www.jmstudio.org/archives/391' />
+<link rel='shortlink' href='http://www.jmstudio.org/?p=391' />
+<link href="http://www.jmstudio.org/wp-content/plugins/picasa-images-express/picasa-image-express.css" rel="stylesheet" type="text/css" />
+<!--[if lt ie 8]>
+<link href="http://www.jmstudio.org/wp-content/plugins/picasa-images-express/picasa-image-express-IE.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<link rel="stylesheet" href="http://www.jmstudio.org/wp-content/plugins/slimbox-plugin/slimbox/slimbox.css" type="text/css" media="screen" />
+<script type="text/javascript" src="http://www.jmstudio.org/wp-content/plugins/slimbox-plugin/slimbox/mootools.x.js"></script>
+<script type="text/javascript" src="http://www.jmstudio.org/wp-content/plugins/slimbox-plugin/slimbox/slimbox.js"></script>
+<link rel="stylesheet" type="text/css" href="http://www.jmstudio.org/wp-content/plugins/wp-recaptcha/recaptcha.css" /><link id='MediaRSS' rel='alternate' type='application/rss+xml' title='NextGEN Gallery RSS Feed' href='http://www.jmstudio.org/wp-content/plugins/nextgen-gallery/xml/media-rss.php' />
+
+<meta name='NextGEN' content='1.8.2' />
+<script type='text/javascript' src='http://www.jmstudio.org/wp-includes/js/tw-sack.js?ver=1.6.1'></script>
+
+<!-- this product is released under General Public License. Please see the attached file for details. You can also find details about the license at http://www.opensource.org/licenses/gpl-license.php -->
+
+
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+sfHover = function() {
+	if (!document.getElementsByTagName) return false;
+	var sfEls = document.getElementById("nav").getElementsByTagName("li");
+
+	for (var i=0; i<sfEls.length; i++) {
+		sfEls[i].onmouseover=function() {
+			this.className+=" sfhover";
+		}
+		sfEls[i].onmouseout=function() {
+			this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
+		}
+	}
+
+}
+if (window.attachEvent) window.attachEvent("onload", sfHover);
+//--><!]]></script>
+
+
+<!--[if lt IE 8]>
+<link href="http://www.jmstudio.org/wp-content/themes/pixeled/ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+<!--[if lt IE 7]>
+<link href="http://www.jmstudio.org/wp-content/themes/pixeled/ie6.css" rel="stylesheet" type="text/css" />
+<script src="http://ie7-js.googlecode.com/svn/version/2.0(beta3)/IE7.js" type="text/javascript"></script>
+<![endif]-->
+
+
+
+</head>
+
+<body>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-168626-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<div id="wrapper">
+
+<div id="header">
+
+<div id="logo">
+
+</div>
+
+
+<div id="topright">
+<ul>
+
+</ul>
+</div>
+
+</div> <!-- Closes header -->
+
+
+
+<div id="catnav">
+<div id="toprss" align="right"><a href="feed:http://www.jmstudio.org/feed"><img src="http://www.jmstudio.org/wp-content/themes/pixeled/images/black-rss-trans.gif" alt="João Machete" width="26" height="26" /></a></div> <!-- Closes toprss -->
+<ul id="nav">
+  <li><a href="http://www.jmstudio.org">Home</a></li>
+  <!--< ?php wp_list_categories('sort_column=name&title_li=&depth=2'); ?>-->
+  <li><a href="http://www.jmstudio.org/archives/category/rnd">Research and Development</a></li>
+  <li class="page_item page-item-25"><a href="http://www.jmstudio.org/gallery" title="Gallery">Gallery</a></li>
+<li class="page_item page-item-297"><a href="http://www.jmstudio.org/demoreel" title="Demoreel">Demoreel</a></li>
+<li class="page_item page-item-11"><a href="http://www.jmstudio.org/resume" title="Resume">Resume</a></li>
+<li class="page_item page-item-23"><a href="http://www.jmstudio.org/contact" title="Contact">Contact</a></li>
+</ul>
+</div> <!-- Closes catnav -->
+
+<div class="cleared"></div>
+
+<div id="main">
+
+<div id="contentwrapper">
+
+
+<div class="topPost">
+  <h2 class="topTitle"><a href="http://www.jmstudio.org/archives/391">Android Swipe/Fling with Scrollview</a></h2>
+  <p class="topMeta">by <a href="http://www.jmstudio.org/archives/author/admin" title="Posts by admin" rel="author">admin</a> on Mar.24, 2011, under <a href="http://www.jmstudio.org/archives/category/rnd" title="View all posts in Research and Development" rel="category tag">Research and Development</a></p>
+  <div class="topContent"><p><a class="shutterset_" href='http://www.jmstudio.org/wp-content/gallery/imagensPosts/flingandscroll.png' title=''><img src='http://www.jmstudio.org/wp-content/gallery/imagensPosts/thumbs/thumbs_flingandscroll.png' alt='flingandscroll' class='ngg-singlepic ngg-center' /></a></p>
+<p>Without any more delays, here is the implementation of Swipe and ScrollView working together:</p>
+<p>Here is the Layout:</p>
+<p><div class="codecolorer-container java vibrant" style="overflow:auto;white-space:nowrap;width:585px;height:400px;"><div class="java codecolorer"><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+<span class="sy0">&lt;?</span>xml version<span class="sy0">=</span><span class="st0">&quot;1.0&quot;</span> encoding<span class="sy0">=</span><span class="st0">&quot;utf-8&quot;</span><span class="sy0">?&gt;&lt;</span>br <span class="sy0">/&gt;</span><br />
+<span class="sy0">&lt;</span>LinearLayout xmlns<span class="sy0">:</span>android<span class="sy0">=</span><span class="st0">&quot;http://schemas.android.com/apk/res/android&quot;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; android<span class="sy0">:</span>orientation<span class="sy0">=</span><span class="st0">&quot;vertical&quot;</span> android<span class="sy0">:</span>layout_width<span class="sy0">=</span><span class="st0">&quot;fill_parent&quot;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; android<span class="sy0">:</span>layout_height<span class="sy0">=</span><span class="st0">&quot;fill_parent&quot;</span><span class="sy0">&gt;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; <span class="sy0">&lt;</span>TextView android<span class="sy0">:</span>layout_width<span class="sy0">=</span><span class="st0">&quot;fill_parent&quot;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; android<span class="sy0">:</span>layout_height<span class="sy0">=</span><span class="st0">&quot;wrap_content&quot;</span> android<span class="sy0">:</span>text<span class="sy0">=</span><span class="st0">&quot;@string/hello&quot;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; android<span class="sy0">:</span>gravity<span class="sy0">=</span><span class="st0">&quot;center&quot;</span> <span class="sy0">/&gt;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> <span class="sy0">&lt;</span>com.<span class="me1">machete</span>.<span class="me1">FlingAndScrollViewer</span>.<span class="me1">FlingAndScrollViewer</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; android<span class="sy0">:</span>layout_width<span class="sy0">=</span><span class="st0">&quot;fill_parent&quot;</span> android<span class="sy0">:</span>layout_height<span class="sy0">=</span><span class="st0">&quot;fill_parent&quot;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; android<span class="sy0">:</span>id<span class="sy0">=</span><span class="st0">&quot;@+id/flingScrollViewer&quot;</span><span class="sy0">&gt;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;</span>ScrollView android<span class="sy0">:</span>id<span class="sy0">=</span><span class="st0">&quot;@+id/scrollView1&quot;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; android<span class="sy0">:</span>background<span class="sy0">=</span><span class="st0">&quot;#FF8000&quot;</span> android<span class="sy0">:</span>layout_height<span class="sy0">=</span><span class="st0">&quot;fill_parent&quot;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; android<span class="sy0">:</span>layout_width<span class="sy0">=</span><span class="st0">&quot;fill_parent&quot;</span><span class="sy0">&gt;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;</span>LinearLayout android<span class="sy0">:</span>id<span class="sy0">=</span><span class="st0">&quot;@+id/linearLayout1&quot;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; android<span class="sy0">:</span>layout_height<span class="sy0">=</span><span class="st0">&quot;fill_parent&quot;</span> android<span class="sy0">:</span>layout_width<span class="sy0">=</span><span class="st0">&quot;fill_parent&quot;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; android<span class="sy0">:</span>orientation<span class="sy0">=</span><span class="st0">&quot;vertical&quot;</span><span class="sy0">&gt;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;</span>TextView android<span class="sy0">:</span>id<span class="sy0">=</span><span class="st0">&quot;@+id/TextView01&quot;</span> android<span class="sy0">:</span>text<span class="sy0">=</span><span class="st0">&quot;1&quot;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; android<span class="sy0">:</span>textColor<span class="sy0">=</span><span class="st0">&quot;#ffffff&quot;</span> android<span class="sy0">:</span>layout_width<span class="sy0">=</span><span class="st0">&quot;fill_parent&quot;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; android<span class="sy0">:</span>layout_weight<span class="sy0">=</span><span class="st0">&quot;1&quot;</span> android<span class="sy0">:</span>gravity<span class="sy0">=</span><span class="st0">&quot;center&quot;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; android<span class="sy0">:</span>layout_height<span class="sy0">=</span><span class="st0">&quot;wrap_content&quot;</span> android<span class="sy0">:</span>textSize<span class="sy0">=</span><span class="st0">&quot;500dip&quot;</span><span class="sy0">&gt;&lt;/</span>TextView<span class="sy0">&gt;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;/</span>LinearLayout<span class="sy0">&gt;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;/</span>ScrollView<span class="sy0">&gt;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; <span class="sy0">&lt;</span>ScrollView android<span class="sy0">:</span>id<span class="sy0">=</span><span class="st0">&quot;@+id/scrollView2&quot;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; android<span class="sy0">:</span>background<span class="sy0">=</span><span class="st0">&quot;#0080FF&quot;</span> android<span class="sy0">:</span>layout_height<span class="sy0">=</span><span class="st0">&quot;fill_parent&quot;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; android<span class="sy0">:</span>layout_width<span class="sy0">=</span><span class="st0">&quot;fill_parent&quot;</span><span class="sy0">&gt;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;</span>LinearLayout android<span class="sy0">:</span>id<span class="sy0">=</span><span class="st0">&quot;@+id/linearLayout2&quot;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; android<span class="sy0">:</span>layout_height<span class="sy0">=</span><span class="st0">&quot;fill_parent&quot;</span> android<span class="sy0">:</span>layout_width<span class="sy0">=</span><span class="st0">&quot;fill_parent&quot;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; android<span class="sy0">:</span>orientation<span class="sy0">=</span><span class="st0">&quot;vertical&quot;</span><span class="sy0">&gt;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;</span>TextView android<span class="sy0">:</span>id<span class="sy0">=</span><span class="st0">&quot;@+id/TextView02&quot;</span> android<span class="sy0">:</span>text<span class="sy0">=</span><span class="st0">&quot;2&quot;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; android<span class="sy0">:</span>textColor<span class="sy0">=</span><span class="st0">&quot;#ffffff&quot;</span> android<span class="sy0">:</span>layout_width<span class="sy0">=</span><span class="st0">&quot;fill_parent&quot;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; android<span class="sy0">:</span>layout_weight<span class="sy0">=</span><span class="st0">&quot;1&quot;</span> android<span class="sy0">:</span>gravity<span class="sy0">=</span><span class="st0">&quot;center&quot;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; android<span class="sy0">:</span>layout_height<span class="sy0">=</span><span class="st0">&quot;wrap_content&quot;</span> android<span class="sy0">:</span>textSize<span class="sy0">=</span><span class="st0">&quot;500dip&quot;</span><span class="sy0">&gt;&lt;/</span>TextView<span class="sy0">&gt;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;/</span>LinearLayout<span class="sy0">&gt;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;/</span>ScrollView<span class="sy0">&gt;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; <span class="sy0">&lt;</span>ScrollView android<span class="sy0">:</span>id<span class="sy0">=</span><span class="st0">&quot;@+id/scrollView3&quot;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; android<span class="sy0">:</span>background<span class="sy0">=</span><span class="st0">&quot;#00FF00&quot;</span> android<span class="sy0">:</span>layout_height<span class="sy0">=</span><span class="st0">&quot;fill_parent&quot;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; android<span class="sy0">:</span>layout_width<span class="sy0">=</span><span class="st0">&quot;fill_parent&quot;</span><span class="sy0">&gt;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;</span>LinearLayout android<span class="sy0">:</span>id<span class="sy0">=</span><span class="st0">&quot;@+id/linearLayout3&quot;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; android<span class="sy0">:</span>layout_height<span class="sy0">=</span><span class="st0">&quot;fill_parent&quot;</span> android<span class="sy0">:</span>layout_width<span class="sy0">=</span><span class="st0">&quot;fill_parent&quot;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; android<span class="sy0">:</span>orientation<span class="sy0">=</span><span class="st0">&quot;vertical&quot;</span><span class="sy0">&gt;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;</span>TextView android<span class="sy0">:</span>id<span class="sy0">=</span><span class="st0">&quot;@+id/TextView03&quot;</span> android<span class="sy0">:</span>text<span class="sy0">=</span><span class="st0">&quot;3&quot;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; android<span class="sy0">:</span>textColor<span class="sy0">=</span><span class="st0">&quot;#ffffff&quot;</span> android<span class="sy0">:</span>layout_width<span class="sy0">=</span><span class="st0">&quot;fill_parent&quot;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; android<span class="sy0">:</span>layout_weight<span class="sy0">=</span><span class="st0">&quot;1&quot;</span> android<span class="sy0">:</span>gravity<span class="sy0">=</span><span class="st0">&quot;center&quot;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; android<span class="sy0">:</span>layout_height<span class="sy0">=</span><span class="st0">&quot;wrap_content&quot;</span> android<span class="sy0">:</span>textSize<span class="sy0">=</span><span class="st0">&quot;500dip&quot;</span><span class="sy0">&gt;&lt;/</span>TextView<span class="sy0">&gt;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;/</span>LinearLayout<span class="sy0">&gt;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;/</span>ScrollView<span class="sy0">&gt;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> <span class="sy0">&lt;/</span>com.<span class="me1">machete</span>.<span class="me1">FlingAndScrollViewer</span>.<span class="me1">FlingAndScrollViewer</span><span class="sy0">&gt;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;&lt;/</span>LinearLayout<span class="sy0">&gt;&lt;</span>br <span class="sy0">/&gt;</span></div></div>
+</p>
+<p>Here is the Main Activity:</p>
+<p><div class="codecolorer-container java vibrant" style="overflow:auto;white-space:nowrap;width:585px;"><div class="java codecolorer"><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+<span class="kw1">public</span> <span class="kw1">class</span> Main &nbsp;<span class="kw1">extends</span> Activity <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; @Override<span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; <span class="kw1">public</span> <span class="kw4">void</span> onCreate<span class="br0">&#40;</span>Bundle savedInstanceState<span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">super</span>.<span class="me1">onCreate</span><span class="br0">&#40;</span>savedInstanceState<span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; setContentView<span class="br0">&#40;</span>R.<span class="me1">layout</span>.<span class="me1">main</span><span class="br0">&#41;</span><span class="sy0">;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; &nbsp; &nbsp;FlingAndScrollViewer flingAndScrollViewer <span class="sy0">=&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#40;</span>FlingAndScrollViewer<span class="br0">&#41;</span> findViewById<span class="br0">&#40;</span>R.<span class="me1">id</span>.<span class="me1">flingScrollViewer</span><span class="br0">&#41;</span><span class="sy0">;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; &nbsp; &nbsp;flingAndScrollViewer.<span class="me1">setInitialPosition</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;</span> <span class="co1">//set the initial position&lt;br /&gt;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+<span class="br0">&#125;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span></div></div>
+<p>
+As you can see with our <strong><em>setInitialPosition</em></strong> we are able to define the startup.</p>
+<p>Here is our custom View(the trick):</p>
+<div class="codecolorer-container java vibrant" style="overflow:auto;white-space:nowrap;width:585px;height:400px;"><div class="java codecolorer"><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+<span class="kw1">public</span> <span class="kw1">class</span> FlingAndScrollViewer <span class="kw1">extends</span> ViewGroup <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; <span class="kw1">private</span> Scroller mScroller<span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; <span class="kw1">private</span> VelocityTracker mVelocityTracker<span class="sy0">;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> <span class="kw1">private</span> <span class="kw4">int</span> mScrollX <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; <span class="kw1">private</span> <span class="kw4">int</span> mCurrentScreen <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> <span class="kw1">private</span> <span class="kw4">float</span> mLastMotionX<span class="sy0">;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> <span class="kw1">private</span> <span class="kw1">static</span> <span class="kw1">final</span> <span class="kw3">String</span> LOG_TAG <span class="sy0">=</span> <span class="st0">&quot;FlingAndScrollViewer&quot;</span><span class="sy0">;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> <span class="kw1">private</span> <span class="kw1">static</span> <span class="kw1">final</span> <span class="kw4">int</span> SNAP_VELOCITY <span class="sy0">=</span> <span class="nu0">1000</span><span class="sy0">;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> <span class="kw1">private</span> <span class="kw1">final</span> <span class="kw1">static</span> <span class="kw4">int</span> TOUCH_STATE_REST <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; <span class="kw1">private</span> <span class="kw1">final</span> <span class="kw1">static</span> <span class="kw4">int</span> TOUCH_STATE_SCROLLING <span class="sy0">=</span> <span class="nu0">1</span><span class="sy0">;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> <span class="kw1">private</span> <span class="kw4">int</span> mTouchState <span class="sy0">=</span> TOUCH_STATE_REST<span class="sy0">;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> <span class="kw1">private</span> <span class="kw4">int</span> mTouchSlop <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> <span class="kw1">public</span> FlingAndScrollViewer<span class="br0">&#40;</span><span class="kw3">Context</span> context<span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">super</span><span class="br0">&#40;</span>context<span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; mScroller <span class="sy0">=</span> <span class="kw1">new</span> Scroller<span class="br0">&#40;</span>context<span class="br0">&#41;</span><span class="sy0">;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; mTouchSlop <span class="sy0">=</span> ViewConfiguration.<span class="me1">get</span><span class="br0">&#40;</span>getContext<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>.<span class="me1">getScaledTouchSlop</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">setLayoutParams</span><span class="br0">&#40;</span><span class="kw1">new</span> ViewGroup.<span class="me1">LayoutParams</span><span class="br0">&#40;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ViewGroup.<span class="me1">LayoutParams</span>.<span class="me1">WRAP_CONTENT</span>,<span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ViewGroup.<span class="me1">LayoutParams</span>.<span class="me1">FILL_PARENT</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> <span class="kw1">public</span> FlingAndScrollViewer<span class="br0">&#40;</span><span class="kw3">Context</span> context, <span class="kw3">AttributeSet</span> attrs<span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">super</span><span class="br0">&#40;</span>context, attrs<span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; TypedArray a <span class="sy0">=</span> getContext<span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="me1">obtainStyledAttributes</span><span class="br0">&#40;</span>attrs,<span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; R.<span class="me1">styleable</span>.<span class="me1">FlingAndScrollViewer</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; mCurrentScreen <span class="sy0">=</span> a.<span class="me1">getInteger</span><span class="br0">&#40;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; R.<span class="me1">styleable</span>.<span class="me1">FlingAndScrollViewer_default_screen</span>, <span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; mScroller <span class="sy0">=</span> <span class="kw1">new</span> Scroller<span class="br0">&#40;</span>context<span class="br0">&#41;</span><span class="sy0">;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; mTouchSlop <span class="sy0">=</span> ViewConfiguration.<span class="me1">get</span><span class="br0">&#40;</span>getContext<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span>.<span class="me1">getScaledTouchSlop</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; <span class="kw1">this</span>.<span class="me1">setLayoutParams</span><span class="br0">&#40;</span><span class="kw1">new</span> ViewGroup.<span class="me1">LayoutParams</span><span class="br0">&#40;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ViewGroup.<span class="me1">LayoutParams</span>.<span class="me1">WRAP_CONTENT</span>,<span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ViewGroup.<span class="me1">LayoutParams</span>.<span class="me1">FILL_PARENT</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> <span class="br0">&#125;</span><span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> <span class="kw1">public</span> <span class="kw4">void</span> setInitialPosition<span class="br0">&#40;</span><span class="kw4">int</span> initialPosition<span class="br0">&#41;</span><span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; mCurrentScreen <span class="sy0">=</span> initialPosition<span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> @Override<span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; <span class="kw1">public</span> <span class="kw4">boolean</span> onInterceptTouchEvent<span class="br0">&#40;</span>MotionEvent ev<span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="coMULTI">/*&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* This method JUST determines whether we want to intercept the motion.&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* If we return true, onTouchEvent will be called and we do the actual&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* scrolling there.&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/</span><span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; <span class="coMULTI">/*&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* Shortcut the most recurring case: the user is in the dragging state&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* and he is moving his finger. We want to intercept this motion.&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">final</span> <span class="kw4">int</span> action <span class="sy0">=</span> ev.<span class="me1">getAction</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span><span class="br0">&#40;</span>action <span class="sy0">==</span> MotionEvent.<span class="me1">ACTION_MOVE</span><span class="br0">&#41;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&amp;</span>#038<span class="sy0">;&amp;</span> <span class="br0">&#40;</span>mTouchState <span class="sy0">!=</span> TOUCH_STATE_REST<span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">return</span> <span class="kw2">true</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; <span class="kw1">final</span> <span class="kw4">float</span> x <span class="sy0">=</span> ev.<span class="me1">getX</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; <span class="kw1">switch</span> <span class="br0">&#40;</span>action<span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">case</span> MotionEvent.<span class="me1">ACTION_MOVE</span><span class="sy0">:&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="coMULTI">/*&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* mIsBeingDragged == false, otherwise the shortcut would have&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* caught it. Check whether the user has moved far enough from his&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* original down touch.&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/</span><span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; &nbsp; &nbsp; <span class="coMULTI">/*&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* Locally do absolute value. mLastMotionX is set to the y value of&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* the down event.&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">final</span> <span class="kw4">int</span> xDiff <span class="sy0">=</span> <span class="br0">&#40;</span><span class="kw4">int</span><span class="br0">&#41;</span> <span class="kw3">Math</span>.<span class="me1">abs</span><span class="br0">&#40;</span>x <span class="sy0">-</span> mLastMotionX<span class="br0">&#41;</span><span class="sy0">;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw4">boolean</span> xMoved <span class="sy0">=</span> xDiff <span class="sy0">&gt;</span> mTouchSlop<span class="sy0">;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>xMoved<span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// Scroll if the user moved far enough along the X axis&lt;br /&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mTouchState <span class="sy0">=</span> TOUCH_STATE_SCROLLING<span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">break</span><span class="sy0">;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; <span class="kw1">case</span> MotionEvent.<span class="me1">ACTION_DOWN</span><span class="sy0">:&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// Remember location of down touch&lt;br /&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mLastMotionX <span class="sy0">=</span> x<span class="sy0">;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; &nbsp; &nbsp; <span class="coMULTI">/*&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* If being flinged and user touches the screen, initiate drag;&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* otherwise don't. mScroller.isFinished should be false when being&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* flinged.&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mTouchState <span class="sy0">=</span> mScroller.<span class="me1">isFinished</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">?</span> TOUCH_STATE_REST<span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">:</span> TOUCH_STATE_SCROLLING<span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">break</span><span class="sy0">;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; <span class="kw1">case</span> MotionEvent.<span class="me1">ACTION_CANCEL</span><span class="sy0">:&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">case</span> MotionEvent.<span class="me1">ACTION_UP</span><span class="sy0">:&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// Release the drag&lt;br /&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mTouchState <span class="sy0">=</span> TOUCH_STATE_REST<span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">break</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; <span class="coMULTI">/*&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* The only time we want to intercept motion events is if we are in the&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* drag mode.&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">return</span> mTouchState <span class="sy0">!=</span> TOUCH_STATE_REST<span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> @Override<span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; <span class="kw1">public</span> <span class="kw4">boolean</span> onTouchEvent<span class="br0">&#40;</span>MotionEvent event<span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>mVelocityTracker <span class="sy0">==</span> <span class="kw2">null</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mVelocityTracker <span class="sy0">=</span> VelocityTracker.<span class="me1">obtain</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; mVelocityTracker.<span class="me1">addMovement</span><span class="br0">&#40;</span>event<span class="br0">&#41;</span><span class="sy0">;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; <span class="kw1">final</span> <span class="kw4">int</span> action <span class="sy0">=</span> event.<span class="me1">getAction</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">final</span> <span class="kw4">float</span> x <span class="sy0">=</span> event.<span class="me1">getX</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; <span class="kw1">switch</span> <span class="br0">&#40;</span>action<span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">case</span> MotionEvent.<span class="me1">ACTION_DOWN</span><span class="sy0">:&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Log.<span class="me1">i</span><span class="br0">&#40;</span>LOG_TAG, <span class="st0">&quot;event : down&quot;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="coMULTI">/*&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* If being flinged and user touches, stop the fling. isFinished&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* will be false if being flinged.&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span><span class="sy0">!</span>mScroller.<span class="me1">isFinished</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mScroller.<span class="me1">abortAnimation</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// Remember where the motion event started&lt;br /&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mLastMotionX <span class="sy0">=</span> x<span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">break</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">case</span> MotionEvent.<span class="me1">ACTION_MOVE</span><span class="sy0">:&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// Log.i(LOG_TAG,&quot;event : move&quot;);&lt;br /&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// if (mTouchState == TOUCH_STATE_SCROLLING) {&lt;br /&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// Scroll to follow the motion event&lt;br /&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">final</span> <span class="kw4">int</span> deltaX <span class="sy0">=</span> <span class="br0">&#40;</span><span class="kw4">int</span><span class="br0">&#41;</span> <span class="br0">&#40;</span>mLastMotionX <span class="sy0">-</span> x<span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mLastMotionX <span class="sy0">=</span> x<span class="sy0">;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// Log.i(LOG_TAG, &quot;event : move, deltaX &quot; + deltaX + &quot;, mScrollX &quot; +&lt;br /&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// mScrollX);&lt;/p&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>deltaX <span class="sy0">&lt;</span> <span class="nu0">0</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>mScrollX <span class="sy0">&gt;</span> <span class="nu0">0</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scrollBy<span class="br0">&#40;</span><span class="kw3">Math</span>.<span class="me1">max</span><span class="br0">&#40;</span><span class="sy0">-</span>mScrollX, deltaX<span class="br0">&#41;</span>, <span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>deltaX <span class="sy0">&gt;</span> <span class="nu0">0</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">final</span> <span class="kw4">int</span> availableToScroll <span class="sy0">=</span> getChildAt<span class="br0">&#40;</span>getChildCount<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">-</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; .<span class="me1">getRight</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">-</span> mScrollX <span class="sy0">-</span> getWidth<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>availableToScroll <span class="sy0">&gt;</span> <span class="nu0">0</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scrollBy<span class="br0">&#40;</span><span class="kw3">Math</span>.<span class="me1">min</span><span class="br0">&#40;</span>availableToScroll, deltaX<span class="br0">&#41;</span>, <span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// }&lt;br /&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">break</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">case</span> MotionEvent.<span class="me1">ACTION_UP</span><span class="sy0">:&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Log.<span class="me1">i</span><span class="br0">&#40;</span>LOG_TAG, <span class="st0">&quot;event : up&quot;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// if (mTouchState == TOUCH_STATE_SCROLLING) {&lt;br /&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">final</span> VelocityTracker velocityTracker <span class="sy0">=</span> mVelocityTracker<span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; velocityTracker.<span class="me1">computeCurrentVelocity</span><span class="br0">&#40;</span><span class="nu0">1000</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw4">int</span> velocityX <span class="sy0">=</span> <span class="br0">&#40;</span><span class="kw4">int</span><span class="br0">&#41;</span> velocityTracker.<span class="me1">getXVelocity</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>velocityX <span class="sy0">&gt;</span> SNAP_VELOCITY <span class="sy0">&amp;</span>#038<span class="sy0">;&amp;</span> mCurrentScreen <span class="sy0">&gt;</span> <span class="nu0">0</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// Fling hard enough to move left&lt;br /&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; snapToScreen<span class="br0">&#40;</span>mCurrentScreen <span class="sy0">-</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">&#40;</span>velocityX <span class="sy0">&lt;</span> <span class="sy0">-</span>SNAP_VELOCITY<span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&amp;</span>#038<span class="sy0">;&amp;</span> mCurrentScreen <span class="sy0">&lt;</span> getChildCount<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">-</span> <span class="nu0">1</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// Fling hard enough to move right&lt;br /&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; snapToScreen<span class="br0">&#40;</span>mCurrentScreen <span class="sy0">+</span> <span class="nu0">1</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span> <span class="kw1">else</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; snapToDestination<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>mVelocityTracker <span class="sy0">!=</span> <span class="kw2">null</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mVelocityTracker.<span class="me1">recycle</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mVelocityTracker <span class="sy0">=</span> <span class="kw2">null</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// }&lt;br /&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mTouchState <span class="sy0">=</span> TOUCH_STATE_REST<span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">break</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">case</span> MotionEvent.<span class="me1">ACTION_CANCEL</span><span class="sy0">:&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Log.<span class="me1">i</span><span class="br0">&#40;</span>LOG_TAG, <span class="st0">&quot;event : cancel&quot;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mTouchState <span class="sy0">=</span> TOUCH_STATE_REST<span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; mScrollX <span class="sy0">=</span> <span class="kw1">this</span>.<span class="me1">getScrollX</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; <span class="kw1">return</span> <span class="kw2">true</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> <span class="kw1">private</span> <span class="kw4">void</span> snapToDestination<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">final</span> <span class="kw4">int</span> screenWidth <span class="sy0">=</span> getWidth<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">final</span> <span class="kw4">int</span> whichScreen <span class="sy0">=</span> <span class="br0">&#40;</span>mScrollX <span class="sy0">+</span> <span class="br0">&#40;</span>screenWidth <span class="sy0">/</span> <span class="nu0">2</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="sy0">/</span> screenWidth<span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; Log.<span class="me1">i</span><span class="br0">&#40;</span>LOG_TAG, <span class="st0">&quot;from des&quot;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; snapToScreen<span class="br0">&#40;</span>whichScreen<span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> <span class="kw1">public</span> <span class="kw4">void</span> snapToScreen<span class="br0">&#40;</span><span class="kw4">int</span> whichScreen<span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; Log.<span class="me1">i</span><span class="br0">&#40;</span>LOG_TAG, <span class="st0">&quot;snap To Screen &quot;</span> <span class="sy0">+</span> whichScreen<span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; mCurrentScreen <span class="sy0">=</span> whichScreen<span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">final</span> <span class="kw4">int</span> newX <span class="sy0">=</span> whichScreen <span class="sy0">*</span> getWidth<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">final</span> <span class="kw4">int</span> delta <span class="sy0">=</span> newX <span class="sy0">-</span> mScrollX<span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; mScroller.<span class="me1">startScroll</span><span class="br0">&#40;</span>mScrollX, <span class="nu0">0</span>, delta, <span class="nu0">0</span>, <span class="kw3">Math</span>.<span class="me1">abs</span><span class="br0">&#40;</span>delta<span class="br0">&#41;</span> <span class="sy0">*</span> <span class="nu0">2</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; invalidate<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> <span class="kw1">public</span> <span class="kw4">void</span> setToScreen<span class="br0">&#40;</span><span class="kw4">int</span> whichScreen<span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; Log.<span class="me1">i</span><span class="br0">&#40;</span>LOG_TAG, <span class="st0">&quot;set To Screen &quot;</span> <span class="sy0">+</span> whichScreen<span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; mCurrentScreen <span class="sy0">=</span> whichScreen<span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">final</span> <span class="kw4">int</span> newX <span class="sy0">=</span> whichScreen <span class="sy0">*</span> getWidth<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; mScroller.<span class="me1">startScroll</span><span class="br0">&#40;</span>newX, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">10</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; invalidate<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> @Override<span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; <span class="kw1">protected</span> <span class="kw4">void</span> onLayout<span class="br0">&#40;</span><span class="kw4">boolean</span> changed, <span class="kw4">int</span> l, <span class="kw4">int</span> t, <span class="kw4">int</span> r, <span class="kw4">int</span> b<span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw4">int</span> childLeft <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; <span class="kw1">final</span> <span class="kw4">int</span> count <span class="sy0">=</span> getChildCount<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> count<span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">final</span> <span class="kw3">View</span> child <span class="sy0">=</span> getChildAt<span class="br0">&#40;</span>i<span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>child.<span class="me1">getVisibility</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="sy0">!=</span> <span class="kw3">View</span>.<span class="me1">GONE</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">final</span> <span class="kw4">int</span> childWidth <span class="sy0">=</span> child.<span class="me1">getMeasuredWidth</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; child.<span class="me1">layout</span><span class="br0">&#40;</span>childLeft, <span class="nu0">0</span>, childLeft <span class="sy0">+</span> childWidth,<span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; child.<span class="me1">getMeasuredHeight</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; childLeft <span class="sy0">+=</span> childWidth<span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> <span class="br0">&#125;</span><span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> @Override<span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; <span class="kw1">protected</span> <span class="kw4">void</span> onMeasure<span class="br0">&#40;</span><span class="kw4">int</span> widthMeasureSpec, <span class="kw4">int</span> heightMeasureSpec<span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">super</span>.<span class="me1">onMeasure</span><span class="br0">&#40;</span>widthMeasureSpec, heightMeasureSpec<span class="br0">&#41;</span><span class="sy0">;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; <span class="kw1">final</span> <span class="kw4">int</span> width <span class="sy0">=</span> MeasureSpec.<span class="me1">getSize</span><span class="br0">&#40;</span>widthMeasureSpec<span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">final</span> <span class="kw4">int</span> widthMode <span class="sy0">=</span> MeasureSpec.<span class="me1">getMode</span><span class="br0">&#40;</span>widthMeasureSpec<span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>widthMode <span class="sy0">!=</span> MeasureSpec.<span class="me1">EXACTLY</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">throw</span> <span class="kw1">new</span> <span class="kw3">IllegalStateException</span><span class="br0">&#40;</span><span class="st0">&quot;error mode.&quot;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; <span class="kw1">final</span> <span class="kw4">int</span> heightMode <span class="sy0">=</span> MeasureSpec.<span class="me1">getMode</span><span class="br0">&#40;</span>heightMeasureSpec<span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>heightMode <span class="sy0">!=</span> MeasureSpec.<span class="me1">EXACTLY</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">throw</span> <span class="kw1">new</span> <span class="kw3">IllegalStateException</span><span class="br0">&#40;</span><span class="st0">&quot;error mode.&quot;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; <span class="co1">// The children are given the same width and height as the workspace&lt;br /&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">final</span> <span class="kw4">int</span> count <span class="sy0">=</span> getChildCount<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">for</span> <span class="br0">&#40;</span><span class="kw4">int</span> i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> count<span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; getChildAt<span class="br0">&#40;</span>i<span class="br0">&#41;</span>.<span class="me1">measure</span><span class="br0">&#40;</span>widthMeasureSpec, heightMeasureSpec<span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; Log.<span class="me1">i</span><span class="br0">&#40;</span>LOG_TAG, <span class="st0">&quot;moving to screen &quot;</span> <span class="sy0">+</span> mCurrentScreen<span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; scrollTo<span class="br0">&#40;</span>mCurrentScreen <span class="sy0">*</span> width, <span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> @Override<span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; <span class="kw1">public</span> <span class="kw4">void</span> computeScroll<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>mScroller.<span class="me1">computeScrollOffset</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mScrollX <span class="sy0">=</span> mScroller.<span class="me1">getCurrX</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; scrollTo<span class="br0">&#40;</span>mScrollX, <span class="nu0">0</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; postInvalidate<span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> <span class="co3">/**&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp;* Return the parceable instance to be saved&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp;*/</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; @Override<span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; <span class="kw1">protected</span> Parcelable onSaveInstanceState<span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">final</span> SavedState state <span class="sy0">=</span> <span class="kw1">new</span> SavedState<span class="br0">&#40;</span><span class="kw1">super</span>.<span class="me1">onSaveInstanceState</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; state.<span class="me1">currentScreen</span> <span class="sy0">=</span> mCurrentScreen<span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">return</span> state<span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> <span class="co3">/**&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp;* Restore the previous saved current screen&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp;*/</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; @Override<span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; <span class="kw1">protected</span> <span class="kw4">void</span> onRestoreInstanceState<span class="br0">&#40;</span>Parcelable state<span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; SavedState savedState <span class="sy0">=</span> <span class="br0">&#40;</span>SavedState<span class="br0">&#41;</span> state<span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">super</span>.<span class="me1">onRestoreInstanceState</span><span class="br0">&#40;</span>savedState.<span class="me1">getSuperState</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">if</span> <span class="br0">&#40;</span>savedState.<span class="me1">currentScreen</span> <span class="sy0">!=</span> <span class="sy0">-</span><span class="nu0">1</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mCurrentScreen <span class="sy0">=</span> savedState.<span class="me1">currentScreen</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> <span class="co1">// ========================= INNER CLASSES ==============================&lt;/p&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> <span class="kw1">public</span> <span class="kw1">interface</span> onViewChangedEvent <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw4">void</span> onViewChange<span class="br0">&#40;</span><span class="kw4">int</span> currentViewIndex<span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> <span class="co3">/**&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp;* A SavedState which save and load the current screen&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp;*/</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; <span class="kw1">public</span> <span class="kw1">static</span> <span class="kw1">class</span> SavedState <span class="kw1">extends</span> BaseSavedState <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw4">int</span> currentScreen <span class="sy0">=</span> <span class="sy0">-</span><span class="nu0">1</span><span class="sy0">;&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; <span class="co3">/**&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* Internal constructor&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* @param superState&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; SavedState<span class="br0">&#40;</span>Parcelable superState<span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">super</span><span class="br0">&#40;</span>superState<span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; <span class="co3">/**&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* Private constructor&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* @param in&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">private</span> SavedState<span class="br0">&#40;</span>Parcel in<span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">super</span><span class="br0">&#40;</span>in<span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; currentScreen <span class="sy0">=</span> in.<span class="me1">readInt</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; <span class="co3">/**&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* Save the current screen&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; @Override<span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">public</span> <span class="kw4">void</span> writeToParcel<span class="br0">&#40;</span>Parcel out, <span class="kw4">int</span> flags<span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">super</span>.<span class="me1">writeToParcel</span><span class="br0">&#40;</span>out, flags<span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; out.<span class="me1">writeInt</span><span class="br0">&#40;</span>currentScreen<span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; <span class="co3">/**&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* Return a Parcelable creator&lt;br /&gt;<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">public</span> <span class="kw1">static</span> <span class="kw1">final</span> Parcelable.<span class="me1">Creator</span><span class="sy0">&lt;</span>SavedState<span class="sy0">&gt;</span> CREATOR <span class="sy0">=</span> <span class="kw1">new</span> Parcelable.<span class="me1">Creator</span><span class="sy0">&lt;</span>SavedState<span class="sy0">&gt;</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">public</span> SavedState createFromParcel<span class="br0">&#40;</span>Parcel in<span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">return</span> <span class="kw1">new</span> SavedState<span class="br0">&#40;</span>in<span class="br0">&#41;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;/</span>p<span class="sy0">&gt;</span><br />
+<span class="sy0">&lt;</span>p<span class="sy0">&gt;</span> &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">public</span> SavedState<span class="br0">&#91;</span><span class="br0">&#93;</span> newArray<span class="br0">&#40;</span><span class="kw4">int</span> size<span class="br0">&#41;</span> <span class="br0">&#123;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="kw1">return</span> <span class="kw1">new</span> SavedState<span class="br0">&#91;</span>size<span class="br0">&#93;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; <span class="br0">&#125;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span><br />
+<span class="br0">&#125;</span><span class="sy0">&lt;</span>br <span class="sy0">/&gt;</span></div></div>
+</p>
+<p>To finalize this, create a attrs.xml inside yours res/values:</p>
+<p><div class="codecolorer-container java vibrant" style="overflow:auto;white-space:nowrap;width:585px;"><div class="java codecolorer"><span class="sy0">&lt;?</span>xml version<span class="sy0">=</span><span class="st0">&quot;1.0&quot;</span> encoding<span class="sy0">=</span><span class="st0">&quot;utf-8&quot;</span><span class="sy0">?&gt;&lt;</span>br <span class="sy0">/&gt;</span><br />
+<span class="sy0">&lt;</span>resources<span class="sy0">&gt;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; <span class="sy0">&lt;</span>declare<span class="sy0">-</span>styleable name<span class="sy0">=</span><span class="st0">&quot;FlingAndScrollViewer&quot;</span><span class="sy0">&gt;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; &nbsp; &nbsp; <span class="sy0">&lt;</span>attr name<span class="sy0">=</span><span class="st0">&quot;default_screen&quot;</span> format<span class="sy0">=</span><span class="st0">&quot;integer&quot;</span><span class="sy0">/&gt;&lt;</span>br <span class="sy0">/&gt;</span><br />
+&nbsp; &nbsp; <span class="sy0">&lt;/</span>declare<span class="sy0">-</span>styleable<span class="sy0">&gt;&lt;</span>br <span class="sy0">/&gt;</span><br />
+<span class="sy0">&lt;/</span>resources<span class="sy0">&gt;</span></div></div>
+</p>
+<p>That is it, now you can swipe between pages and scroll in any direction you want </p>
+</div>
+  <span class="topTags"><em>:</em><a href="http://www.jmstudio.org/archives/tag/android" rel="tag">Android</a>, <a href="http://www.jmstudio.org/archives/tag/java" rel="tag">java</a></span>
+<div class="cleared"></div>
+</div> <!-- Closes topPost -->
+
+<div id="numberofcomments">3 comments for this entry:</div>
+<div id="comment">
+
+<!-- You can start editing here. -->
+
+
+	<ol id="commentlist">
+
+	
+		<li class="alt" id="comment-81">
+
+
+<a class="gravatar">
+<img alt='' src='http://0.gravatar.com/avatar/801e0a50a1abd1940a7525f7265551f1?s=69&amp;d=http%3A%2F%2Fwww.jmstudio.org%2Fwp-content%2Fthemes%2Fpixeled%2Fimages%2Fgravatar-trans.png%3Fs%3D69&amp;r=G' class='avatar avatar-69 photo' height='69' width='69' /></a>
+
+			<div class="commentbody">
+			<cite>Peter</cite> 
+						<br />
+
+			<small class="commentmetadata"><a href="#comment-81" title="">March 24th, 2011 on 09:16</a> </small>
+
+			<p>Thanks joao, exactly what I was looking for&#8230;amazing post.</p>
+			</div><div class="cleared"></div><!-- clears the floats so the backgrounds show all the way down -->
+		</li>
+
+	
+	
+		<li id="comment-85">
+
+
+<a class="gravatar">
+<img alt='' src='http://1.gravatar.com/avatar/7b6ecaf82c4152adf10665c4b0c7ca56?s=69&amp;d=http%3A%2F%2Fwww.jmstudio.org%2Fwp-content%2Fthemes%2Fpixeled%2Fimages%2Fgravatar-trans.png%3Fs%3D69&amp;r=G' class='avatar avatar-69 photo' height='69' width='69' /></a>
+
+			<div class="commentbody">
+			<cite><a href='http://tombarrasso.com' rel='external nofollow' class='url'>Thomas Barrasso</a></cite> 
+						<br />
+
+			<small class="commentmetadata"><a href="#comment-85" title="">May 1st, 2011 on 23:25</a> </small>
+
+			<p>Awesome bro, this is fantastic!</p>
+			</div><div class="cleared"></div><!-- clears the floats so the backgrounds show all the way down -->
+		</li>
+
+	
+	
+		<li class="alt" id="comment-86">
+
+
+<a class="gravatar">
+<img alt='' src='http://1.gravatar.com/avatar/fb32903228bc1129a53d4bb0bd79b625?s=69&amp;d=http%3A%2F%2Fwww.jmstudio.org%2Fwp-content%2Fthemes%2Fpixeled%2Fimages%2Fgravatar-trans.png%3Fs%3D69&amp;r=G' class='avatar avatar-69 photo' height='69' width='69' /></a>
+
+			<div class="commentbody">
+			<cite>Shan</cite> 
+						<br />
+
+			<small class="commentmetadata"><a href="#comment-86" title="">May 5th, 2011 on 20:39</a> </small>
+
+			<p>Thanks for sharing the code, it works. But I have a problem while implementing it in my project. In your layout xml, the height of the flingScrollViewer is fill_parent. If I changed it as 0dp and layout_weight as 90 (out of 100), then I do get an exception &#8220;error mode.&#8221; at line #281. Do you have any idea why I am getting exception?</p>
+			</div><div class="cleared"></div><!-- clears the floats so the backgrounds show all the way down -->
+		</li>
+
+	
+	
+	</ol>
+
+ 
+
+
+<h3 id="respond">Leave a Reply</h3>
+
+
+<form action="http://www.jmstudio.org/wp-comments-post.php" method="post" id="commentform">
+
+
+<p><input type="text" name="author" id="author" value="" size="22" tabindex="1" />
+<label for="author"><small>Name (required)</small></label></p>
+
+<p><input type="text" name="email" id="email" value="" size="22" tabindex="2" />
+<label for="email"><small>Mail (will not be published) (required)</small></label></p>
+
+<p><input type="text" name="url" id="url" value="" size="22" tabindex="3" />
+<label for="url"><small>Website</small></label></p>
+
+
+<!--<p><small><strong>XHTML:</strong> You can use these tags: <code>&lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=&quot;&quot;&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=&quot;&quot;&gt; &lt;strike&gt; &lt;strong&gt; </code></small></p>-->
+
+
+<p><textarea name="comment" id="comment" cols="100%" rows="10" tabindex="4"></textarea></p>
+
+<p><input name="submit" type="submit" id="submit" class="submitbutton" tabindex="5" value="Leave comment" />
+<input type="hidden" name="comment_post_ID" value="391" />
+</p>
+<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="1051f1484f" /></p>                <script type='text/javascript'>
+                    var RecaptchaOptions = { theme : 'red', lang : 'en' , tabindex : 5 };
+                </script><script type="text/javascript" src="http://www.google.com/recaptcha/api/challenge?k=6Lda7gYAAAAAAO0JAfuzdOTgpzpwpYKAHKebl7EA"></script>
+
+	<noscript>
+  		<iframe src="http://www.google.com/recaptcha/api/noscript?k=6Lda7gYAAAAAAO0JAfuzdOTgpzpwpYKAHKebl7EA" height="300" width="500" frameborder="0"></iframe><br/>
+  		<textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
+  		<input type="hidden" name="recaptcha_response_field" value="manual_challenge"/>
+	</noscript>                        <div id="recaptcha-submit-btn-area">&nbsp;</div>
+                        <noscript>
+                         <style type='text/css'>#submit {display:none;}</style>
+                         <input name="submit" type="submit" id="submit-alt" tabindex="6" value="Submit Comment"/> 
+                        </noscript><script type="text/javascript">
+//<![CDATA[
+	function gethash(){
+		document.getElementById('commentform').onsubmit = null;
+		if(document.getElementById('submit')) document.getElementById('submit').value='Please wait...';
+		var mysack = new sack("http://www.jmstudio.org/wp-content/plugins/wp-captcha-free/captcha-free.php");
+		mysack.execute = 1;
+		mysack.method = 'POST';
+		mysack.onError = function() { alert('Unable to get Captcha-Free Hash!') };
+		mysack.setVar('post_id', 391);
+		mysack.runAJAX();
+		return false;
+	}
+	function gothash(myhash){
+		document.getElementById('captchafree').value = myhash;
+		// Workaround for Wordpress' retarded choice of naming the submit button same as a JS function name >:-(
+		document.getElementById('submit').click();
+	}
+	document.getElementById('commentform').onsubmit = gethash;
+//]]>
+</script>
+<input type="hidden" id="captchafree" name="captchafree" value="" />
+<noscript><p><strong>Please note:</strong> JavaScript is required to post comments.</p></noscript>
+<p style="font-size: small"><a href="http://wordpresssupplies.com/wordpress-plugins/captcha-free/">Spam protection by WP Captcha-Free</a></p>
+</form>
+
+
+
+</div> <!-- Closes Comment -->
+
+
+
+</div> <!-- Closes contentwrapper-->
+
+
+<div id="sidebars">
+
+<div id="sidebar_full">
+<ul>
+
+ <li>
+<div id="welcome">
+
+
+<h2>Welcome to my personal website</h2><p>On these pages you will see samples of my work for a variety of industries and many different applications.
+This website is for everyone who simply interested in the field of digital art and computer science.<br>
+Feel free to join the discussion by leaving comments, and stay updated by subscribing to the <a href='http://www.jmstudio.org/feed'>RSS feed</a>. <br>Thank you for visiting and enjoy!!</p>
+
+
+
+
+</div><!-- Closes welcome --> </li>
+
+		<li id="recent-posts-2" class="sidebaritem"><div class="sidebarbox">		<h2 class="widgettitle">Recent Posts</h2>		<ul>
+				<li><a href="http://www.jmstudio.org/archives/391" title="Android Swipe/Fling with Scrollview">Android Swipe/Fling with Scrollview</a></li>
+				<li><a href="http://www.jmstudio.org/archives/376" title="Pie Graph with QT and Opengl">Pie Graph with QT and Opengl</a></li>
+				<li><a href="http://www.jmstudio.org/archives/355" title="Tornado Maker">Tornado Maker</a></li>
+				<li><a href="http://www.jmstudio.org/archives/323" title="Alembic the future CG interchange format">Alembic the future CG interchange format</a></li>
+				<li><a href="http://www.jmstudio.org/archives/321" title="Fluid cloud Particles">Fluid cloud Particles</a></li>
+				</ul>
+		</div></li><li id="simpletags-3" class="sidebaritem"><div class="sidebarbox"><h2 class="widgettitle">Tag Cloud</h2>
+<!-- Generated by Simple Tags 2.0-beta9 - http://wordpress.org/extend/plugins/simple-tags -->
+	<div class="st-tag-cloud">
+	<a href="http://www.jmstudio.org/archives/tag/fluids" id="tag-link-33" class="st-tags t3" title="2 topics" rel="tag" style="font-size:10.67pt; color:#9fbbc7;">fluids</a>
+<a href="http://www.jmstudio.org/archives/tag/python" id="tag-link-31" class="st-tags t3" title="2 topics" rel="tag" style="font-size:10.67pt; color:#9fbbc7;">python</a>
+<a href="http://www.jmstudio.org/archives/tag/graph" id="tag-link-43" class="st-tags t1" title="1 topics" rel="tag" style="font-size:8pt; color:#cccccc;">graph</a>
+<a href="http://www.jmstudio.org/archives/tag/fluid" id="tag-link-28" class="st-tags t1" title="1 topics" rel="tag" style="font-size:8pt; color:#cccccc;">fluid</a>
+<a href="http://www.jmstudio.org/archives/tag/java" id="tag-link-22" class="st-tags t10" title="5 topics" rel="tag" style="font-size:20pt; color:#0482b6;">java</a>
+<a href="http://www.jmstudio.org/archives/tag/gui" id="tag-link-38" class="st-tags t1" title="1 topics" rel="tag" style="font-size:8pt; color:#cccccc;">Gui</a>
+<a href="http://www.jmstudio.org/archives/tag/blog" id="tag-link-9" class="st-tags t1" title="1 topics" rel="tag" style="font-size:8pt; color:#cccccc;">blog</a>
+<a href="http://www.jmstudio.org/archives/tag/data" id="tag-link-39" class="st-tags t1" title="1 topics" rel="tag" style="font-size:8pt; color:#cccccc;">data</a>
+<a href="http://www.jmstudio.org/archives/tag/ocr" id="tag-link-25" class="st-tags t1" title="1 topics" rel="tag" style="font-size:8pt; color:#cccccc;">OCR</a>
+<a href="http://www.jmstudio.org/archives/tag/maya" id="tag-link-20" class="st-tags t10" title="5 topics" rel="tag" style="font-size:20pt; color:#0482b6;">maya</a>
+<a href="http://www.jmstudio.org/archives/tag/drupal" id="tag-link-10" class="st-tags t1" title="1 topics" rel="tag" style="font-size:8pt; color:#cccccc;">drupal</a>
+<a href="http://www.jmstudio.org/archives/tag/particles" id="tag-link-34" class="st-tags t1" title="1 topics" rel="tag" style="font-size:8pt; color:#cccccc;">particles</a>
+<a href="http://www.jmstudio.org/archives/tag/gwt" id="tag-link-16" class="st-tags t3" title="2 topics" rel="tag" style="font-size:10.67pt; color:#9fbbc7;">GWT</a>
+<a href="http://www.jmstudio.org/archives/tag/effects" id="tag-link-30" class="st-tags t1" title="1 topics" rel="tag" style="font-size:8pt; color:#cccccc;">effects</a>
+<a href="http://www.jmstudio.org/archives/tag/mel" id="tag-link-37" class="st-tags t1" title="1 topics" rel="tag" style="font-size:8pt; color:#cccccc;">Mel</a>
+<a href="http://www.jmstudio.org/archives/tag/visualization" id="tag-link-40" class="st-tags t1" title="1 topics" rel="tag" style="font-size:8pt; color:#cccccc;">visualization</a>
+<a href="http://www.jmstudio.org/archives/tag/bullet" id="tag-link-27" class="st-tags t1" title="1 topics" rel="tag" style="font-size:8pt; color:#cccccc;">bullet</a>
+<a href="http://www.jmstudio.org/archives/tag/procedural" id="tag-link-24" class="st-tags t10" title="5 topics" rel="tag" style="font-size:20pt; color:#0482b6;">procedural</a>
+<a href="http://www.jmstudio.org/archives/tag/demoreel" id="tag-link-29" class="st-tags t1" title="1 topics" rel="tag" style="font-size:8pt; color:#cccccc;">demoreel</a>
+<a href="http://www.jmstudio.org/archives/tag/realflow" id="tag-link-26" class="st-tags t1" title="1 topics" rel="tag" style="font-size:8pt; color:#cccccc;">realflow</a>
+<a href="http://www.jmstudio.org/archives/tag/format" id="tag-link-36" class="st-tags t1" title="1 topics" rel="tag" style="font-size:8pt; color:#cccccc;">format</a>
+<a href="http://www.jmstudio.org/archives/tag/android" id="tag-link-44" class="st-tags t1" title="1 topics" rel="tag" style="font-size:8pt; color:#cccccc;">Android</a>
+<a href="http://www.jmstudio.org/archives/tag/nparticles" id="tag-link-21" class="st-tags t5" title="3 topics" rel="tag" style="font-size:13.33pt; color:#73abc2;">nparticles</a>
+<a href="http://www.jmstudio.org/archives/tag/io" id="tag-link-35" class="st-tags t1" title="1 topics" rel="tag" style="font-size:8pt; color:#cccccc;">IO</a>
+<a href="http://www.jmstudio.org/archives/tag/voronoi" id="tag-link-32" class="st-tags t1" title="1 topics" rel="tag" style="font-size:8pt; color:#cccccc;">Voronoi</a>
+<a href="http://www.jmstudio.org/archives/tag/qt" id="tag-link-42" class="st-tags t1" title="1 topics" rel="tag" style="font-size:8pt; color:#cccccc;">qt</a>
+<a href="http://www.jmstudio.org/archives/tag/opengl" id="tag-link-41" class="st-tags t1" title="1 topics" rel="tag" style="font-size:8pt; color:#cccccc;">opengl</a></div>
+
+</div></li>
+ <li>
+ <div class="sidebarbox">
+ <h3>My Favorit Links!</h3><p>A few highly recommended...</p>
+ <ul><li><a href="http://www.dgp.toronto.edu/" target="_blank">Dynamic Graphics Project</a></li>
+<li><a href="http://www.essentialmath.com/tutorial.htm" target="_blank">Essential Math</a></li>
+<li><a href="http://www.fundza.com" title="Fundza  CG References &amp; Tutorials" target="_blank">Fundza CG References &amp; Tutorials</a></li>
+<li><a href="http://code.google.com/edu/" title="Lots of courses" target="_blank">Google University</a></li>
+<li><a href="http://odforce.net/" target="_blank">Houdini odforce</a></li>
+<li><a href="http://www.efg2.com/Lab/Library/ImageProcessing" target="_blank">Image Processing Lab</a></li>
+<li><a href="http://www.joelonsoftware.com/" target="_blank">joel on software</a></li>
+<li><a href="http://mathworld.wolfram.com/" title="Extensive mathematics resource " target="_blank">Math World Wolfram</a></li>
+<li><a href="http://mentalraytips.blogspot.com/" title="Master Zap" target="_blank">MentalRay Tips from ZAP</a></li>
+<li><a href="http://www.mymentalray.com/" target="_blank">MyMental Ray</a></li>
+<li><a href="http://www.debevec.org/" title="Associate Director, Graphics Research Research Associate Professor" target="_blank">Paul Debevec</a></li>
+<li><a href="http://graphics.pixar.com/research/" target="_blank">Pixar Research</a></li>
+<li><a href="http://tog.acm.org/resources/RTNews/html/" title="Ray Tracing News Guide" target="_blank">Ray Tracing News</a></li>
+<li><a href="http://www.realtimerendering.com/" target="_blank">Realtime Rendering</a></li>
+<li><a href="http://tokeru.com/t/bin/view/Maya/" target="_blank">TWiki Maya</a></li>
+<li><a href="http://www.disneyanimation.com/library/list.html" title="Walt disney Research Page" target="_blank">Walt disney Research</a></li>
+</ul>
+ </div>
+ </li>
+ 
+</ul>
+</div><!-- Closes Sidebar_full -->
+
+
+<div id="sidebar_left">
+<ul>
+
+</ul>
+
+</div> <!-- Closes Sidebar_left -->
+
+<div id="sidebar_right">
+
+<ul>
+
+</ul>
+
+</div> <!-- Closes Sidebar_right -->
+
+
+<div class="cleared"></div>
+</div> <!-- Closes Sidebars --><div class="cleared"></div>
+
+</div><!-- Closes Main -->
+
+
+<div id="morefoot">
+
+<div class="col1">
+<h3>Looking for something?</h3>
+<p>Use the form below to search the site:</p>
+<form method="get" id="searchform" action="http://www.jmstudio.org/">
+<p>
+<input type="text" value="Search keywords" name="s" id="searchbox" onfocus="this.value=''"/>
+<input type="submit" class="submitbutton" value="Find it" />
+</p>
+</form><p>Still not finding what you're looking for? Drop a comment on a post or contact us so we can take care of it!</p>
+</div>
+
+<div class="col2">
+<h3>My Favorit Links!</h3><p>A few highly recommended...</p><ul><li><a href="http://www.dgp.toronto.edu/" target="_blank">Dynamic Graphics Project</a></li>
+<li><a href="http://www.essentialmath.com/tutorial.htm" target="_blank">Essential Math</a></li>
+<li><a href="http://www.fundza.com" title="Fundza  CG References &amp; Tutorials" target="_blank">Fundza CG References &amp; Tutorials</a></li>
+<li><a href="http://code.google.com/edu/" title="Lots of courses" target="_blank">Google University</a></li>
+<li><a href="http://odforce.net/" target="_blank">Houdini odforce</a></li>
+<li><a href="http://www.efg2.com/Lab/Library/ImageProcessing" target="_blank">Image Processing Lab</a></li>
+<li><a href="http://www.joelonsoftware.com/" target="_blank">joel on software</a></li>
+<li><a href="http://mathworld.wolfram.com/" title="Extensive mathematics resource " target="_blank">Math World Wolfram</a></li>
+<li><a href="http://mentalraytips.blogspot.com/" title="Master Zap" target="_blank">MentalRay Tips from ZAP</a></li>
+<li><a href="http://www.mymentalray.com/" target="_blank">MyMental Ray</a></li>
+<li><a href="http://www.debevec.org/" title="Associate Director, Graphics Research Research Associate Professor" target="_blank">Paul Debevec</a></li>
+<li><a href="http://graphics.pixar.com/research/" target="_blank">Pixar Research</a></li>
+<li><a href="http://tog.acm.org/resources/RTNews/html/" title="Ray Tracing News Guide" target="_blank">Ray Tracing News</a></li>
+<li><a href="http://www.realtimerendering.com/" target="_blank">Realtime Rendering</a></li>
+<li><a href="http://tokeru.com/t/bin/view/Maya/" target="_blank">TWiki Maya</a></li>
+<li><a href="http://www.disneyanimation.com/library/list.html" title="Walt disney Research Page" target="_blank">Walt disney Research</a></li>
+</ul>
+</div>
+
+<div class="col3">
+<h3>Archives</h3><p>All entries, chronologically...</p><ul>	<li><a href='http://www.jmstudio.org/archives/date/2011/03' title='March 2011'>March 2011</a></li>
+	<li><a href='http://www.jmstudio.org/archives/date/2010/11' title='November 2010'>November 2010</a></li>
+	<li><a href='http://www.jmstudio.org/archives/date/2010/10' title='October 2010'>October 2010</a></li>
+	<li><a href='http://www.jmstudio.org/archives/date/2010/08' title='August 2010'>August 2010</a></li>
+	<li><a href='http://www.jmstudio.org/archives/date/2010/06' title='June 2010'>June 2010</a></li>
+	<li><a href='http://www.jmstudio.org/archives/date/2010/04' title='April 2010'>April 2010</a></li>
+	<li><a href='http://www.jmstudio.org/archives/date/2010/03' title='March 2010'>March 2010</a></li>
+	<li><a href='http://www.jmstudio.org/archives/date/2009/08' title='August 2009'>August 2009</a></li>
+	<li><a href='http://www.jmstudio.org/archives/date/2009/02' title='February 2009'>February 2009</a></li>
+	<li><a href='http://www.jmstudio.org/archives/date/2009/01' title='January 2009'>January 2009</a></li>
+ </ul>
+</div>
+
+<div class="cleared"></div>
+</div><!-- Closes morefoot -->
+
+
+
+<div id="footer">
+<div id="footerleft">
+<p>Copyright &copy; 2011 Joao Machete Studio. All rights reserved.</p>
+<!-- Please don't remove my credits! I worked hard to create this theme and distribute it freely. Thanks! -->
+</div>
+<div class="cleared"></div>
+                <script type="text/javascript">
+                var sub = document.getElementById('submit');
+                document.getElementById('recaptcha-submit-btn-area').appendChild (sub);
+                document.getElementById('submit').tabIndex = 6;
+                if ( typeof _recaptcha_wordpress_savedcomment != 'undefined') {
+                        document.getElementById('comment').value = _recaptcha_wordpress_savedcomment;
+                }
+                document.getElementById('recaptcha_table').style.direction = 'ltr';
+                </script></div><!-- Closes footer -->
+
+</div><!-- Closes wrapper -->
+
+</body>
+</html>

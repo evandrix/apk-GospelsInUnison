@@ -1,0 +1,2381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html dir='ltr' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<script type="text/javascript">(function() { var a=window;function c(b){this.t={};this.tick=function(b,i,d){d=d!=void 0?d:(new Date).getTime();this.t[b]=[d,i]};this.tick("start",null,b)}var e=new c;a.jstiming={Timer:c,load:e};try{var g=null;a.chrome&&a.chrome.csi&&(g=Math.floor(a.chrome.csi().pageT));g==null&&a.gtbExternal&&(g=a.gtbExternal.pageT());g==null&&a.external&&(g=a.external.pageT);g&&(a.jstiming.pt=g)}catch(h){};a.tickAboveFold=function(b){var f=0;if(b.offsetParent){do f+=b.offsetTop;while(b=b.offsetParent)}b=f;b<=750&&a.jstiming.load.tick("aft")};var j=!1;function k(){j||(j=!0,a.jstiming.load.tick("firstScrollTime"))}a.addEventListener?a.addEventListener("scroll",k,!1):a.attachEvent("onscroll",k);
+ })();</script>
+<meta content='true' name='MSSmartTagsPreventParsing'/>
+<meta content='blogger' name='generator'/>
+<link href='http://jim-mcbeath.blogspot.com/favicon.ico' rel='icon' type='image/x-icon'/>
+<link href='http://jim-mcbeath.blogspot.com/2008/09/scala-syntax-primer.html' rel='canonical'/>
+<link rel="alternate" type="application/atom+xml" title="Jim McBeath - Atom" href="http://jim-mcbeath.blogspot.com/feeds/posts/default" />
+<link rel="alternate" type="application/rss+xml" title="Jim McBeath - RSS" href="http://jim-mcbeath.blogspot.com/feeds/posts/default?alt=rss" />
+<link rel="service.post" type="application/atom+xml" title="Jim McBeath - Atom" href="http://www.blogger.com/feeds/7045524330253482541/posts/default" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.blogger.com/rsd.g?blogID=7045524330253482541" />
+<link rel="alternate" type="application/atom+xml" title="Jim McBeath - Atom" href="http://jim-mcbeath.blogspot.com/feeds/465171792354875959/comments/default" />
+<!--[if IE]> <script> (function() { var html5 = ("abbr,article,aside,audio,canvas,datalist,details," + "figure,footer,header,hgroup,mark,menu,meter,nav,output," + "progress,section,time,video").split(','); for (var i = 0; i < html5.length; i++) { document.createElement(html5[i]); } try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} })(); </script> <![endif]-->
+<title>Jim McBeath: Scala Syntax Primer</title>
+<link type='text/css' rel='stylesheet' href='http://www.blogger.com/static/v1/widgets/129348724-widget_css_bundle.css' />
+ <link rel="stylesheet" type="text/css" href="http://www.blogger.com/dyn-css/authorization.css?targetBlogID=7045524330253482541&zx=567fba88-0d3b-4d7c-8afd-58ad6efb7492"/>
+<style type="text/css">#navbar-iframe { display:block }
+</style>
+
+<style id='page-skin-1' type='text/css'><!--
+/*
+-----------------------------------------------
+Blogger Template Style
+Name:     Minima
+Designer: Douglas Bowman
+URL:      www.stopdesign.com
+Date:     26 Feb 2004
+Updated by: Blogger Team
+----------------------------------------------- */
+/* Variable definitions
+====================
+<Variable name="bgcolor" description="Page Background Color"
+type="color" default="#fff">
+<Variable name="textcolor" description="Text Color"
+type="color" default="#333">
+<Variable name="linkcolor" description="Link Color"
+type="color" default="#58a">
+<Variable name="pagetitlecolor" description="Blog Title Color"
+type="color" default="#666">
+<Variable name="descriptioncolor" description="Blog Description Color"
+type="color" default="#999">
+<Variable name="titlecolor" description="Post Title Color"
+type="color" default="#c60">
+<Variable name="bordercolor" description="Border Color"
+type="color" default="#ccc">
+<Variable name="sidebarcolor" description="Sidebar Title Color"
+type="color" default="#999">
+<Variable name="sidebartextcolor" description="Sidebar Text Color"
+type="color" default="#666">
+<Variable name="visitedlinkcolor" description="Visited Link Color"
+type="color" default="#999">
+<Variable name="bodyfont" description="Text Font"
+type="font" default="normal normal 100% Georgia, Serif">
+<Variable name="headerfont" description="Sidebar Title Font"
+type="font"
+default="normal normal 78% 'Trebuchet MS',Trebuchet,Arial,Verdana,Sans-serif">
+<Variable name="pagetitlefont" description="Blog Title Font"
+type="font"
+default="normal normal 200% Georgia, Serif">
+<Variable name="descriptionfont" description="Blog Description Font"
+type="font"
+default="normal normal 78% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif">
+<Variable name="postfooterfont" description="Post Footer Font"
+type="font"
+default="normal normal 78% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif">
+<Variable name="startSide" description="Side where text starts in blog language"
+type="automatic" default="left">
+<Variable name="endSide" description="Side where text ends in blog language"
+type="automatic" default="right">
+*/
+/* Use this with templates/template-twocol.html */
+body {
+background:#ffffff;
+margin:0;
+color:#333333;
+font:x-small Georgia Serif;
+font-size/* */:/**/small;
+font-size: /**/small;
+text-align: center;
+}
+a:link {
+color:#5588aa;
+text-decoration:none;
+}
+a:visited {
+color:#999999;
+text-decoration:none;
+}
+a:hover {
+color:#cc6600;
+text-decoration:underline;
+}
+a img {
+border-width:0;
+}
+/* Header
+-----------------------------------------------
+*/
+#header-wrapper {
+width:660px;
+margin:0 auto 10px;
+border:1px solid #cccccc;
+}
+#header-inner {
+background-position: center;
+margin-left: auto;
+margin-right: auto;
+}
+#header {
+margin: 5px;
+border: 1px solid #cccccc;
+text-align: center;
+color:#666666;
+}
+#header h1 {
+margin:5px 5px 0;
+padding:15px 20px .25em;
+line-height:1.2em;
+text-transform:uppercase;
+letter-spacing:.2em;
+font: normal normal 200% Georgia, Serif;
+}
+#header a {
+color:#666666;
+text-decoration:none;
+}
+#header a:hover {
+color:#666666;
+}
+#header .description {
+margin:0 5px 5px;
+padding:0 20px 15px;
+max-width:700px;
+text-transform:uppercase;
+letter-spacing:.2em;
+line-height: 1.4em;
+font: normal normal 78% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif;
+color: #999999;
+}
+#header img {
+margin-left: auto;
+margin-right: auto;
+}
+/* Outer-Wrapper
+----------------------------------------------- */
+#outer-wrapper {
+/* width: 660px; */
+margin:0 auto;
+padding:10px;
+text-align:left;
+font: normal normal 100% Georgia, Serif;
+}
+#main-wrapper {
+width: 78%; /* was 410px */
+float: left;
+word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
+overflow: hidden;     /* fix for long non-text content breaking IE sidebar float */
+}
+#sidebar-wrapper {
+width: 20%; /* was 220px */
+float: right;
+word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
+overflow: hidden;      /* fix for long non-text content breaking IE sidebar float */
+}
+/* Headings
+----------------------------------------------- */
+h2 {
+margin:1.5em 0 .75em;
+font:normal normal 78% 'Trebuchet MS',Trebuchet,Arial,Verdana,Sans-serif;
+line-height: 1.4em;
+text-transform:uppercase;
+letter-spacing:.2em;
+color:#999999;
+}
+/* Posts
+-----------------------------------------------
+*/
+h2.date-header {
+margin:1.5em 0 .5em;
+}
+.post {
+margin:.5em 0 1.5em;
+border-bottom:1px dotted #cccccc;
+padding-bottom:1.5em;
+}
+.post h3 {
+margin:.25em 0 0;
+padding:0 0 4px;
+font-size:140%;
+font-weight:normal;
+line-height:1.4em;
+color:#cc6600;
+}
+.post h3 a, .post h3 a:visited, .post h3 strong {
+display:block;
+text-decoration:none;
+color:#cc6600;
+font-weight:normal;
+}
+.post h3 strong, .post h3 a:hover {
+color:#333333;
+}
+.post-body {
+margin:0 0 .75em;
+line-height:1.6em;
+}
+.post-body blockquote {
+line-height:1.3em;
+}
+.post-footer {
+margin: .75em 0;
+color:#999999;
+text-transform:uppercase;
+letter-spacing:.1em;
+font: normal normal 78% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif;
+line-height: 1.4em;
+}
+.comment-link {
+margin-left:.6em;
+}
+.post img {
+padding:4px;
+border:1px solid #cccccc;
+}
+.post blockquote {
+margin:1em 20px;
+}
+.post blockquote p {
+margin:.75em 0;
+}
+.post br.p {
+margin-top: 1em;
+}
+.post div.code, .post pre.java, .post pre.scala, .post pre.bash {
+border: medium ridge black;
+padding: 0.6em;
+margin-top: 1em;
+margin-bottom: 1em;
+display: block;
+font-family: fixed;
+background-color: #e8e8e8;
+white-space: pre;
+overflow: auto;
+}
+/* SyntaxHighlighter, from http://syntaxhighlighter.googlecode.com/svn/trunk/Styles/SyntaxHighlighter.css */
+.dp-highlighter
+{
+font-family: "Consolas", "Monaco", "Courier New", Courier, monospace;
+font-size: 12px;
+background-color: #E7E5DC;
+width: 99%;
+overflow: auto;
+margin: 18px 0 18px 0 !important;
+padding-top: 1px; /* adds a little border on top when controls are hidden */
+}
+/* clear styles */
+.dp-highlighter ol,
+.dp-highlighter ol li,
+.dp-highlighter ol li span
+{
+margin: 0;
+padding: 0;
+border: none;
+}
+.dp-highlighter a,
+.dp-highlighter a:hover
+{
+background: none;
+border: none;
+padding: 0;
+margin: 0;
+}
+.dp-highlighter .bar
+{
+padding-left: 45px;
+}
+.dp-highlighter.collapsed .bar,
+.dp-highlighter.nogutter .bar
+{
+padding-left: 0px;
+}
+.dp-highlighter ol
+{
+list-style: decimal; /* for ie */
+background-color: #fff;
+margin: 0px 0px 1px 45px !important; /* 1px bottom margin seems to fix occasional Firefox scrolling */
+padding: 0px;
+color: #5C5C5C;
+}
+.dp-highlighter.nogutter ol,
+.dp-highlighter.nogutter ol li
+{
+list-style: none !important;
+margin-left: 0px !important;
+}
+.dp-highlighter ol li,
+.dp-highlighter .columns div
+{
+list-style: decimal-leading-zero; /* better look for others, override cascade from OL */
+list-style-position: outside !important;
+border-left: 3px solid #6CE26C;
+background-color: #F8F8F8;
+color: #5C5C5C;
+padding: 0 3px 0 10px !important;
+margin: 0 !important;
+line-height: 14px;
+}
+.dp-highlighter.nogutter ol li,
+.dp-highlighter.nogutter .columns div
+{
+border: 0;
+}
+.dp-highlighter .columns
+{
+background-color: #F8F8F8;
+color: gray;
+overflow: hidden;
+width: 100%;
+}
+.dp-highlighter .columns div
+{
+padding-bottom: 5px;
+}
+.dp-highlighter ol li.alt
+{
+background-color: #FFF;
+color: inherit;
+}
+.dp-highlighter ol li span
+{
+color: black;
+background-color: inherit;
+}
+/* Adjust some properties when collapsed */
+.dp-highlighter.collapsed ol
+{
+margin: 0px;
+}
+.dp-highlighter.collapsed ol li
+{
+display: none;
+}
+/* Additional modifications when in print-view */
+.dp-highlighter.printing
+{
+border: none;
+}
+.dp-highlighter.printing .tools
+{
+display: none !important;
+}
+.dp-highlighter.printing li
+{
+display: list-item !important;
+}
+/* Styles for the tools */
+.dp-highlighter .tools
+{
+padding: 3px 8px 3px 10px;
+font: 9px Verdana, Geneva, Arial, Helvetica, sans-serif;
+color: silver;
+background-color: #f8f8f8;
+padding-bottom: 10px;
+border-left: 3px solid #6CE26C;
+}
+.dp-highlighter.nogutter .tools
+{
+border-left: 0;
+}
+.dp-highlighter.collapsed .tools
+{
+border-bottom: 0;
+}
+.dp-highlighter .tools a
+{
+font-size: 9px;
+color: #a0a0a0;
+background-color: inherit;
+text-decoration: none;
+margin-right: 10px;
+}
+.dp-highlighter .tools a:hover
+{
+color: red;
+background-color: inherit;
+text-decoration: underline;
+}
+/* About dialog styles */
+.dp-about { background-color: #fff; color: #333; margin: 0px; padding: 0px; }
+.dp-about table { width: 100%; height: 100%; font-size: 11px; font-family: Tahoma, Verdana, Arial, sans-serif !important; }
+.dp-about td { padding: 10px; vertical-align: top; }
+.dp-about .copy { border-bottom: 1px solid #ACA899; height: 95%; }
+.dp-about .title { color: red; background-color: inherit; font-weight: bold; }
+.dp-about .para { margin: 0 0 4px 0; }
+.dp-about .footer { background-color: #ECEADB; color: #333; border-top: 1px solid #fff; text-align: right; }
+.dp-about .close { font-size: 11px; font-family: Tahoma, Verdana, Arial, sans-serif !important; background-color: #ECEADB; color: #333; width: 60px; height: 22px; }
+/* Language specific styles */
+.dp-highlighter .comment, .dp-highlighter .comments { color: #008200; background-color: inherit; }
+.dp-highlighter .string { color: blue; background-color: inherit; }
+.dp-highlighter .keyword { color: #069; font-weight: bold; background-color: inherit; }
+.dp-highlighter .preprocessor { color: gray; background-color: inherit; }
+/* End of SyntaxHighlighter */
+/* Comments
+----------------------------------------------- */
+#comments h4 {
+margin:1em 0;
+font-weight: bold;
+line-height: 1.4em;
+text-transform:uppercase;
+letter-spacing:.2em;
+color: #999999;
+}
+#comments-block {
+margin:1em 0 1.5em;
+line-height:1.6em;
+}
+#comments-block .comment-author {
+margin:.5em 0;
+}
+#comments-block .comment-body {
+margin:.25em 0 0;
+}
+#comments-block .comment-footer {
+margin:-.25em 0 2em;
+line-height: 1.4em;
+text-transform:uppercase;
+letter-spacing:.1em;
+}
+#comments-block .comment-body p {
+margin:0 0 .75em;
+}
+.deleted-comment {
+font-style:italic;
+color:gray;
+}
+#blog-pager-newer-link {
+float: left;
+}
+#blog-pager-older-link {
+float: right;
+}
+#blog-pager {
+text-align: center;
+}
+.feed-links {
+clear: both;
+line-height: 2.5em;
+}
+/* Sidebar Content
+----------------------------------------------- */
+.sidebar {
+color: #666666;
+line-height: 1.5em;
+}
+.sidebar ul {
+list-style:none;
+margin:0 0 0;
+padding:0 0 0;
+}
+.sidebar li {
+margin:0;
+padding-top:0;
+padding-right:0;
+padding-bottom:.25em;
+padding-left:15px;
+text-indent:-15px;
+line-height:1.5em;
+}
+.sidebar .widget, .main .widget {
+border-bottom:1px dotted #cccccc;
+margin:0 0 1.5em;
+padding:0 0 1.5em;
+}
+.main .Blog {
+border-bottom-width: 0;
+}
+/* Profile
+----------------------------------------------- */
+.profile-img {
+float: left;
+margin-top: 0;
+margin-right: 5px;
+margin-bottom: 5px;
+margin-left: 0;
+padding: 4px;
+border: 1px solid #cccccc;
+}
+.profile-data {
+margin:0;
+text-transform:uppercase;
+letter-spacing:.1em;
+font: normal normal 78% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif;
+color: #999999;
+font-weight: bold;
+line-height: 1.6em;
+}
+.profile-datablock {
+margin:.5em 0 .5em;
+}
+.profile-textblock {
+margin: 0.5em 0;
+line-height: 1.6em;
+}
+.profile-link {
+font: normal normal 78% 'Trebuchet MS', Trebuchet, Arial, Verdana, Sans-serif;
+text-transform: uppercase;
+letter-spacing: .1em;
+}
+/* Footer
+----------------------------------------------- */
+#footer {
+width:660px;
+clear:both;
+margin:0 auto;
+padding-top:15px;
+line-height: 1.6em;
+text-transform:uppercase;
+letter-spacing:.1em;
+text-align: center;
+}
+
+--></style>
+<script src='http://syntaxhighlighter.googlecode.com/svn/trunk/Scripts/shCore.js' type='text/javascript'></script>
+<script src='http://syntaxhighlighter.googlecode.com/svn/trunk/Scripts/shBrushJava.js' type='text/javascript'></script>
+<script src='http://syntaxhighlighter.googlecode.com/svn/trunk/Scripts/shBrushScala.js' type='text/javascript'></script>
+<script src='http://syntaxhighlighter.googlecode.com/svn/trunk/Scripts/shBrushBash.js' type='text/javascript'></script>
+<script language='javascript'>
+function unhighlightSyntax() {
+    window.location.reload()
+}
+function highlightSyntaxFlipButton() {
+    dp.SyntaxHighlighter.BloggerMode();
+    dp.SyntaxHighlighter.HighlightAll("hlcode");
+    button = document.getElementById("hlButton")
+    button.value = "Unhighlight Syntax"
+    button.onclick = unhighlightSyntax
+}
+</script>
+<script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('headEnd');
+</script></head>
+<body>
+<div class='navbar section' id='navbar'><div class='widget Navbar' id='Navbar1'><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener("load",
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<iframe src="http://www.blogger.com/navbar.g?targetBlogID=7045524330253482541&amp;blogName=Jim+McBeath&amp;publishMode=PUBLISH_MODE_BLOGSPOT&amp;navbarType=BLUE&amp;layoutType=LAYOUTS&amp;searchRoot=http://jim-mcbeath.blogspot.com/search&amp;blogLocale=en&amp;homepageUrl=http://jim-mcbeath.blogspot.com/&amp;targetPostID=465171792354875959&amp;vt=-4324624022947949646" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="30px" width="100%" id="navbar-iframe" allowtransparency="true" title="Blogger Navigation and Search"></iframe>
+<div></div></div></div>
+<div id='outer-wrapper'><div id='wrap2'>
+<!-- skip links for text browsers -->
+<span id='skiplinks' style='display:none;'>
+<a href='#main'>skip to main </a> |
+      <a href='#sidebar'>skip to sidebar</a>
+</span>
+<div id='header-wrapper'>
+<div class='header section' id='header'><div class='widget Header' id='Header1'>
+<div id='header-inner'>
+<div class='titlewrapper'>
+<h1 class='title'>
+<a href='http://jim-mcbeath.blogspot.com/'>Jim McBeath</a>
+</h1>
+</div>
+<div class='descriptionwrapper'>
+<p class='description'><span>Coding and Life</span></p>
+</div>
+</div>
+</div></div>
+</div>
+<div id='content-wrapper'>
+<div id='crosscol-wrapper' style='text-align:center'>
+<div class='crosscol section' id='crosscol'></div>
+</div>
+<div id='main-wrapper'>
+<div class='main section' id='main'><div class='widget Blog' id='Blog1'>
+<div class='blog-posts hfeed'>
+<!-- google_ad_section_start(name=default) -->
+
+          <div class="date-outer">
+        
+<h2 class='date-header'><span>Friday, September 12, 2008</span></h2>
+
+          <div class="date-posts">
+        
+<div class='post-outer'>
+<div class='post hentry'>
+<a name='465171792354875959'></a>
+<h3 class='post-title entry-title'>
+<a href='http://jim-mcbeath.blogspot.com/2008/09/scala-syntax-primer.html'>Scala Syntax Primer</a>
+</h3>
+<div class='post-header-line-1'></div>
+<div class='post-body entry-content'>
+Scala runs on the JVM and can directly call and be called from Java,
+but source compatibility was not a goal.
+Scala has a lot of capabilities not in Java,
+and to help those new features work more nicely,
+there are a number of differences between Java and Scala syntax
+that can make reading Scala code a bit of a challenge for Java programmers
+when first encountering Scala.
+This primer attempts to explain those differences.
+It is aimed at Java programmers, so some details about syntax which are
+the same as Java are omitted.
+
+<br/><br/>
+This primer is not intended to be a complete tutorial on Scala,
+rather it is more of a syntax reference.
+For a much better introduction to the language,
+you should buy the book
+<a href="http://www.artima.com/shop/programming_in_scala">
+Programming in Scala</a> by Martin Odersky, Lex Spoon and Bill Venners.
+
+<br/><br/>
+Most of these syntax differences can be explained by two of Scala's
+major goals:
+<ol>
+<li>Minimize verbosity.
+<li>Support a functional style.
+</ol>
+
+The logic behind some of these syntax rules may at first seem arbitrary,
+but the rules support each other surprisingly well.
+Hopefully by the time you finish this primer,
+you will have no trouble understanding code fragments like this one:
+<pre><div class="code"
+>    (0/:list)(_+_)
+</div></pre>
+
+Scala is an integrated object/functional language.
+In the discussion below, the terms "method" and "function" are
+used interchangeably.
+
+<br/><br/>
+You can run the Scala interpreter and type in these examples
+to get a better feel for how these rules work.
+
+<h3>Contents</h3>
+<ul>
+<li><a href="#basics">Basics</a>
+<li><a href="#keywords">Keywords</a>
+<li><a href="#symbols">Symbols and Literals</a>
+<li><a href="#expressions">Expressions</a>
+<li><a href="#case">Case and Patterns</a>
+<li><a href="#for">For Expressions</a>
+<li><a href="#arrays">Arrays</a>
+<li><a href="#tuples">Tuples</a>
+<li><a href="#classes">Classes</a>
+<li><a href="#types">Types</a>
+<li><a href="#funcdef">Function Definitions</a>
+<li><a href="#funccall">Function Calls</a>
+<li><a href="#funcsugar">Function Sugar</a>
+</ul>
+
+<a name="basics"></a>
+<h3>Basics</h3>
+
+<ul>
+<li>Scala classes do not need to go into files that match the class name,
+    as they do in Java.
+    You can put any Scala class in any Scala file.
+    The only time it makes a difference is when you have a <code>class</code>
+    and an <code>object</code> of the same name and want them to
+    be <i>companions</i>, in which case they must be in the same file.
+<li>Semicolons are optional.
+    If you put one statement on each line, you don't need semicolons.
+    If you want to put multiple statements on a line, you can do so
+    by separating them with semicolons.
+    There are specific rules about when statements can span lines,
+    so sometimes you have to be a bit careful when doing so.
+<li>Every value is an object on which methods can be called.
+    For example, <code>123.toString()</code> is valid.
+<li>Scala includes implicit transformations that allow objects to be used
+    in unexpected ways.
+    If you see some source code where a method call is operating on an
+    instance of a class which does not define that method,
+    then probably the instance is being implicitly converted to a class
+    on which that method is defined.
+<li>Scala's "Uniform Access Principle" means that variables and functions
+    without parameters are accessed in the same way.
+    In particular, a variable definition using the <code>val</code> or
+    <code>var</code> keyword can be converted to a function definition
+    simply by replacing that keyword with the <code>def</code> keyword.
+    The syntax at the calling sites does not change.
+<li>Scala includes direct support for XML.
+    This code fragment assigns an instance of type
+    <code>scala.xml.Elem</code> to val x:
+<pre><div class="code"
+>    val x = &lt;head&gt;&lt;title&gt;The Title&lt;/title&gt;&lt;/head&gt;
+</div></pre>
+    You can mix Scala code in with the XML by putting it in braces.
+    This code fragment produces the same resulting value as the above code:
+<pre><div class="code"
+>    val title = "The Title"
+    val x = &lt;head&gt;&lt;title&gt;{ title }&lt;/title&gt;&lt;/head&gt;
+</div></pre>
+<li>Just about everything can be nested.
+    Packages can be nested inside packages,
+    classes can be nested inside classes,
+    defs can be nested inside defs.
+<li>As in Java, annotations are indicated by the <code>@</code> character.
+</ul>
+
+<a name="keywords"></a>
+<h3>Keywords</h3>
+<ul>
+<li>There is no <code>static</code> keyword.  Methods and variables
+    that you would declare static in Java go into an <code>object</code>
+    rather than a <code>class</code> in Scala.  Objects are singletons.
+<li>Scala has no <code>break</code> or <code>continue</code> statements.
+    Fortunately, Scala's support of a functional programming style
+    reduces the need for these.
+<li>Access modifiers such as <code>protected</code>
+    and <code>private</code> can include a scope
+    in square brackets, such as <code>private[this]</code> or
+    <code>protected[MyPackage1.MyPackage2]</code>.
+    The default access is <code>public</code>.
+<li>The <code>val</code> keyword declares an immutable value (a val),
+    similar to the <code>final</code> keyword in Java.
+    The <code>var</code> keyword declares a mutable variable.
+<li>Multiple items can be imported with one <code>import</code> statement:
+<pre><div class="code"
+>    import java.text.{DateFormat,SimpleDateFormat}
+</div></pre>
+<li>Imported symbols can be renamed to other names,
+    which provides a means to work around the problem of importing
+    two symbols of the same name.
+    For example, if you want to import both
+    <code>java.util.Date</code> and <code>java.sql.Date</code>
+    and be able to use them both without having to type the whole
+    qualified name each time, you could do this:
+<pre><div class="code"
+>    import java.util.{Date=>UDate}
+    import java.sql.{Date=>SDate}
+</div></pre>
+<li>If an import is renamed to <code>_</code>, that symbol will not
+    be imported.  This allows importing everything except a specified
+    symbol:
+<pre><div class="code"
+>    import java.util.{Date=>_,_}
+</div></pre>
+<li>The <code>abstract</code> keyword is only used for abstract classes
+    and traits.
+    To declare an abstract function (def), val, variable (var), or type, you
+    omit the <code>=</code> character and body of the item.
+<li>When overriding a method in a superclass, the <code>override</code>
+    modifier must be specified.
+    Overriding a method without using the <code>override</code> modifier
+    or using the modifier when not overriding a superclass method
+    will result in compilation error.
+<li>Some other keywords:
+    <code>lazy</code>, <code>implicit</code>
+</ul>
+
+<a name="symbols"></a>
+<h3>Symbols and Literals</h3>
+<ul>
+<li>Scala allows multi-line strings quoted with triple-quotes:
+<pre><div class="code"
+>    val longString = """Line 1
+Line 2
+Line 3""";
+</div></pre>
+<li>Symbol names can include almost any character.
+    In particular, they can include all of the characters normally used
+    as operators, such as *, +, ~ and :.
+    The backslash character (\) is a valid symbol character, and in fact
+    is used as a method name in the <code>scala.xml.Elem</code> class.
+    Note that <code>"abc\"def"</code> is a seven character String
+    with a double quote in the middle,
+    but if <code>abc</code> is an instance of <code>scala.xml.Elem</code>,
+    then <code>abc\"def"</code> is a call passing a three character String
+    to the backslash method, a method
+    that accepts a String argument and returns an instance of
+    <code>scala.xml.NodeSeq</code>.
+<li>The underscore character (_) is used as a wildcard character rather
+    than asterisk (*), such as in an <code>import</code> statement
+    or in a <code>case</code> statement to represent a "don't care" value.
+    This is because asterisk is a valid symbol character in Scala.
+<li>As in Java, by convention class names and object names start with
+    an upper case letter, variable names start with a lower case letter.
+<li>In one case, whether a symbol
+    starts with an upper or lower case actually matters to the compiler:
+    in a <code>case</code> statement, that difference is used to disambiguate
+    between a constant value, such as <code>PI</code>
+    if <code>Math.PI</code> has been imported
+    (starts with upper case)
+    and a placeholder name being introduced (whose scope is then limited
+    to the body of the case statement).
+</ul>
+
+<a name="expressions"></a>
+<h3>Expressions</h3>
+<ul>
+<li>Any place an expression is expected, a block of expressions
+    surrounded by braces can be used instead.
+    The braces act as parentheses.
+    For example, the expression <code>5 * { val a = 1; a + 2 }</code>
+    is valid and yields the value 15.
+<li>A mentioned above, symbol names can include almost any character,
+    such as * and +.  This is useful for defining methods
+    that will be used as operators (see the rules under
+    <a href="#funccall">Function Calls</a> for functions with one argument).
+<li>The precedence of operators is determined by their first character,
+    and is hardwired to match the usual precedence.
+    Thus if you create the operator methods
+    <code>*^</code> and <code>+^</code>,
+    the <code>*^</code> will have higher precedence.
+    The one exception to this rule is that if the operator ends with
+    an equal sign (<code>=</code>) and is not one of the standard
+    relational operators, then it will have the same precedence
+    as simple assignment.
+<li>When used as binary operators, any symbol which ends with a colon (:)
+    is right-associative; all other symbols are left associative.
+    The controlling object for right-associative operators goes on
+    the right side of the operator, with its one argument on the left side.
+    However, the left hand argument is still evaluated before the
+    right hand argument.
+<li>The characters +, -, ! and ~ can be used as prefix operators in any
+    class by defining the method <code>unary_+</code>, <code>unary_-</code>
+    etc.
+<li>Every statement is an expression whose value is the last expression
+    within that statement that was evaluated.
+    For example, there is no <code>?:</code> ternary operator in Scala.
+    Instead, you use a standard if/then/else statement:
+<pre><div class="code"
+>    val x = if (n>0) "positive" else "negative"
+</div></pre>
+<li>When used on the right hand side of a value or variable declaration,
+    the underscore character means assign the default value.
+    This is the same as not specifying a value in Java;
+    in Scala, not specifying an initial value declares an abstract variable.
+<pre><div class="code"
+>    val n = 123         //specific initial value
+    var x:Int           //abstract variable
+    var y:Int = _       //default initial value
+</div></pre>
+</ul>
+
+<a name="case"></a>
+<h3>Case and Patterns</h3>
+<ul>
+<li>
+Like Java, Scala has a <code>case</code> statement to allow selecting one
+possible code path from many based on a value.
+A simple <code>switch</code> statement in Java might look like this:
+<pre><div class="code"
+>//Java code
+    switch (n) {
+        case 0: action0(); break;
+        case 1: action1(); break;
+        default: actionDflt(); break;
+    }
+</div></pre>
+    The equivalent code in Scala would be:
+<pre><div class="code"
+>    n match {
+        case 0 => action0()
+        case 1 => action1()
+        case _ => actionDflt()
+    }
+</div></pre>
+<li>Instead of the <code>switch</code> keyword as in Java,
+    Scala uses a <code>match</code> expression.
+    The <code>match</code> keyword comes after the value being matched,
+    unlike the relative positions of the <code>switch</code> keyword
+    and the value in Java.
+<li><code>match</code> works on all types, not just ints.
+    For example, you can <code>match</code> on a String variable and have
+    <code>case</code> statements each with a constant String value.
+<li>No <code>break</code> statement is required, and execution does not
+    fall through to the next case.
+<li><code>match</code> statements return values.
+    The value of a <code>match</code> statement is the value of whichever
+    branch was executed.
+<li>The underscore is used to indicate the default case.
+<li>In addition to constants, a <code>case</code> expression can include
+    patterns, which allow for more complex matching.
+    Case matching is handled by extractors, which can be implemented by
+    writing an <code>unapply</code> method in an object.
+<li>A <code>case</code> pattern can include a variable declaration with
+    a type, in which case the variable is defined with that type and
+    set to the value of the matched data within the body of that case.
+<pre><div class="code"
+>    n match {  //assume n is of type Number
+        case i:Int => //i is an Int here, like (int)n would be in Java
+        case d:Double => //d is a Double here, like (double)n in Java
+        case _ => //no values were defined in this case
+    }
+</div></pre>
+<li>When matching a more complex expression, you can assign a variable
+    name to an internal part of the pattern by writing the variable
+    name and the <code>@</code> character before the pattern:
+<pre><div class="code"
+>    case Foo(a,b @ Bar(_)) //b gets set to the part that matches Bar(_)
+</div></pre>
+<li>Case expressions can be followed by a pattern guard before the =>.
+    The pattern guard is the keyword <code>if</code> followed by
+    a boolean expression:
+<pre><div class="code"
+>    x match {  //assume n is of type Number
+        case Foo(a,b) if a==b => //here only when Foo with a==b
+        case Foo(a,b) => //here for all other Foo
+        case _ => //here for all non-Foo
+    }
+</div></pre>
+<li>Case expressions work for XML.
+    In this example, the variable <code>b</code> gets set to whatever
+    is inside the <code>body</code> element if there is only one
+    element there:
+<pre><div class="code"
+>    case &lt;body&gt;{ b }&lt;/body&gt; => //b is the contents
+</div></pre>
+    To match multiple elements, use <code>_*</code> to match any sequence:
+<pre><div class="code"
+>    case &lt;body&gt;{ b @ _* }&lt;/body&gt; => //b is the contents
+</div></pre>
+<li>The <code>catch</code> block of a try/catch statement uses the same
+    syntax as the body of a <code>match</code> statement:
+<pre><div class="code"
+>    try {
+        // code that might throw an exception goes here
+    } catch {
+        case e1:IllegalArgumentException => //e1 is IllegalArgumentException here
+        case e2:ArrayOutOfBoundsException => //e2 is valid here
+        case e3:RuntimeException => //any other RuntimeException comes here
+        case _ =>       //all other exceptions come here
+    }
+</div></pre>
+<li>A pattern can be used on the left hand side of an assignment.
+    For example, the following code results in assigning the values
+    3 and 5 to the new variables x1 and y1:
+<pre><div class="code"
+>    case class Point(x:Int,y:Int)      //defines a simple value class
+    val Point(x1,y1) = Point(3,5)
+</div></pre>
+    This example is contrived, but the same kind of assignment works when
+    calling a method that returns a value which is an object.
+<li>A pattern can be used on the left side of the <code>&lt;-</code>
+    operator in a generator in a
+    <a href="#for"><code>for</code> expression</a>.
+</ul>
+
+<a name="for"></a>
+<h3>For Expressions</h3>
+For Expressions are also called For Comprehensions.
+<ul>
+<li>A <code>for</code> expression consists of the <code>for</code> keyword,
+    a sequence of specific kinds of elements separated by semicolons or
+    newlines and surrounded by parentheses, and the <code>yield</code>
+    keyword followed by an expression:
+<pre><div class="code"
+>    for ( n <- 0 to 6 ; e = n%2; if e==0 ) yield n*n
+</div></pre>
+<li>The elements inside the parentheses can be any of the following:
+    <ul>
+    <li>A generator, such as <code>n <- 0 to 6</code>, which produces
+        multiple values and assigns them to a new val (here <code>n</code>).
+        The new val name appears to the left of the <code>&lt;-</code>
+        operator; to the right of that operator is a value which
+        implements the <code>foreach</code> method to generate a
+        series of values.
+    <li>A definition, such as <code>e = n%2</code>, which introduces a
+        new value by performing the specified calculation.
+    <li>A filter, such as <code>if e==0</code>, which filters out
+        the values which do not satisfy that expression.
+    </ul>
+<li>The val name in a generator can instead be a pattern,
+    similarly to how a pattern can be used in an assignment statement
+    or a case expression.
+    For example:
+<pre><div class="code"
+>    val list = List((1,2),(3,4),(5,6))
+    for ( (a,b) <- list) yield a+b
+</div></pre>
+    yields List(3, 7, 11).
+<li>The elements can be placed inside of braces rather than parentheses
+    and separated by newlines rather than semicolons:
+<pre><div class="code"
+>    for {
+        n <- 0 to 6
+        e = n%2
+        if e==0
+    } yield n*n
+</div></pre>
+<li>When multiple generators are specified, each generator is repeated for
+    each value produced by the preceding generator.
+    For example, the expression
+<pre><div class="code"
+>    for ( x <- 0 to 4 ; y <- 0 until 3) yield (x,y)
+</div></pre>
+    produces a value starting with (0,0), (0,1), (0,2) and ending with (4,2).
+<li>The type of the value produced by a <code>for</code> expression is
+    the same as the type of the first generator.
+<li>As an alternative to using <code>yield</code> followed by an expression,
+    you can omit the <code>yield</code> keyword and use a block of code
+    in place of a single expression.
+<li>A <code>for</code> statement can always be translated into a series
+    of <code>foreach</code>, <code>filter</code>,
+    <code>map</code> and <code>flatMap</code> method calls.
+    In that sense, the <code>for</code> statement is syntactic sugar.
+</ul>
+
+<a name="arrays"></a>
+<h3>Arrays</h3>
+<ul>
+<li>Array indexes are specified with parentheses rather than square brackets.
+<li>Array access is implemented the same way as function access,
+    using the <code>apply</code> method.
+<li>The code <code>arr(index)</code> is converted to
+    <code>arr.apply(index)</code>.
+<li>The code <code>arr(index) = newval</code>
+    is converted to <code>arr.update(index,newval)</code>.
+<li>Arrays are declared using the <code>Array</code> keyword
+    and with the element type in square brackets,
+    rather than
+    using empty square brackets after a type as is done in Java.
+    For example, an array with space for three Strings would be declared
+    like this:
+<pre><div class="code"
+>    val x = new Array[String](3)
+</div></pre>
+<li>A two dimensional 3 by 3 array of Strings would be declared like this:
+<pre><div class="code"
+>    val x = new Array[Array[String]](3, 3)</code>.
+</div></pre>
+</ul>
+
+<a name="tuples"></a>
+<h3>Tuples</h3>
+
+<ul>
+<li>Scala has built in support for Tuples, from one element to 22 elements.
+   A Tuple is a small ordered collection of objects,
+   where each object can have a different type.
+<li>The types for Tuples of various sizes are Tuple1 through Tuple22.
+    These types have N type parameters, where N is the Tuple size.
+    For example, a two element Tuple with an Int and a String has type
+    <code>Tuple2[Int,String]</code>.
+<li>The <code>Pair</code> object allows that word to be used instead of
+    <code>Tuple2</code> for building and matching two element Tuples.
+<li>The <code>Triple</code> object allows that word to be used instead of
+    <code>Tuple3</code> for building and matching three element Tuples.
+<li>You can create a tuple by enclosing the object in parentheses
+    and separating them by commas:
+    <code>(1, 2, "foo")</code> is a <code>Tuple3[Int,Int,String]</code>.
+<li>You can create a Tuple2 (a Pair) by using the <code>-&gt;</code> operator,
+    which works on any value:
+    <code>"a" -&gt; 25</code> is the same as <code>("a", 25)</code>.
+    The following expression is true:
+<pre><div class="code"
+>    ("a",25)=="a"->25
+</div></pre>
+    This is done by an implicit conversion from <code>Any</code> to
+    <code>Predef.ArrowAssoc</code>,
+    which contains the <code>-&gt;</code> method.
+<li>The elements of a Tuple can be accessed as member fields _1, _2, _3 etc.
+<li>If an expression returns a Tuple, that can be assigned to a set
+    of variables or vals.
+    The following code assigns 5 to the new val <code>tens</code>
+    and 8 to the new val <code>ones</code>.
+<pre><div class="code"
+>    def div10(n:Int):Tuple2[Int,Int] = (n/10, n%10)
+    val (tens, ones) = div10(58)
+</div></pre>
+    This is a case of using a pattern on the left hand side of an assignment,
+    as mentioned in the section on
+    <a href="#cases">Cases and Patterns</a>.
+</ul>
+
+<a name="classes"></a>
+<h3>Classes</h3>
+<ul>
+<li>The primary constructor for a class
+    is coded in-line in the class definition,
+    i.e. the constructor statements are not contained within a definition
+    inside the class.
+    The constructor parameters are declared immediately after the class
+    name, and superclass arguments are placed after the name of the
+    class being extended.
+<li>Class parameters can be preceded by <code>val</code> to make them
+    immutable instance values (vals), or by <code>var</code>
+    to make them instance variables.
+<li>Class parameters can be preceded by an access modifier such
+    as <code>private</code> or <code>protected</code>.
+    By default, class parameters using <code>val</code> or <code>var</code>
+    are public.
+<li>The primary constructor can be made private by adding the
+    access modifier <code>private</code> before the parameter list.
+<li><code>trait</code> is like <code>interface</code> in Java,
+    but can include implementation code.
+    Classes in Scala don't <code>implement</code> traits, they
+    <code>extend</code> them same as classes.
+    If a class extends multiple traits, or extends a class plus
+    traits, the keyword <code>with</code> is used rather than commas
+    as in Java.
+<li>Case classes are defined by adding the <code>case</code> keyword
+    before the <code>class</code> keyword.
+    This automatically does the equivalent of the following:
+    <ul>
+    <li>Prepends <code>val</code> to all parameters, making them
+        immutable instance values.
+    <li>Creates <code>equals</code> and <code>hashCode</code> methods
+        so that instances of that class can safely be used in collections.
+    <li>Creates a companion <code>object</code> of the same name with
+        an <code>apply</code> method with the same args as declared for
+        the class, to allow creation of instances without using the
+        <code>new</code> keyword,
+        and with an <code>unapply</code> method to allow the class name
+        to be used as an extractor in <code>case</code> statements.
+    </ul>
+<li>Anonymous classes can be defined without reference to an extending class,
+    in which case they extend Object:
+<pre><div class="code"
+>    val x = new {
+        def cat(a:String, b:String) = a+b
+    }
+</div></pre>
+<li>The type-parameterized <code>isInstanceOf</code> method
+    is used to determine
+    if an object is an instance of a specific class:
+<pre><div class="code"
+>    if (x.isInstanceOf[Double]) ...
+</div></pre>
+<li>Similar to <code>isInstanceOf</code>, a value can be cast to a specific
+    type by using the type-parameterized <code>asInstanceOf</code> method:
+<pre><div class="code"
+>    if (x.isInstanceOf[Double]) {
+        val d = x.asInstanceOf[Double]
+        //operate on d
+    } else {
+        //not a double
+    }
+</div></pre>
+    However, the above construct is not typically used;
+    instead, that functionality is implemented with a
+    <code>case</code> statement, which simultaneously tests for a type
+    and sets a new value of that type:
+<pre><div class="code"
+>    x match {
+        case d:Double =>  //operate on d
+        case _ =>  //not a double
+    }
+</div></pre>
+<li>The <code>isInstanceOf</code> method can be used to test if an object
+    matches a trait as well as a class.
+    It can also be used to test an instance against a structural definition,
+    which can be used to test if an instance implements a specific method:
+<pre><div class="code"
+>    type HasAddActionListenerMethod =
+        { def addActionListener(a:ActionListener) }
+    uiElement match {
+        case c:HasAddActionListenerMethod =>
+            c.addActionListener(new ActionListener() {
+                override def actionPerformed(ev:ActionEvent) {
+                    //insert your actionPerformed code here
+                }
+            })
+    }
+</div></pre>
+<li>Class literals are written <code>classOf[MyClass]</code> as opposed
+    to <code>MyClass.class</code> as in Java.
+</ul>
+
+<a name="types"></a>
+<h3>Types</h3>
+<ul>
+<li>All values in Scala are objects, so (except for compatibility with
+    Java) there is no int/Integer or double/Double distinction.
+    All integers are of type <code>Int</code> and all doubles are
+    of type <code>Double</code>.
+    (In previous versions of Scala, either upper case <code>Int</code>
+    or lower case <code>int</code> was accepted, but convention now is
+    to use only the upper case version, and this may be enforced by
+    the compiler in the future.)
+<li>Type specifications are written as <code>name:type</code> rather than
+    <code>type name</code> as in Java.
+    This is to allow the type to be omitted in many cases, since Scala
+    does type inference.
+    For example, write <code>n:Int</code> rather than <code>int n</code>.
+<li>Types for generics are specified in square brackets <code>[T]</code>
+    rather than in angle brackets <code>&lt;T&gt;</code> as in Java.
+    Thus a generic type might be specified as <code>F[A,B,C]</code>.
+<li>Scala supports covariant and contravariant type specifications at
+    the definition site.
+    These are declared with a leading + for covariant types and
+    a leading - for contravariant types.
+    Thus a function declaration <code>F[+A,-B]</code> means F is
+    qualified by a covariant type A and a contravariant type B.
+<li>Types can be specified with upper and lower bounds. 
+    The expression <code>T&lt;:U</code> means type U is an upper bound for T,
+    whereas <code>T&gt;:U</code> means type U is a lower bound for type T.
+<li>Types can be specified with view bounds, which are similar to upper bounds:
+    The expression <code>T&lt;%U</code> means type U is a view bound for T,
+    which allows for implicit conversion to T and can thus support more
+    actual types.
+<li>A higher kinded type with two type qualifiers, such as
+    <code>Pair[String,Int]</code>, can be written in infix notation
+    by placing the higher kinded type name between its two type qualifiers,
+    such as <code>String Pair Int</code>.
+    This makes more sense if the higher kinded type name happens to use
+    operator characters such as +.
+    Thus when you see a type such as <code>Quantity[M + M2]</code>,
+    as used in the Quantity class in
+    <a href="http://trac.assembla.com/metascala/browser/src/metascala/Units.scala">this file</a>,
+    that is the same as <code>Quantity[+[M,M2]]</code>, so look for a
+    type called <code>+</code> that takes two type qualifiers.
+<li>Existential types are supported with an expression like this:
+<pre><div class="code"
+>    T forSome { type T }
+</div></pre>
+    where the contents of the braces is some type declaration.
+    This is mainly used when interfacing to Java code that either has
+    raw types or uses Java's <code>?</code> wildcard type.
+<li>The <code>type T</code> in an existential type specification can be
+    replaced by a more complex expression:
+<pre><div class="code"
+>    List[T] forSome { type T <: Component }
+</div></pre>
+    In the above example, we are saying T is some type which is a subtype
+    of Component.
+<li>The shorthand
+<pre><div class="code"
+>    List[_]
+</div></pre>
+    is the same thing as
+<pre><div class="code"
+>    List[T] forSome { type T }
+</div></pre>
+<li>The shorthand
+<pre><div class="code"
+>    List[_ <: Component]
+</div></pre>
+    is the same thing as
+<pre><div class="code"
+>    List[T] forSome { type T <: Component }
+</div></pre>
+<li>Type variables can be defined by using the <code>type</code> keyword.
+    Similar to a typedef in C, the type variable simplifies code when
+    a complicated type is used many times:
+<pre><div class="code"
+>    type ALS = Array[List[String]]
+    val a:ALS
+    val b:ALS
+</div></pre>
+    Type variables can also be abstract, in which case they must
+    eventually be defined by a subclass.
+<li>A trait may include code that accesses another trait, in which case
+    the class that includes the first trait must also include the second trait.
+    In order to make this work, the first trait must include a "self type"
+    referencing the second trait.
+    The self type declaration is the first line of the body, usually
+    declaring a type for <code>this</code>, but optionally using a
+    different name in place of <code>this</code>:
+<pre><div class="code"
+>    trait foo {
+        //method for foo trait
+    }
+    trait bar {
+        this : foo =>
+        //methods for bar trait, which can access foo methods
+    }
+</div></pre>
+<li>Inner class types can be referenced using the outer and inner class
+    names separated by a dot (.) as in Java, or using a pound sign (#).
+    The dot syntax specifies a path-dependent type; the pound syntax
+    specifies the generic inner class.
+    For example, if you had this code:
+<pre><div class="code"
+>    class Outer {
+        class Inner {}
+    }
+</div></pre>
+    then you would use <code>Outer#Inner</code> to refer generically
+    to that inner class.
+    If you had an instance <code>x</code> of class Outer, you would
+    refer to the specific class Inner in that instance by using
+    <code>x.Inner</code>, which is a distinct type from the <code>Inner</code>
+    class within any other instance of <code>Outer</code>,
+    and a subtype of the generic <code>Outer#Inner</code> class.
+</ul>
+
+<a name="funcdef"></a>
+<h3>Function Definitions</h3>
+<ul>
+<li>The return type of a function is written after the function's
+    parameter list and preceded by a semicolon, similar to the type
+    specification for a variable.
+    For example, a function which would be declared in Java as
+<pre><div class="code"
+>//Java code
+    public String toString(StringBuffer buf)
+</div></pre>
+    would be declared in Scala as
+<pre><div class="code"
+>    def toString(buf:StringBuffer):String
+</div></pre>
+<li>Functions which do not return a value are declared as having the
+    type <code>Unit</code> rather than <code>void</code> as in Java.
+    If a function never returns (such as if it always throws a Throwable)
+    the return type is <code>Nothing</code>.
+<li>A function with no parameters can be declared without parentheses,
+    in which case it must be called with no parentheses.
+    This provides support for the Uniform Access Principle,
+    such that the caller does not know if the symbol is a variable
+    or a function with no parameters.
+<li>The function body is preceded by "=" if it returns a value (i.e. the
+  return type is something other than Unit), but the return type
+  and the "=" can be omitted when the type is Unit (i.e. it looks
+  like a procedure as opposed to a function).
+<li>Braces around the body are not required (if the body is a single
+  expression); more precisely, the body of a function is just an
+  expression, and any expression with multiple parts must be
+  enclosed in braces (an expression with one part may optionally
+  be enclosed in braces).
+<li>Vararg parameters are declared by appending an asterisk to the argument,
+    like this:
+<pre><div class="code"
+>    def printf(format:String, args:Any*):String
+</div></pre>
+    The parameter gets turned into an array within the method, so
+    in the above example the <code>args</code> parameter
+    would have the type <code>Array[Any]</code>
+    within the body of the <code>printf</code> function.
+</ul>
+
+<a name="funccall"></a>
+<h3>Function Calls</h3>
+
+<ul>
+<li>When a class has an <code>apply</code> method, <code>foo(bar)</code>
+    (where <code>foo</code> is an instance of that class)
+    translates to <code>foo.apply(bar)</code>.
+    <ul>
+    <li>Likewise for an object.
+        If you see <code>Foo(bar)</code> that is most likely a
+        call to the <code>apply</code> method of <code>object Foo</code>.
+    <li>As with any method, the <code>apply</code> method can be overloaded,
+        with different versions having different signatures.
+    <li>Functions are instances of a class (Function1, Function2, etc),
+        so the same rule applies to any function object.
+    <li>A method named <code>unapply</code> in an object definition
+        is also treated specially:
+        it is invoked as an extractor when the object name is used
+        in a case statement pattern.
+    </ul>
+<li>Functions with zero or one argument can be called without the
+    dot and parentheses.
+    <ul>
+    <li>But any expression can have parentheses around it, so you can
+      omit the dot and still use parentheses.
+    <li>And since you can use braces anywhere you can use parentheses,
+        you can omit the dot and put in braces,
+        which can contain multiple statements.
+    </ul>
+<li>Functions with no arguments can be called without the parentheses.
+    For example, the <code>length()</code> function on <code>String</code>
+    can be invoked as <code>"abc".length</code>
+    rather than <code>"abc".length()</code>.
+    If the function is a Scala function defined without parentheses, then
+    the function must be called without parentheses.
+<li>By convention, functions with no arguments that have side effects,
+    such as println, are called with parentheses;
+    those without side effects are called without parentheses.
+</ul>
+
+<a name="funcsugar"></a>
+<h3>Function Sugar</h3>
+"Syntactic sugar" is added syntax to make certain constructs
+easier or more natural to specify.
+The step in which the compiler replaces these constructs by their more verbose
+equivalents is called "desugaring".
+
+<ul>
+<li>Functions with one parameter (including anonymous functions)
+    are instances of type <code>Function1[A,B]</code>,
+    functions with two parameters are of type <code>Function2[A,B,C]</code>,
+    etc.
+    The last type in the list of parameter types is the return value type,
+    so there is always one more than the number N of parameters.
+    A function with no parameters is an instance of <code>Function0[A]</code>.
+    The name <code>Function</code> with no number is equivalent
+    to <code>Function1</code>.
+<li><code>(A,B)=>C</code> is shorthand ("syntactic sugar")
+    for <code>Function2[A,B,C]</code>.
+<li>A <code>Function1[A,B]</code> can be written as
+    <code>(A)=>B</code>, or as just <code>A=>B</code>.
+<li>A <code>Function0[A]</code> (i.e. a function with no parameters)
+    can be written as <code>()=>A</code>.
+    This function can be called with or without parentheses (as
+    mentioned in the <a href="#funcdef">Function Definition</a> section).
+<li>A function with no parameter list can also be specified
+    with no parentheses as <code>=>A</code>.
+    This function must be called without parentheses.
+    If you are declaring a variable <code>x</code> of this type,
+    the declaration looks like <code>x: =>A</code>.
+    This signature is often used for call-by-name parameters.
+<li>When passing an anonymous function (also called a function literal),
+    you can use a shorthand in which you directly write the body of the
+    function, using underscores where each of the function parameters is
+    to go (as long as Scala has enough information to infer the type).
+    For example, if you are folding a list to sum all the
+    elements, you can write it the long way:
+<pre><div class="code"
+>    val list = List(1,2,3,4,5)
+    list.foldLeft(0) { (a:Int, b:Int) => a+b }
+</div></pre>
+    or, by taking advantage of Scala's type inference
+    (and using the same value for <code>list</code>):
+<pre><div class="code"
+>    list.foldLeft(0) { (a, b) => a+b }
+</div></pre>
+    or, using underscores as in-line parameter placeholders:
+<pre><div class="code"
+>    list.foldLeft(0) { _ + _  }
+</div></pre>
+    or using the equivalent method <code>/:</code> (which also does a
+    <code>foldLeft</code>):
+<pre><div class="code"
+>    (0/:list)(_+_)
+</div></pre>
+    In this last form, we are taking advantage of the following shorthands:
+    <ul>
+    <li>The <code>/:</code> operator is equivalent to the
+    <code>foldLeft</code> method
+        (the List class defines both methods).
+    <li>The <code>foldLeft</code> method
+        (and the equivalent <code>/:</code> operator method)
+        uses a curried parameter list, with the first parameter list having
+        only one method.  This allows us to take advantage of the next step.
+    <li>Since the <code>foldLeft</code> method takes only one parameter
+        (in the first parameter list), we can invoke it without
+        the dot and parentheses.
+    <li>Since the operator name ends with a colon, it is right-associative,
+        so the <code>list</code> object goes on the right and the <code>0</code>
+        argument goes on the left.
+    <li>The second parameter list contains only one item (the function to
+        apply to the fold), and the function we are passing in has only
+        one expression, so we can use parentheses rather than braces.
+    <li>Scala has enough information to infer the types of the two parameters
+        in the function literal, so we do not need to specify the types of
+        the parameters.
+    <li>We are only using each parameter in the literal once, so we can use
+        the underscore shorthand and not have to declare the names of the
+        parameters in the function literal.
+    <li>We can remove all the space without creating ambiguity.
+    </ul>
+<li>If a function literal, as used in the above example, is a single method
+    call that takes only one argument, then the method name alone may
+    be specified.
+    Under this rule, this:
+<pre><div class="code"
+>    args.foreach( (x:Any) => println(x) )
+</div></pre>
+    becomes this (the other intermediate forms given above are also valid):
+<pre><div class="code"
+>    args.foreach(println)
+</div></pre>
+<li>Instead of using an underscore as a placeholder for an argument,
+    if a function name is followed by a space and an underscore,
+    the underscore is a placeholder for an entire argument list.
+    This is a partially applied function.
+<li>Another example, this one from
+<a href="http://blog.tmorris.net/">Tony Morris</a>'s
+<a href="http://projects.workingmouse.com/public/intro-to-highlevel-programming-with-scala/artifacts/latest/html/index.html">
+Introduction to High-level Programming with Scala</a>:
+<pre><div class="code"
+>    def compose[A, B, C](f: B => C, g: A => B): A => C = (a: A) => f(g(a))
+</div></pre>
+    <ul>
+    <li>This defines a <code>compose</code>
+        function with three type parameters A, B and C.
+        The regular function parameters are in parentheses.
+    <li>The parameter <code>f</code> is a function that takes one argument
+        of type <code>B</code> and returns a value of type <code>C</code>.
+        The parameter <code>g</code> is also a function.
+    <li>The return type of the <code>compose</code> function,
+        which appears after the colon that follows the parentheses,
+        is a function that takes one argument of type <code>A</code> and
+        returns a value of type <code>C</code>.
+    <li>The body of the function appears after the <code>=</code> character,
+        and is a function which has a parameter <code>a</code> of type
+        <code>A</code> and returns the value <code>f(g(a))</code>.
+    <li>Note that executing the <code>compose</code> function does NOT
+        execute functions <code>f</code> and <code>g</code>,
+        but rather returns a function object which, when invoked, will
+        execute <code>f(g)</code> on its argument.
+    <li>This would thus be used as follows:
+<pre><div class="code"
+>    def plus1(n:Int):Int = n+1
+    def intToParenString(n:Int) = "("+n.toString+")"
+    val plus1string = compose(intToParenString,plus1)
+    val x = plus1string(10)  //this executes plus1 and intToParenString,
+        //sets x to the string (11)
+</div></pre>
+    </ul>
+</ul>
+<font size=-1>Updated 2008-10-19: added classOf, added infix type notation.
+</font>
+<div style='clear: both;'></div>
+</div>
+<div class='post-footer'>
+<div class='post-footer-line post-footer-line-1'><span class='post-author vcard'>
+Posted by
+<span class='fn'>Jim McBeath</span>
+</span>
+<span class='post-timestamp'>
+at
+<a class='timestamp-link' href='http://jim-mcbeath.blogspot.com/2008/09/scala-syntax-primer.html' rel='bookmark' title='permanent link'><abbr class='published' title='2008-09-12T08:47:00-07:00'>8:47 AM</abbr></a>
+</span>
+<span class='post-comment-link'>
+</span>
+<span class='post-icons'>
+<span class='item-control blog-admin pid-999117375'>
+<a href='http://www.blogger.com/post-edit.g?blogID=7045524330253482541&postID=465171792354875959&from=pencil' title='Edit Post'>
+<img alt='' class='icon-action' height='18' src='http://img2.blogblog.com/img/icon18_edit_allbkg.gif' width='18'/>
+</a>
+</span>
+</span>
+<span class='post-backlinks post-comment-link'>
+</span>
+</div>
+<div class='post-footer-line post-footer-line-2'><span class='post-labels'>
+Labels:
+<a href='http://jim-mcbeath.blogspot.com/search/label/scala' rel='tag'>scala</a>
+</span>
+</div>
+<div class='post-footer-line post-footer-line-3'></div>
+</div>
+</div>
+<div class='comments' id='comments'>
+<a name='comments'></a>
+<h4>
+7
+comments:
+        
+</h4>
+<div id='Blog1_comments-block-wrapper'>
+<dl class='avatar-comment-indent' id='comments-block'>
+<dt class='comment-author ' id='c1720534008874059993'>
+<a name='c1720534008874059993'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/08563099319244593236" rel="nofollow" onclick="" class="avatar-hovercard" id="av-0-08563099319244593236"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="Chris Bouzek">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/08563099319244593236' rel='nofollow'>Chris Bouzek</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-1720534008874059993'>
+<p>
+Very nice reference-I can see I'll have to keep this one handy.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://jim-mcbeath.blogspot.com/2008/09/scala-syntax-primer.html?showComment=1221245880000#c1720534008874059993' title='comment permalink'>
+September 12, 2008 11:58 AM
+</a>
+<span class='item-control blog-admin pid-746645559'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7045524330253482541&postID=1720534008874059993' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c393794506474136385'>
+<a name='c393794506474136385'></a>
+<div class="avatar-image-container vcard"><span dir="ltr"><a href="http://www.blogger.com/profile/15025907481819573844" rel="nofollow" onclick="" class="avatar-hovercard" id="av-1-15025907481819573844"><img src="http://img1.blogblog.com/img/blank.gif" width="25" height="35" alt="" class="delayLoad" style="display: none;" longdesc="http://bp1.blogger.com/_aqHYz95KCJs/R_ziuzCM_tI/AAAAAAAAAAU/0hsXIKKZN84/S220/sp_avatar.bmp" title="Admin">
+
+<noscript><img src="http://bp1.blogger.com/_aqHYz95KCJs/R_ziuzCM_tI/AAAAAAAAAAU/0hsXIKKZN84/S220/sp_avatar.bmp" width="25" height="35" class="photo" alt=""></noscript></a></span></div>
+<a href='http://www.blogger.com/profile/15025907481819573844' rel='nofollow'>Admin</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-393794506474136385'>
+<p>
+Wow, epic post.  Very nice.  Posted at 8:47 am?  Even more impressive.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://jim-mcbeath.blogspot.com/2008/09/scala-syntax-primer.html?showComment=1222525920000#c393794506474136385' title='comment permalink'>
+September 27, 2008 7:32 AM
+</a>
+<span class='item-control blog-admin pid-1881094155'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7045524330253482541&postID=393794506474136385' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c5972992287643632504'>
+<a name='c5972992287643632504'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://karmazilla.net/" rel="nofollow" onclick="" class="avatar-hovercard" id="av-2-17317221846060479034"><img src="http://img1.blogblog.com/img/openid16-rounded.gif" width="16" height="16" alt="" title="karmazilla">
+
+</a></span></div>
+<a href='http://karmazilla.net/' rel='nofollow'>karmazilla</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-5972992287643632504'>
+<p>
+Excellent reference piece. Definetely bookmarked!
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://jim-mcbeath.blogspot.com/2008/09/scala-syntax-primer.html?showComment=1222555980000#c5972992287643632504' title='comment permalink'>
+September 27, 2008 3:53 PM
+</a>
+<span class='item-control blog-admin pid-375604978'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7045524330253482541&postID=5972992287643632504' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c433793676603159909'>
+<a name='c433793676603159909'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/05523596449775700316" rel="nofollow" onclick="" class="avatar-hovercard" id="av-3-05523596449775700316"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="S&eacute;bastien">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/05523596449775700316' rel='nofollow'>Sébastien</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-433793676603159909'>
+<p>
+Excellent article, thanks a lot !
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://jim-mcbeath.blogspot.com/2008/09/scala-syntax-primer.html?showComment=1262719895129#c433793676603159909' title='comment permalink'>
+January 5, 2010 11:31 AM
+</a>
+<span class='item-control blog-admin pid-208871861'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7045524330253482541&postID=433793676603159909' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c8665006232464920917'>
+<a name='c8665006232464920917'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/10806500945459623939" rel="nofollow" onclick="" class="avatar-hovercard" id="av-4-10806500945459623939"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="tim">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/10806500945459623939' rel='nofollow'>tim</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-8665006232464920917'>
+<span class='deleted-comment'>This post has been removed by the author.</span>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://jim-mcbeath.blogspot.com/2008/09/scala-syntax-primer.html?showComment=1268563340824#c8665006232464920917' title='comment permalink'>
+March 14, 2010 3:42 AM
+</a>
+<span class='item-control blog-admin '>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7045524330253482541&postID=8665006232464920917' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c7526314695307623934'>
+<a name='c7526314695307623934'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/10806500945459623939" rel="nofollow" onclick="" class="avatar-hovercard" id="av-5-10806500945459623939"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="tim">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/10806500945459623939' rel='nofollow'>tim</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-7526314695307623934'>
+<p>
+Thanks Jim, there&#39;s so much to learn in Scala that it&#39;s great to have somewhere to get instant reminders.
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://jim-mcbeath.blogspot.com/2008/09/scala-syntax-primer.html?showComment=1268563384091#c7526314695307623934' title='comment permalink'>
+March 14, 2010 3:43 AM
+</a>
+<span class='item-control blog-admin pid-938212869'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7045524330253482541&postID=7526314695307623934' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+<dt class='comment-author ' id='c540848824906034932'>
+<a name='c540848824906034932'></a>
+<div class="avatar-image-container avatar-stock"><span dir="ltr"><a href="http://www.blogger.com/profile/03382126308221894704" rel="nofollow" onclick="" class="avatar-hovercard" id="av-6-03382126308221894704"><img src="http://img2.blogblog.com/img/b16-rounded.gif" width="16" height="16" alt="" title="Adam Coates">
+
+</a></span></div>
+<a href='http://www.blogger.com/profile/03382126308221894704' rel='nofollow'>Adam Coates</a>
+said...
+</dt>
+<dd class='comment-body' id='Blog1_cmt-540848824906034932'>
+<p>
+Wow;  this is great.  This is a much better introduction to Scala for already-seasoned programmers than anything on scala-lang.org.  Many thanks!
+</p>
+</dd>
+<dd class='comment-footer'>
+<span class='comment-timestamp'>
+<a href='http://jim-mcbeath.blogspot.com/2008/09/scala-syntax-primer.html?showComment=1279131637289#c540848824906034932' title='comment permalink'>
+July 14, 2010 11:20 AM
+</a>
+<span class='item-control blog-admin pid-736811013'>
+<a class='comment-delete' href='http://www.blogger.com/delete-comment.g?blogID=7045524330253482541&postID=540848824906034932' title='Delete Comment'>
+<img src='//www.blogger.com/img/icon_delete13.gif'/>
+</a>
+</span>
+</span>
+</dd>
+</dl>
+</div>
+<p class='comment-footer'>
+<a href='https://www.blogger.com/comment.g?blogID=7045524330253482541&postID=465171792354875959' onclick=''>Post a Comment</a>
+</p>
+<div id='backlinks-container'>
+<div id='Blog1_backlinks-container'>
+<a name='links'></a><h4>
+</h4>
+<p class='comment-footer'>
+<a class='comment-link' href='' id='Blog1_backlinks-create-link' target='_blank'>
+</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="latency-465171792354875959"></div><script type="text/javascript">if (window['tickAboveFold']) {window['tickAboveFold'](document.getElementById("latency-465171792354875959")); } </script>
+
+        </div></div>
+      
+<!-- google_ad_section_end -->
+</div>
+<div class='blog-pager' id='blog-pager'>
+<span id='blog-pager-newer-link'>
+<a class='blog-pager-newer-link' href='http://jim-mcbeath.blogspot.com/2008/09/creating-control-constructs-in-scala.html' id='Blog1_blog-pager-newer-link' title='Newer Post'>Newer Post</a>
+</span>
+<span id='blog-pager-older-link'>
+<a class='blog-pager-older-link' href='http://jim-mcbeath.blogspot.com/2008/09/true-kind-necessary.html' id='Blog1_blog-pager-older-link' title='Older Post'>Older Post</a>
+</span>
+<a class='home-link' href='http://jim-mcbeath.blogspot.com/'>Home</a>
+</div>
+<div class='clear'></div>
+<div class='post-feeds'>
+<div class='feed-links'>
+Subscribe to:
+<a class='feed-link' href='http://jim-mcbeath.blogspot.com/feeds/465171792354875959/comments/default' target='_blank' type='application/atom+xml'>Post Comments (Atom)</a>
+</div>
+</div>
+</div></div>
+</div>
+<div id='sidebar-wrapper'>
+<div class='sidebar section' id='sidebar'><div class='widget BlogArchive' id='BlogArchive1'>
+<h2>Blog Archive</h2>
+<div class='widget-content'>
+<div id='ArchiveList'>
+<div id='BlogArchive1_ArchiveList'>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://jim-mcbeath.blogspot.com/search?updated-min=2011-01-01T00%3A00%3A00-08%3A00&updated-max=2012-01-01T00%3A00%3A00-08%3A00&max-results=6'>2011</a>
+<span class='post-count' dir='ltr'>(6)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://jim-mcbeath.blogspot.com/2011_06_01_archive.html'>June</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://jim-mcbeath.blogspot.com/2011/06/sledgehammer-words.html'>Sledgehammer Words</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://jim-mcbeath.blogspot.com/2011_04_01_archive.html'>April</a>
+<span class='post-count' dir='ltr'>(3)</span>
+<ul class='posts'>
+<li><a href='http://jim-mcbeath.blogspot.com/2011/04/java-nio-complete-scala-server.html'>Java Nio Complete Scala Server</a></li>
+<li><a href='http://jim-mcbeath.blogspot.com/2011/04/java-nio-for-writing.html'>Java NIO for Writing</a></li>
+<li><a href='http://jim-mcbeath.blogspot.com/2011/04/java-nio-and-scala-coroutines.html'>Java NIO and Scala Coroutines</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://jim-mcbeath.blogspot.com/2011_03_01_archive.html'>March</a>
+<span class='post-count' dir='ltr'>(2)</span>
+<ul class='posts'>
+<li><a href='http://jim-mcbeath.blogspot.com/2011/03/java-nio-for-character-decoding-in.html'>Java NIO for Character Decoding in Scala</a></li>
+<li><a href='http://jim-mcbeath.blogspot.com/2011/03/java-nio-and-scala-continuations.html'>Java NIO and Scala Continuations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://jim-mcbeath.blogspot.com/search?updated-min=2010-01-01T00%3A00%3A00-08%3A00&updated-max=2011-01-01T00%3A00%3A00-08%3A00&max-results=8'>2010</a>
+<span class='post-count' dir='ltr'>(8)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://jim-mcbeath.blogspot.com/2010_12_01_archive.html'>December</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://jim-mcbeath.blogspot.com/2010/12/scala-pros-and-cons.html'>Scala Pros and Cons</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://jim-mcbeath.blogspot.com/2010_11_01_archive.html'>November</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://jim-mcbeath.blogspot.com/2010/11/nondeterministic-evaluation-in-scala.html'>Nondeterministic Evaluation in Scala</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://jim-mcbeath.blogspot.com/2010_09_01_archive.html'>September</a>
+<span class='post-count' dir='ltr'>(3)</span>
+<ul class='posts'>
+<li><a href='http://jim-mcbeath.blogspot.com/2010/09/standalone-generic-scala-generator.html'>Standalone Generic Scala Generator</a></li>
+<li><a href='http://jim-mcbeath.blogspot.com/2010/09/scala-generators.html'>Scala Generators</a></li>
+<li><a href='http://jim-mcbeath.blogspot.com/2010/09/scala-coroutines.html'>Scala Coroutines</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://jim-mcbeath.blogspot.com/2010_08_01_archive.html'>August</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://jim-mcbeath.blogspot.com/2010/08/delimited-continuations.html'>Delimited Continuations</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://jim-mcbeath.blogspot.com/2010_05_01_archive.html'>May</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://jim-mcbeath.blogspot.com/2010/05/my-misperception-of-scalas-ordered.html'>My Misperception of Scala&#39;s Ordered Trait</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://jim-mcbeath.blogspot.com/2010_01_01_archive.html'>January</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://jim-mcbeath.blogspot.com/2010/01/reload-that-config-file.html'>Reload That Config File</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://jim-mcbeath.blogspot.com/search?updated-min=2009-01-01T00%3A00%3A00-08%3A00&updated-max=2010-01-01T00%3A00%3A00-08%3A00&max-results=21'>2009</a>
+<span class='post-count' dir='ltr'>(21)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://jim-mcbeath.blogspot.com/2009_12_01_archive.html'>December</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://jim-mcbeath.blogspot.com/2009/12/improve-your-releases.html'>Improve Your Releases</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://jim-mcbeath.blogspot.com/2009_11_01_archive.html'>November</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://jim-mcbeath.blogspot.com/2009/11/overriding-vals-as-optional-parameters.html'>Overriding vals as Optional Parameters</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://jim-mcbeath.blogspot.com/2009_10_01_archive.html'>October</a>
+<span class='post-count' dir='ltr'>(3)</span>
+<ul class='posts'>
+<li><a href='http://jim-mcbeath.blogspot.com/2009/10/scala-case-statements-as-partial.html'>Scala Case Statements As Partial Functions</a></li>
+<li><a href='http://jim-mcbeath.blogspot.com/2009/10/simple-publishsubscribe-example-in.html'>A Simple Publish/Subscribe Example in Scala</a></li>
+<li><a href='http://jim-mcbeath.blogspot.com/2009/10/initializing-immutable-variables-in.html'>Initializing Immutable Variables in Scala</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://jim-mcbeath.blogspot.com/2009_09_01_archive.html'>September</a>
+<span class='post-count' dir='ltr'>(4)</span>
+<ul class='posts'>
+<li><a href='http://jim-mcbeath.blogspot.com/2009/09/type-safe-builder-in-scala-part-4.html'>Type Safe Builder in Scala, Part 4</a></li>
+<li><a href='http://jim-mcbeath.blogspot.com/2009/09/type-safe-builder-in-scala-part-3.html'>Type Safe Builder in Scala, Part 3</a></li>
+<li><a href='http://jim-mcbeath.blogspot.com/2009/09/type-safe-builder-in-scala-part-2.html'>Type Safe Builder in Scala, Part 2</a></li>
+<li><a href='http://jim-mcbeath.blogspot.com/2009/09/type-safe-builder-in-scala-using-church.html'>Type Safe Builder in Scala Using Church Numerals</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://jim-mcbeath.blogspot.com/2009_08_01_archive.html'>August</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://jim-mcbeath.blogspot.com/2009/08/scala-class-linearization.html'>Scala Class Linearization</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://jim-mcbeath.blogspot.com/2009_06_01_archive.html'>June</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://jim-mcbeath.blogspot.com/2009/06/eliding-actor-messages.html'>Eliding Actor Messages</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://jim-mcbeath.blogspot.com/2009_05_01_archive.html'>May</a>
+<span class='post-count' dir='ltr'>(3)</span>
+<ul class='posts'>
+<li><a href='http://jim-mcbeath.blogspot.com/2009/05/lift-without-maven.html'>Lift Without Maven</a></li>
+<li><a href='http://jim-mcbeath.blogspot.com/2009/05/scala-functions-vs-methods.html'>Scala Functions vs Methods</a></li>
+<li><a href='http://jim-mcbeath.blogspot.com/2009/05/fun-with-feedback.html'>Fun With Feedback</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://jim-mcbeath.blogspot.com/2009_04_01_archive.html'>April</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://jim-mcbeath.blogspot.com/2009/04/scala-listener-manager.html'>Scala Listener Manager</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://jim-mcbeath.blogspot.com/2009_03_01_archive.html'>March</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='http://jim-mcbeath.blogspot.com/2009/03/if-you-dont-understand-me-its-my-fault.html'>If You Don&#39;t Understand Me, It&#39;s My Fault</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://jim-mcbeath.blogspot.com/2009_02_01_archive.html'>February</a>
+<span class='post-count' dir='ltr'>(3)</span>
+<ul class='posts'>
+<li><a href='http://jim-mcbeath.blogspot.com/2009/02/unit-testing-with-dates-and-times.html'>Unit Testing with Dates and Times</a></li>
+<li><a href='http://jim-mcbeath.blogspot.com/2009/02/concurrent-editing-without-locking.html'>Concurrent Editing Without Locking</a></li>
+<li><a href='http://jim-mcbeath.blogspot.com/2009/02/internet-made-me-stupid.html'>The Internet Made Me Stupid</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://jim-mcbeath.blogspot.com/2009_01_01_archive.html'>January</a>
+<span class='post-count' dir='ltr'>(2)</span>
+<ul class='posts'>
+<li><a href='http://jim-mcbeath.blogspot.com/2009/01/vagaries-of-time.html'>The Vagaries of Time</a></li>
+<li><a href='http://jim-mcbeath.blogspot.com/2009/01/you-should-learn-scala.html'>You Should Learn Scala</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>&#9660;&#160;</span>
+</a>
+<a class='post-count-link' href='http://jim-mcbeath.blogspot.com/search?updated-min=2008-01-01T00%3A00%3A00-08%3A00&updated-max=2009-01-01T00%3A00%3A00-08%3A00&max-results=24'>2008</a>
+<span class='post-count' dir='ltr'>(24)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://jim-mcbeath.blogspot.com/2008_12_01_archive.html'>December</a>
+<span class='post-count' dir='ltr'>(4)</span>
+<ul class='posts'>
+<li><a href='http://jim-mcbeath.blogspot.com/2008/12/understanding-monads.html'>Understanding Monads</a></li>
+<li><a href='http://jim-mcbeath.blogspot.com/2008/12/java-resources-support.html'>Java Resources Support</a></li>
+<li><a href='http://jim-mcbeath.blogspot.com/2008/12/scala-operator-cheat-sheet.html'>Scala Operator Cheat Sheet</a></li>
+<li><a href='http://jim-mcbeath.blogspot.com/2008/12/apology-abcs.html'>Apology ABCs</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://jim-mcbeath.blogspot.com/2008_11_01_archive.html'>November</a>
+<span class='post-count' dir='ltr'>(4)</span>
+<ul class='posts'>
+<li><a href='http://jim-mcbeath.blogspot.com/2008/11/command-line-gui-java-apps.html'>Command Line GUI Java Apps</a></li>
+<li><a href='http://jim-mcbeath.blogspot.com/2008/11/practical-church-numerals-in-scala.html'>Practical Church Numerals in Scala</a></li>
+<li><a href='http://jim-mcbeath.blogspot.com/2008/11/scala-type-infix-operators.html'>Scala Type Infix Operators</a></li>
+<li><a href='http://jim-mcbeath.blogspot.com/2008/11/seamful-design.html'>Seamful Design</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://jim-mcbeath.blogspot.com/2008_10_01_archive.html'>October</a>
+<span class='post-count' dir='ltr'>(4)</span>
+<ul class='posts'>
+<li><a href='http://jim-mcbeath.blogspot.com/2008/10/software-quality-dimensions.html'>Software Quality Dimensions</a></li>
+<li><a href='http://jim-mcbeath.blogspot.com/2008/10/polymorphism-using-implicit-conversions.html'>Polymorphism Using Implicit Conversions</a></li>
+<li><a href='http://jim-mcbeath.blogspot.com/2008/10/avoiding-nulls.html'>Avoiding Nulls</a></li>
+<li><a href='http://jim-mcbeath.blogspot.com/2008/10/state-obvious.html'>State The Obvious</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>&#9660;&#160;</span>
+</a>
+<a class='post-count-link' href='http://jim-mcbeath.blogspot.com/2008_09_01_archive.html'>September</a>
+<span class='post-count' dir='ltr'>(4)</span>
+<ul class='posts'>
+<li><a href='http://jim-mcbeath.blogspot.com/2008/09/scala-parser-combinators.html'>Scala Parser Combinators</a></li>
+<li><a href='http://jim-mcbeath.blogspot.com/2008/09/creating-control-constructs-in-scala.html'>Creating Control Constructs in Scala</a></li>
+<li><a href='http://jim-mcbeath.blogspot.com/2008/09/scala-syntax-primer.html'>Scala Syntax Primer</a></li>
+<li><a href='http://jim-mcbeath.blogspot.com/2008/09/true-kind-necessary.html'>True, Kind, Necessary</a></li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://jim-mcbeath.blogspot.com/2008_08_01_archive.html'>August</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+          &#9658;&#160;
+        
+</span>
+</a>
+<a class='post-count-link' href='http://jim-mcbeath.blogspot.com/2008_07_01_archive.html'>July</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=7045524330253482541&widgetType=BlogArchive&widgetId=BlogArchive1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("BlogArchive1"));' target='configBlogArchive1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget Label' id='Label1'>
+<h2>Labels</h2>
+<div class='widget-content list-label-widget-content'>
+<ul>
+<li>
+<a dir='ltr' href='http://jim-mcbeath.blogspot.com/search/label/architecture'>architecture</a>
+<span dir='ltr'>(2)</span>
+</li>
+<li>
+<a dir='ltr' href='http://jim-mcbeath.blogspot.com/search/label/i18n'>i18n</a>
+<span dir='ltr'>(2)</span>
+</li>
+<li>
+<a dir='ltr' href='http://jim-mcbeath.blogspot.com/search/label/java'>java</a>
+<span dir='ltr'>(4)</span>
+</li>
+<li>
+<a dir='ltr' href='http://jim-mcbeath.blogspot.com/search/label/life'>life</a>
+<span dir='ltr'>(8)</span>
+</li>
+<li>
+<a dir='ltr' href='http://jim-mcbeath.blogspot.com/search/label/math'>math</a>
+<span dir='ltr'>(1)</span>
+</li>
+<li>
+<a dir='ltr' href='http://jim-mcbeath.blogspot.com/search/label/programming'>programming</a>
+<span dir='ltr'>(4)</span>
+</li>
+<li>
+<a dir='ltr' href='http://jim-mcbeath.blogspot.com/search/label/scala'>scala</a>
+<span dir='ltr'>(39)</span>
+</li>
+<li>
+<a dir='ltr' href='http://jim-mcbeath.blogspot.com/search/label/scala%20lift'>scala lift</a>
+<span dir='ltr'>(1)</span>
+</li>
+</ul>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=7045524330253482541&widgetType=Label&widgetId=Label1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("Label1"));' target='configLabel1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div><div class='widget HTML' id='HTML1'>
+<h2 class='title'>License</h2>
+<div class='widget-content'>
+Unless otherwise specified in individual blog entries, all source code in this blog is Copyright by Jim McBeath, as of the posting date, under the <a href="http://www.gnu.org/licenses/lgpl.html">GNU Lesser General Public License</a> (LGPL), Version 3.
+</div>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=7045524330253482541&widgetType=HTML&widgetId=HTML1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("HTML1"));' target='configHTML1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div><div class='widget Profile' id='Profile1'>
+<h2>About Me</h2>
+<div class='widget-content'>
+<dl class='profile-datablock'>
+<dt class='profile-data'>
+<a class='profile-name-link' href='http://www.blogger.com/profile/10541190774989580614' rel='author'>
+Jim McBeath
+</a>
+</dt>
+</dl>
+<a class='profile-link' href='http://www.blogger.com/profile/10541190774989580614' rel='author'>View my complete profile</a>
+<div class='clear'></div>
+<span class='widget-item-control'>
+<span class='item-control blog-admin'>
+<a class='quickedit' href='http://www.blogger.com/rearrange?blogID=7045524330253482541&widgetType=Profile&widgetId=Profile1&action=editWidget&sectionId=sidebar' onclick='return _WidgetManager._PopupConfig(document.getElementById("Profile1"));' target='configProfile1' title='Edit'>
+<img alt='' height='18' src='http://img1.blogblog.com/img/icon18_wrench_allbkg.png' width='18'/>
+</a>
+</span>
+</span>
+<div class='clear'></div>
+</div>
+</div></div>
+</div>
+<!-- spacer for skins that want sidebar and main to be the same height-->
+<div class='clear'>&#160;</div>
+</div>
+<!-- end content-wrapper -->
+<div id='footer-wrapper'>
+<div class='footer section' id='footer'></div>
+</div>
+</div></div>
+<!-- end outer-wrapper -->
+<script type='text/javascript'>
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22154864-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script type="text/javascript">
+if (window.jstiming) window.jstiming.load.tick('widgetJsBefore');
+</script><script type="text/javascript" src="http://www.blogger.com/static/v1/widgets/3067356616-widgets.js"></script>
+<script type='text/javascript'>
+if (typeof(BLOG_attachCsiOnload) != 'undefined' && BLOG_attachCsiOnload != null) { window['blogger_templates_experiment_id'] = "templatesV1";window['blogger_blog_id'] = '7045524330253482541';BLOG_attachCsiOnload('item_'); }_WidgetManager._Init('http://www.blogger.com/rearrange?blogID=7045524330253482541','http://jim-mcbeath.blogspot.com/2008/09/scala-syntax-primer.html','7045524330253482541');
+_WidgetManager._SetPageActionUrl('http://www.blogger.com/display?blogID=7045524330253482541','APq4FmAzNrOaOYMyPx6vxpZnhWWPWL_AL0KokjvR2SA274tFOd0tC4IjZmSHYTqmj36PCP52yIyAfAkzZE5zfUsJbJKuIpt2UoY_WXvB9gSLmWtsTGzrFIY=','AOuZoY4pf7uxUt0Wly5ZDQcS54H2BUWhPg:1310623887672');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'title': 'Jim McBeath', 'pageType': 'item', 'url': 'http://jim-mcbeath.blogspot.com/2008/09/scala-syntax-primer.html', 'canonicalUrl': 'http://jim-mcbeath.blogspot.com/2008/09/scala-syntax-primer.html', 'homepageUrl': 'http://jim-mcbeath.blogspot.com/', 'blogspotFaviconUrl': 'http://jim-mcbeath.blogspot.com/favicon.ico', 'enabledCommentProfileImages': true, 'searchLabel': '', 'searchQuery': '', 'pageName': 'Scala Syntax Primer', 'pageTitle': 'Jim McBeath: Scala Syntax Primer', 'encoding': 'UTF-8', 'locale': 'en', 'isPrivate': false, 'isMobile': false, 'mobileClass': '', 'languageDirection': 'ltr', 'feedLinks': '\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42Jim McBeath - Atom\42 href\75\42http://jim-mcbeath.blogspot.com/feeds/posts/default\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/rss+xml\42 title\75\42Jim McBeath - RSS\42 href\75\42http://jim-mcbeath.blogspot.com/feeds/posts/default?alt\75rss\42 /\76\n\74link rel\75\42service.post\42 type\75\42application/atom+xml\42 title\75\42Jim McBeath - Atom\42 href\75\42http://www.blogger.com/feeds/7045524330253482541/posts/default\42 /\76\n\74link rel\75\42EditURI\42 type\75\42application/rsd+xml\42 title\75\42RSD\42 href\75\42http://www.blogger.com/rsd.g?blogID\0757045524330253482541\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42Jim McBeath - Atom\42 href\75\42http://jim-mcbeath.blogspot.com/feeds/465171792354875959/comments/default\42 /\76\n', 'meTag': '', 'openIdOpTag': '', 'imageSrcTag': '', 'latencyHeadScript': '\74script type\75\42text/javascript\42\76(function() { var a\75window;function c(b){this.t\75{};this.tick\75function(b,i,d){d\75d!\75void 0?d:(new Date).getTime();this.t[b]\75[d,i]};this.tick(\42start\42,null,b)}var e\75new c;a.jstiming\75{Timer:c,load:e};try{var g\75null;a.chrome\46\46a.chrome.csi\46\46(g\75Math.floor(a.chrome.csi().pageT));g\75\75null\46\46a.gtbExternal\46\46(g\75a.gtbExternal.pageT());g\75\75null\46\46a.external\46\46(g\75a.external.pageT);g\46\46(a.jstiming.pt\75g)}catch(h){};a.tickAboveFold\75function(b){var f\0750;if(b.offsetParent){do f+\75b.offsetTop;while(b\75b.offsetParent)}b\75f;b\74\075750\46\46a.jstiming.load.tick(\42aft\42)};var j\75!1;function k(){j||(j\75!0,a.jstiming.load.tick(\42firstScrollTime\42))}a.addEventListener?a.addEventListener(\42scroll\42,k,!1):a.attachEvent(\42onscroll\42,k);\n })();\74/script\076', 'mobileHeadScript': ''}}]);
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'sidebar', null, document.getElementById('BlogArchive1'), {'languageDirection': 'ltr'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LabelView', new _WidgetInfo('Label1', 'sidebar', null, document.getElementById('Label1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'sidebar', null, document.getElementById('HTML1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_ProfileView', new _WidgetInfo('Profile1', 'sidebar', null, document.getElementById('Profile1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header'));
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'navbar'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', null, document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'showBacklinks': true, 'postId': '465171792354875959'}, 'displayModeFull'));
+</script>
+</body>
+</html>
